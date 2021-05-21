@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+    Your payoff was {{ player.payoff }}.
+    {% if player.payoff == 0 %}
+    	Your opponent's payoff was 5.
+    {% elif player.payoff == 1 %}
+    	Your opponent's payoff was 1.
+    {% elif player.payoff == 5 %}
+    	Your opponent's payoff was 0.
+    {% else %}
+    	Your opponent's payoff was 3.
+    {% endif %}
+    {% next_button %}
+{% endblock %}
+
+

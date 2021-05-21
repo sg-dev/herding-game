@@ -1,0 +1,49 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    End
+{% endblock %}
+
+{% block content %}
+    The game has now ended. Thank you for participating! You can visualize below a table displaying yours and the other player's decision and payoff, with the tax rate that has been applied.
+
+    <table>
+	  <tr>
+	  	<th>My decision</th>
+	    <th>My payoff</th>
+	    <th>Other's decision</th>
+	    <th>Other's payoff</th>
+	    <th>Tax rate</th>
+	  </tr>
+	  <tr>
+	    <td>{{ my_decision }}</td>
+	    <td>{{ my_payoff }}</td>
+	    <td>{{ other_decision }}</td>
+	    <td>{{ other_payoff }}</td>
+	    <td>{{ tax }}</td>
+	  </tr>
+	</table>
+{% endblock %}
+
+{% block styles %}
+	<style>
+		table {
+		  font-family: arial, sans-serif;
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+
+		td, th {
+		  border: 1px solid #dddddd;
+		  text-align: left;
+		  padding: 8px;
+		}
+
+		tr:nth-child(even) {
+		  background-color: #dddddd;
+		}
+	</style>
+{% endblock %}
+
+
