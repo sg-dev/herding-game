@@ -36,14 +36,13 @@ We build a Prisoner's Dilemma game with the possibility of giving to the player 
 
 #### Command-line arguments
 * d: Bot decision
-* Î±: Fraction of total payoff redistributed to cooperators
-* Î²: Bonus given to player w.p. p if cooperator and w.p. q if defector
+* α: Fraction of total payoff redistributed to cooperators ==> p_1' = p_1 - (p_1+p_2) * α
 
 #### Function simulating bot(s)
 When assigning payoffs, check whether player has chosen C, D and toss a coin u.a.r. (w.p. 1/2) to decide d = C, D for the bot.
 
 #### Model
-Usual PD model with addition of (Î±, Î²) options.
+Usual PD model with addition of (α, β) options.
 
 #### Pages
 * Let the player choose its action as usual.
@@ -52,6 +51,7 @@ Usual PD model with addition of (Î±, Î²) options.
 
 #### Time-planning
 4 hours 
+* 2 regimes each played twice (α = 0, α = 0.5)
 
 
 One-shot Multiplayer
@@ -62,14 +62,13 @@ We build a Prisoner's Dilemma game with the possibility of giving to the player 
 
 #### Command-line arguments
 * f: Fraction of bot cooperators
-* Î±: Fraction of total payoff redistributed to cooperators
-* Î²: Bonus given to player w.p. p if cooperator and w.p. q if defector
+* α: Fraction of total payoff redistributed to cooperators ==> p_1' = p_1 - (p_1+p_others) * α
 
 #### Function simulating bot(s)
 When assigning payoffs, check whether player has chosen C, D and compute payoff according to fraction of bot cooperators f.
 
 #### Model
-Usual PD model with addition of (Î±, Î²) options.
+Usual PD model with addition of (α, β) options.
 
 #### Pages
 * Let the player choose its action as usual.
@@ -78,6 +77,8 @@ Usual PD model with addition of (Î±, Î²) options.
 
 #### Time-planning
 2 hours
+* Table with n_cooperators and n_defectors
+* 4 regimes each played twice ((α = 0, α = 0.5) x (f=0.25, f=0.75))
 
 
 Repeated Multiplayer
@@ -85,14 +86,14 @@ Repeated Multiplayer
 
 #### Command-line arguments
 * f[]: Fraction of cooperators (over rounds)
-* Î±[]: Fraction of total payoff redistributed to cooperators (over rounds)
-* Î²[]: Bonus given to player w.p. p if cooperator and w.p. q if defector (over rounds)
+* α[]: Fraction of total payoff redistributed to cooperators (over rounds)
+* β[]: Bonus given to player w.p. p if cooperator and w.p. q if defector (over rounds)
 
 #### Function simulating bot(s)
 When assigning payoffs, check round t and whether player has chosen C, D and compute payoff according to fraction of bot cooperators at that round f[t].
 
 #### Model
-Usual IPD model with addition of (Î±, Î²) options.
+Usual IPD model with addition of (α, β) options.
 
 #### Pages
 * Let the player choose its action as usual.
@@ -101,11 +102,15 @@ Usual IPD model with addition of (Î±, Î²) options.
 
 #### Time-planning
 4 hours
+* Table with n_cooperators and n_defectors at each round t
+* 4 regimes each played twice ((α = 0, α = 0.5) x ([1, 0.75, 0.5, 0.25, 0], [0, 0.25, 0.5, 0.75, 1]))
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Tutorials
 Please read the following the two tutorials for a deeper understanding of the repository:
-* `PD_tutorial.md` is especially useful if you would like to see a walked-through example of the One-Shot 2-player/Multiplayer Prisoner's Dilemma with (Î±, Î²) options.
-* `IPD_tutorial.md` is especially useful if you would like to see a walked-through example of the Repeated Multiplayer Prisoner's Dilemma with (Î±, Î²) options.
+* `PD_tutorial.md` is especially useful if you would like to see a walked-through example of the One-Shot 2-player/Multiplayer Prisoner's Dilemma with (α, β) options.
+* `IPD_tutorial.md` is especially useful if you would like to see a walked-through example of the Repeated Multiplayer Prisoner's Dilemma with (α, β) options.
 
 #### Time-planning
 2 hours
