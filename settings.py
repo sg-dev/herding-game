@@ -8,6 +8,12 @@ SESSION_CONFIGS = [
         num_demo_participants=4,
         app_sequence=['one_shot'],
     ),
+    dict(
+        name='one_shot_multi',
+        display_name='One-Shot Multi-Player Prisoners Dilemma' ,
+        num_demo_participants=20,
+        app_sequence=['one_shot_multi'],
+    ),
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
