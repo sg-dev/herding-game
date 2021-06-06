@@ -1,0 +1,100 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    End
+{% endblock %}
+
+{% block content %}
+    The game has now ended. Thank you for participating! You can visualize below a table displaying yours and your neighbourhood's decisions and payoffs, with the tax rate that has been applied.
+
+    <p>
+    	
+    </p>
+
+    <table>
+	  <tr>
+	  	<th>My decision</th>
+	    <th style="color:red;">My payoff</th>
+	    <th># Cooperators</th>
+	    <th># Defectors</th>
+	    <th>Tax rate</th>
+	  </tr>
+	  <tr>
+	    <td>{{ my_decision }}</td>
+	    <td style="color:red;">{{ my_payoff }}</td>
+	    <td>{{ n_C }}</td>
+	    <td>{{ n_D }}</td>
+	    <td>{{ tax }}</td>
+	  </tr>
+	</table>
+
+	<p>
+    	
+
+
+    </p>
+
+   <div style="text-align:center">
+	  <canvas id="canvas" width="300" height="300"></canvas>
+	</div>
+	<p>
+    	
+    </p>
+	<div style="text-align:center">
+	  <span class="circle_me"></span>
+	</div>
+
+
+    <body onload="draw('D');">
+	  <canvas id="circle" width="150" height="150"></canvas>
+	</body>
+
+	<script>
+		var ctx = $('#canvas')[0].getContext("2d");
+	  	var coords = [ [130,80], [90,40], [110,40], [130,40], [150,40], [170,40] ];
+	    var n_C = {{ n_C }};
+
+	    for(var i = 0; i < coords.length; i++) {
+	      ctx.beginPath();
+	      ctx.arc(coords[i][0], coords[i][1], 5, 0, Math.PI * 2, true);
+	      ctx.fill();
+	      if (n_C > 0){
+	      	ctx.fillStyle = 'orange';
+	        n_C = n_C - 1;
+	      }
+	      else {
+	      	ctx.fillStyle = 'blue';
+	      }
+	    }
+	</script>
+{% endblock %}
+
+{% block styles %}
+	<style>
+		table {
+		  font-family: arial, sans-serif;
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+
+		td, th {
+		  border: 1px solid #dddddd;
+		  text-align: left;
+		  padding: 8px;
+		}
+
+		tr:nth-child(even) {
+		  background-color: #dddddd;
+		}
+
+		#circle_me {
+            width: 20px;
+            height: 20px;
+            -webkit-border-radius: 25px;
+            -moz-border-radius: 25px;
+            border-radius: 25px;
+            background: black;
+         }
+	</style>
+{% endblock %}

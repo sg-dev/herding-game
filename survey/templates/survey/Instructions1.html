@@ -1,0 +1,37 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Instructions - Description
+{% endblock %}
+
+{% block content %}
+<div class="card card-body bg-light instructions">
+<p class="big">
+
+
+    <p> In this experiment you will be randomly paired with another participant or with multiple participants for 1 round: they will be named your "neighbourhood" in the latter case.</p>
+
+    <p>Once a match ends, yours and the other participant(s)'s payoffs will be displayed.</p>
+
+    <p>You and the participant(s) you are paired with choose simultaneously between two actions,
+        <b>Cooperate</b> and <b>Defect</b>.</p>
+
+    <p>
+        When you and the other(s) choose an action, a tax will be applied to your initial payoff and depending on the actions yours and the other(s)'s actions, a portion of yours and the other(s)'s payoff, called bonus, will get redistributed between you and the other(s), unless players choose the same action. 
+
+        In particular, if both cooperate, then they get no bonus while, if both defect, they get subtracted the tax from their original payoff. 
+    </p>
+
+    {% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+    <style type="text/css">
+        .big{
+            font-size: large;
+        }
+    </style>
+
+{% endblock %}
