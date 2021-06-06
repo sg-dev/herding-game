@@ -78,7 +78,7 @@ Usual PD model with addition of (α, β) options.
 #### Time-planning
 2 hours
 * Table with n_cooperators and n_defectors
-* 4 regimes each played twice ((α = 0, α = 0.5) x (f=0.25, f=0.75))
+* 10 regimes each played twice ((α = 0, α = 0.5) x (f=0, f=0.25, f=0.5, f=0.75, f=1))
 
 
 Repeated Multiplayer
