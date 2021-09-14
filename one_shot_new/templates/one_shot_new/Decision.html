@@ -18,7 +18,13 @@
 {% endblock %}
 
 {% block content %}
-<b> The tax rate applied on your game is {{ tax }}%.</b>
+    <div class="card card-body bg-light instructions">
+        <p>The tax rate that will be applied to the following earning table is <b>{{ tax }}%</b>.</p>
+    </div>
+
+
+    <br>
+    <br>
 
     <div class="form-group required">
         <table class="table table-bordered text-center" style="width: auto; margin: auto">

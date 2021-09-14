@@ -2,29 +2,35 @@ from os import environ
 
 
 SESSION_CONFIGS = [
+    # dict(
+    #     name='one_shot',
+    #     display_name='One-Shot 2-Player Prisoners Dilemma' ,
+    #     num_demo_participants=4,
+    #     app_sequence=['one_shot'],
+    # ),
+    # dict(
+    #     name='one_shot_multi',
+    #     display_name='One-Shot Multi-Player Prisoners Dilemma' ,
+    #     num_demo_participants=20,
+    #     app_sequence=['one_shot_multi'],
+    # ),
+    # dict(
+    #     name='one_shot_new',
+    #     display_name='One-Shot 2-Player Prisoners Dilemma' ,
+    #     num_demo_participants=4,
+    #     app_sequence=['survey', 'one_shot_new'],
+    # ),
+    # dict(
+    #     name='one_shot_multi_new',
+    #     display_name='One-Shot Multi-Player Prisoners Dilemma' ,
+    #     num_demo_participants=20,
+    #     app_sequence=['survey', 'one_shot_multi_new'],
+    # ),
     dict(
-        name='one_shot',
-        display_name='One-Shot 2-Player Prisoners Dilemma' ,
-        num_demo_participants=4,
-        app_sequence=['one_shot'],
-    ),
-    dict(
-        name='one_shot_multi',
-        display_name='One-Shot Multi-Player Prisoners Dilemma' ,
-        num_demo_participants=20,
-        app_sequence=['one_shot_multi'],
-    ),
-    dict(
-        name='one_shot_new',
-        display_name='One-Shot 2-Player Prisoners Dilemma' ,
-        num_demo_participants=4,
-        app_sequence=['survey', 'one_shot_new'],
-    ),
-    dict(
-        name='one_shot_multi_new',
-        display_name='One-Shot Multi-Player Prisoners Dilemma' ,
-        num_demo_participants=20,
-        app_sequence=['survey', 'one_shot_multi_new'],
+        name='repeated_multi',
+        display_name='Repeated Multi-Player Prisoners Dilemma' ,
+        num_demo_participants=32,
+        app_sequence=['survey', 'repeated_multi'],
     ),
 ]
 
