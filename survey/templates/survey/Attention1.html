@@ -2,7 +2,7 @@
 {% load otree %}
 
 {% block title %}
-    Attention Check - Tax and Bonus
+    Comprehension Check - Tax, Redistribution and Possible Scenarios
 {% endblock %}
 
 {% block content %}
@@ -13,6 +13,257 @@
 
     {% formfields %}
 
+    <br>
+
+	<b> By clicking the Next button below, you will be starting the game.</b>
+
+	<br>
+
     {% next_button %}
+
+    <br>
+    <br>
+    <br>
+
+    <div style="text-align:center">
+    	<b> Recap of Instructions </b>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="card card-body bg-light instructions">
+    This is a game you are going to play with 4 other randomly chosen players. All players play against each other as illustrated below.
+	</div>
+
+	<br>
+	<br>
+
+	<div style="text-align:center">
+	    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 427.5 599" width="600px" height="600px">
+	        <defs>
+	            <style>
+	                .cls-1 {
+	                    fill: #e6e7e8;
+	                }
+
+	                .cls-2 {
+	                    fill: DarkMagenta/*#9e1f63;*/
+	                }
+
+	                .cls-15,
+	                .cls-3 {
+	                    font-size: 15px;
+	                    fill: #231f20;
+	                    font-family: MyriadPro-Regular, Myriad Pro;
+	                }
+
+	                .cls-4 {
+	                    letter-spacing: -0.01em;
+	                }
+
+	                .cls-5 {
+	                    letter-spacing: 0em;
+	                }
+
+	                .cls-6 {
+	                    fill: Orange/*#f7941d;*/
+	                }
+
+	                .cls-10,
+	                .cls-11,
+	                .cls-7,
+	                .cls-8,
+	                .cls-9 {
+	                    fill: none;
+	                    stroke-miterlimit: 10;
+	                }
+
+	                .cls-10,
+	                .cls-7,
+	                .cls-8,
+	                .cls-9 {
+	                    stroke: #bcbec0;
+	                }
+
+	                .cls-7,
+	                .cls-8 {
+	                    stroke-width: 1.39px;
+	                }
+
+	                .cls-8 {
+	                    stroke-dasharray: 8.04 8.04;
+	                }
+
+	                .cls-10,
+	                .cls-9 {
+	                    stroke-width: 0.98px;
+	                }
+
+	                .cls-10 {
+	                    stroke-dasharray: 7.86 7.86;
+	                }
+
+	                .cls-11 {
+	                    stroke: #231f20;
+	                    stroke-width: 4px;
+	                }
+
+	                .cls-12 {
+	                    letter-spacing: 0em;
+	                }
+
+	                .cls-13 {
+	                    letter-spacing: -0.01em;
+	                }
+
+	                .cls-14 {
+	                    letter-spacing: -0.01em;
+	                }
+
+	                .cls-15 {
+	                    letter-spacing: -0.08em;
+	                }
+
+	                .cls-16 {
+	                    letter-spacing: 0em;
+	                }
+
+	                .cls-17 {
+	                    fill: #a7a9ac;
+	                }
+	            </style>
+	        </defs>
+	        <g id="legend">
+	            <rect class="cls-1" x="68.88" y="529" width="289.74" height="70" rx="10.44" />
+	            <circle class="cls-2" cx="103.06" cy="566.08" r="15.88" />
+	            <text class="cls-3" transform="translate(126.45 572.17)">Defectors</text>
+	            <circle class="cls-6" cx="241.19" cy="566.08" r="15.88" />
+	            <text class="cls-3" transform="translate(265.34 572.17)">Cooperators</text>
+	        </g>
+	        <g id="otherlinks">
+	            <path class="cls-7" d="M45,43.94a15.66,15.66,0,0,1,3.15-2.45" />
+	            <path class="cls-8"
+	                d="M55.72,38.92C90.19,33.65,174.3,87.5,257.35,170.3c86.36,86.11,141.43,173.48,131.06,205.14" />
+	            <path class="cls-7" d="M386.77,379.1a15.36,15.36,0,0,1-2.43,3.16" />
+	            <path class="cls-9" d="M382.75,382.5a11.12,11.12,0,0,1-.72,3.91" />
+	            <path class="cls-10" d="M377.62,392.85c-18.47,18.27-84.72,31.8-163.62,31.8-83.13,0-152.22-15-166.18-34.78" />
+	            <path class="cls-9" d="M46,386.41a11.12,11.12,0,0,1-.72-3.91" />
+	            <path class="cls-9" d="M45,382.5a11.12,11.12,0,0,1-3.91-.72" />
+	            <path class="cls-10" d="M34.65,377.37C16.38,358.9,2.85,292.65,2.85,213.75c0-83.13,15-152.22,34.78-166.18" />
+	            <path class="cls-9" d="M41.09,45.72A11.12,11.12,0,0,1,45,45" />
+	            <path class="cls-9" d="M383,45a11.12,11.12,0,0,1,3.91.72" />
+	            <path class="cls-10" d="M393.35,50.13c18.27,18.47,31.8,84.72,31.8,163.62,0,83.13-15,152.22-34.78,166.18" />
+	            <path class="cls-9" d="M386.91,381.78a11.12,11.12,0,0,1-3.91.72" />
+	            <path class="cls-9" d="M45,44.5a11.12,11.12,0,0,1,.72-3.91" />
+	            <path class="cls-10" d="M50.13,34.15C68.6,15.88,134.85,2.35,213.75,2.35c83.13,0,152.22,15,166.18,34.78" />
+	            <path class="cls-9" d="M381.78,40.59a11.12,11.12,0,0,1,.72,3.91" />
+	            <path class="cls-7" d="M41.34,382.5a16,16,0,0,1-2.44-3.15" />
+	            <path class="cls-8"
+	                d="M36.34,371.78C31.12,337.31,85.1,253.27,168,170.35,254.26,84.11,341.7,29.17,373.35,39.59" />
+	            <path class="cls-7" d="M377,41.23a16,16,0,0,1,3.16,2.44" />
+	        </g>
+	        <g id="mainlinks">
+	            <line class="cls-11" x1="44.5" y1="44.5" x2="214" y2="213.5" />
+	            <line class="cls-11" x1="382.5" y1="44.5" x2="214" y2="213.75" />
+	            <line class="cls-11" x1="383" y1="382.5" x2="214" y2="213.75" />
+	            <line class="cls-11" x1="214.25" y1="213.5" x2="45.25" y2="382.5" />
+	        </g>
+	        <g id="names">
+	            <text class="cls-3" transform="translate(13.93 120.79)">A. Einstein</text>
+	            <text class="cls-3" transform="translate(348.78 120.79)">M. Curie</text>
+	            <text class="cls-3" transform="translate(12.36 464.17)">D. Hodgkin</text>
+	            <text class="cls-3" transform="translate(350.36 459.58)">G. Kasparov</text>
+	            <text class="cls-15" transform="translate(202.67 281)">You</text>
+	        </g>
+	        <g id="circles">
+	            <circle id=circ0 class="cls-6" cx="44.5" cy="44.5" r="24.5" />
+	            <circle id=circ1 class="cls-6" cx="382.5" cy="44.5" r="24.5" />
+	            <circle id=circ2 class="cls-6" cx="45" cy="382.5" r="24.5" />
+	            <circle id=circ3 class="cls-2" cx="383" cy="382.5" r="24.5" />
+	            <circle class="cls-17" cx="214" cy="213.5" r="24.5" />
+	        </g>
+	    </svg>
+	</div>
+
+	<br>
+	<br>
+
+	<div class="card card-body bg-light instructions">
+	    <p> Your task consists in choosing to either <b>collaborate</b> or <b>not</b> with all the other players. This means, that your choice will be played against all other players simultaneously.
+	    Your choice and that of the other players’ determines the earnings, as illustrated by the following example. 
+	    All players are required to pay a share of their earnings into the public pot. However, only collaborating players will receive an equal share of the public pot.
+	    </p>
+	</div>
+
+	<br>
+	<br>
+
+	<table class="table table-bordered text-center" style="width: auto; margin: auto">
+	            <tr>
+	                <th colspan="2" rowspan="2"></th>
+	                <th colspan="2"><center>Player X</center></th>
+	                </tr>
+	                <tr>
+	                    <th><center>Collaborate</center></th>
+	                    <th><center>Don't collaborate</center></th>
+	                </tr>
+	            <tr class="highlight-row-on-hover">
+	                    <th rowspan="2"><span class="rotate90">You</span></th>
+	                    <td><button name="decision" value="C" class="btn btn-primary btn-large" disabled>Collaborate</button></td>
+	                    <td>5, 5</td>
+	                    <td>5, 8</td>
+	            </tr>
+	            <tr class="highlight-row-on-hover">
+	                    <td><button name="decision" value="D" class="btn btn-primary btn-large" disabled>Don't collaborate</button></td>
+	                    <td>8, 5</td>
+	                    <td>2, 2</td>
+	            </tr>
+	</table>
+
+	<br>
+	<br>
+
+	<div class="card card-body bg-light instructions">
+	    In each round you choose one action which is then played agains every single player. The total earning for the round is the sum of the earning of the interactions.
+	</div>
+
+	<br>
+
+	<div class="card card-body bg-light instructions">
+	    <b> Taxation </b>
+	    <p>The earnings of all players are taxed and the taxed amount is placed in the public pot. The public pot is then redistributed equally among the collaborating players.
+	    Suppose for simplicity, that you only play with one player.
+	    You choose <b>not to collaborate</b>, while Player X <b>collaborates</b>.
+	    Consider the example where the tax rate is 50% and the earnings are the ones shown in the table above.
+	        <ol>
+	          <li>You earn 8 and Player X earns 5 points.</li>
+	          <li>Given the tax rate of 50% you pay 4 and Player X pays 2.5 into the public pot. The public pot now contains 6.5.</li>
+	          <li>The 6.5 are distributed equally among the players choosing to collaborate. In this case only Player X collborates and gets 6.5 while you get 0. In total you receive 4 (4 + 0) and player X receives 9 (2.5 + 6.5).</li>
+	        </ol>
+
+	    Consider a second example with a tax rate of 10%.
+	        <ol>
+	          <li>You earn 8 and Player X earns 5 points.</li>
+	          <li>Given the tax rate of 10% you pay 0.8 and Player X pays 0.5 into the public pot. The public pot now contains 1.3.</li>
+	          <li>The 1.3 are distributed equally among the players choosing to collaborate. In this case only Player X collborates and gets 1.3 while you get 0. In total you receive 7.2 (7.2 + 0) and player X receives 5.8 (4.5 + 1.3).</li>
+	        </ol>
+	    </p>
+	</div>
+
+	<br>
+
+	<div class="card card-body bg-light instructions">
+	    <p>To recap, the game consists of <b>3</b> phases:
+	    <ol>
+	      <li><b>Game Phase</b> You choose either to collaborate or not and get an initial earning.</li>
+	      <li><b>Tax Phase</b> Tax is collected from all players’ and placed in a public pot.</li>
+	      <li><b>Redistribution Phase</b> This public pot is redistributed equally among collaborating players.</li>
+	    </ol>
+	    </p>
+	</div>
+
+	<br>
+	<br>
 
 {% endblock %}

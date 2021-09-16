@@ -2,16 +2,21 @@
 {% load otree static %}
 
 {% block title %}
-    End
+    End of Game
 {% endblock %}
 
 {% block content %}
-    The game has now ended. Thank you for participating! You can visualize below a table displaying yours and the other player's decision and payoff, with the tax rate that has been applied.
+    <div class="card card-body bg-light instructions">
+    The game has now ended. Thank you for participating! You can visualize below a table displaying yours and your neighbourhood's decisions and payoffs, with the tax rate that has been applied.
+	</div>
+
+	<br>
 
     <p>
     	
     </p>
 
+    <div class="card card-body bg-light instructions">
     <table>
 	  <tr>
 	  	<th>My decision</th>
@@ -25,9 +30,10 @@
 	    <td style="color:red;">{{ my_payoff }}</td>
 	    <td>{{ other_decision }}</td>
 	    <td>{{ other_payoff }}</td>
-	    <td>{{ tax }}</td>
+	    <td>{{ tax }}%</td>
 	  </tr>
 	</table>
+	</div>
 {% endblock %}
 
 {% block styles %}

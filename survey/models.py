@@ -32,26 +32,20 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
 
-    tax = models.StringField(
-        choices=[['A fraction of the total payoff that the platform retains', 'A fraction of the total payoff that the platform retains'], ['A fraction of the total payoff that the platform redistributes', 'A fraction of the total payoff that the platform redistributes']],
-        label='What is the tax rate?',
-        widget=widgets.RadioSelect,
-    )
-
-    bonus = models.StringField(
-        choices=[['When both players choose the same action', 'When both players choose the same action'], ['When players choose different actions', 'When players choose different actions']],
-        label='When is the bonus awarded?',
-        widget=widgets.RadioSelect,
-    )
-
     q1 = models.StringField(
-        choices=[['I would Cooperate', 'I would Cooperate'], ['I would Defect', 'I would Defect']],
-        label='If α = 1 and the other player was about to Defect, which would the best choice be?',
+        choices=[['Collaborating players', 'Collaborating players'], ['All players', 'All players'], ['Non collaborating players', 'Non collaborating players']],
+        label='The collected taxes (public pot) is redistributed among:',
         widget=widgets.RadioSelect,
     )
 
     q2 = models.StringField(
-        choices=[['I would Cooperate', 'I would Cooperate'], ['I would Defect', 'I would Defect']],
-        label='If α = 0 and the other player was about to Cooperate, which would the best choice be?',
+        choices=[['Yes', 'Yes'], ['No', 'No']],
+        label='Can you have different choices for different players in the same round?',
+        widget=widgets.RadioSelect,
+    )
+
+    q3 = models.StringField(
+        choices=[['0', '0'], ['1', '1'], ['5', '5'], ['10', '10']],
+        label='If the tax is 50% and your earnings are 10, how much do you contribute to the public pot?',
         widget=widgets.RadioSelect,
     )
