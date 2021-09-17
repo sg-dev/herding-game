@@ -1,0 +1,124 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Comprehension Check - Tax, Redistribution and Possible Scenarios
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Please answer the following questions.
+    </p>
+
+    {% formfields %}
+
+    <br>
+
+    <p>
+        <button class="otree-btn-next btn btn-primary">Submit and start game.</button>
+    </p>
+
+    <br>
+    <br>
+    <hr>
+
+    <div style="text-align:center">
+    	<h3> Recap of Instructions </h3>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="card card-body bg-light instructions">
+    This is a game you are going to play with 4 other randomly chosen players. All players play against each other as illustrated below.
+	</div>
+
+	<br>
+	<br>
+
+    <div style="text-align:center"></div>
+    {{ include "game.svg"}}
+    </div>
+
+	<br>
+	<br>
+
+	<div class="card card-body bg-light instructions">
+	    <p> Your task consists in choosing to either <b>collaborate</b> or <b>not</b> with all the other players. This means, that your choice will be played against all other players simultaneously.
+	    Your choice and that of the other players’ determines the earnings, as illustrated by the following example.
+	    All players are required to pay a share of their earnings into the public pot. However, only collaborating players will receive an equal share of the public pot.
+	    </p>
+	</div>
+
+	<br>
+	<br>
+
+	<table class="table table-bordered text-center" style="width: auto; margin: auto">
+	            <tr>
+	                <th colspan="2" rowspan="2"></th>
+	                <th colspan="2"><center>Player X</center></th>
+	                </tr>
+	                <tr>
+	                    <th><center>Collaborate</center></th>
+	                    <th><center>Don't collaborate</center></th>
+	                </tr>
+	            <tr class="highlight-row-on-hover">
+	                    <th rowspan="2"><span class="rotate90">You</span></th>
+	                    <td><button name="decision" value="C" class="btn btn-primary btn-large" disabled>Collaborate</button></td>
+	                    <td>5, 5</td>
+	                    <td>5, 8</td>
+	            </tr>
+	            <tr class="highlight-row-on-hover">
+	                    <td><button name="decision" value="D" class="btn btn-primary btn-large" disabled>Don't collaborate</button></td>
+	                    <td>8, 5</td>
+	                    <td>2, 2</td>
+	            </tr>
+	</table>
+
+	<br>
+	<br>
+
+	<div class="card card-body bg-light instructions">
+	    In each round you choose one action which is then played agains every single player. The total earning for the round is the sum of the earning of the interactions.
+	</div>
+
+	<br>
+
+	<div class="card card-body bg-light instructions">
+	    <b> Taxation </b>
+	    <p>The earnings of all players are taxed and the taxed amount is placed in the public pot. The public pot is then redistributed equally among the collaborating players.
+	    Suppose for simplicity, that you only play with one player.
+	    You choose <b>not to collaborate</b>, while Player X <b>collaborates</b>.
+	    Consider the example where the tax rate is 50% and the earnings are the ones shown in the table above.
+	        <ol>
+	          <li>You earn 8 and Player X earns 5 points.</li>
+	          <li>Given the tax rate of 50% you pay 4 and Player X pays 2.5 into the public pot. The public pot now contains 6.5.</li>
+	          <li>The 6.5 are distributed equally among the players choosing to collaborate. In this case only Player X collborates and gets 6.5 while you get 0. In total you receive 4 (4 + 0) and player X receives 9 (2.5 + 6.5).</li>
+	        </ol>
+
+	    Consider a second example with a tax rate of 10%.
+	        <ol>
+	          <li>You earn 8 and Player X earns 5 points.</li>
+	          <li>Given the tax rate of 10% you pay 0.8 and Player X pays 0.5 into the public pot. The public pot now contains 1.3.</li>
+	          <li>The 1.3 are distributed equally among the players choosing to collaborate. In this case only Player X collborates and gets 1.3 while you get 0. In total you receive 7.2 (7.2 + 0) and player X receives 5.8 (4.5 + 1.3).</li>
+	        </ol>
+	    </p>
+	</div>
+
+	<br>
+
+	<div class="card card-body bg-light instructions">
+	    <p>To recap, the game consists of <b>3</b> phases:
+	    <ol>
+	      <li><b>Game Phase</b> You choose either to collaborate or not and get an initial earning.</li>
+	      <li><b>Tax Phase</b> Tax is collected from all players’ and placed in a public pot.</li>
+	      <li><b>Redistribution Phase</b> This public pot is redistributed equally among collaborating players.</li>
+	    </ol>
+	    </p>
+	</div>
+
+	<br>
+	<br>
+
+{% endblock %}
