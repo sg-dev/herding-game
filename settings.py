@@ -26,11 +26,18 @@ SESSION_CONFIGS = [
     #     num_demo_participants=20,
     #     app_sequence=['survey', 'one_shot_multi_new'],
     # ),
+    # dict(
+    #     name='repeated_multi',
+    #     display_name='Repeated Multi-Player Prisoners Dilemma' ,
+    #     num_demo_participants=32,
+    #     app_sequence=['herding_instructions', 'repeated_multi'],
+    # ),
+
     dict(
-        name='repeated_multi',
+        name='herding_points',
         display_name='Repeated Multi-Player Prisoners Dilemma' ,
         num_demo_participants=32,
-        app_sequence=['survey', 'repeated_multi'],
+        app_sequence=['herding_instructions']
     ),
 ]
 

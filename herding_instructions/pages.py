@@ -17,4 +17,4 @@ class Comprehension(Page):
 			return 'Wrong answer, try again.'
 
 
-page_sequence = [Instructions, Comprehension]#, Instructions2, Attention2]
+page_sequence = [Instructions, Comprehension]
