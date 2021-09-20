@@ -80,4 +80,8 @@ class Player(BasePlayer):
         doc="""This player's decision""",
         widget=widgets.RadioSelect()
     )
-    debrief = models.StringField()
+    debrief = models.StringField(
+        choices=[['0-10%', '0-10%'], ['11-25%', '11-25%'], ['26-50%', '26-50%'], ['50-75%', '50-75%'], ['76-100%', '76-100%']],
+        #label='The collected taxes (public pot) is redistributed among:',
+        widget=widgets.RadioSelect,
+        )

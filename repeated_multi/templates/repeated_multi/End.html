@@ -1,9 +1,9 @@
 {% extends "global/Page.html" %}
 {% load otree static %}
 
-<!-- {% block title %}
-    End
-{% endblock %} -->
+{% block title %}
+    Round recap and results
+{% endblock %}
 
 {% block content %}
 <div class="card card-body bg-light instructions">
@@ -12,13 +12,12 @@
 
 <br>
 <br>
-<br>
 
 <div class="card card-body bg-light instructions">
-	<p> The <b>bonus</b> has been computed from the following operations (by convention the division by <b>0</b> equals also <b>0</b>). {{ n_C_1 }} players cooperated and {{ n_D_1 }} did not; initially, cooperators got each {{ coop_payoff }} and non-cooperators got each {{ def_payoff}}.
+	<p> The <b>bonus</b> has been computed from the following operations. <!-- (by convention the division by <b>0</b> equals also <b>0</b>). {{ n_C_1 }} players cooperated and {{ n_D_1 }} did not; initially, cooperators got each {{ coop_payoff }} and non-cooperators got each {{ def_payoff}}. -->
 		<ul>
-	          <li><b>{{ n_C_1 }}</b> players cooperated and got each <b>{{ coop_payoff }}</b>.</li>
-	          <li><b>{{ n_D_1 }}</b> players did not cooperate and got each <b>{{ def_payoff }}</b>.</li>
+	          <li><b>{{ n_C_1 }}</b> players cooperated and each got <b>{{ coop_payoff }}</b>.</li>
+	          <li><b>{{ n_D_1 }}</b> players did not cooperate and each got <b>{{ def_payoff }}</b>.</li>
 	          <li>The bonus pot contains <b>{{ tax }}% × ({{ n_C_1 }} × {{ coop_payoff }} + {{ n_D_1 }} × {{ def_payoff }}) = {{ pot }}</b>.</li>
 	          <li>The bonus for each cooperator is <b>{{ pot }}/{{ n_C_1 }} = {{ bonus_coop }}</b>.</li>
 	    </ul>

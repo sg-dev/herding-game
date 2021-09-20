@@ -21,7 +21,7 @@
 <div class="card card-body bg-light instructions">
     <p>We would like to ask you a final open-ended question before we let you go. 
 
-    You can answer with just a single number or, preferably justifying your answer. 
+    Answering this questions will not affect the final payout, guessing is allowed. 
 
     Please press next once you are done answering.</p>
 </div>
@@ -39,25 +39,25 @@
 <br>
 
 <table class="table table-bordered text-center" style="width: auto; margin: auto">
-            <tr>
-                <th colspan="2" rowspan="2"></th>
-                <th colspan="2"><center>Player X</center></th>
-                </tr>
                 <tr>
-                    <th><center>Collaborate</center></th>
-                    <th><center>Don't collaborate</center></th>
+                    <th colspan="2" rowspan="2"></th>
+                    <th colspan="2"><center style="color:grey">Player X</center></th>
+                    </tr>
+                    <tr>
+                        <th><center style="color:grey">Cooperate</center></th>
+                        <th><center style="color:grey">Don't cooperate</center></th>
+                    </tr>
+                <tr class="highlight-row-on-hover">
+                        <th rowspan="2"><span>You</span></th>
+                        <td><button name="decision" value="C" class="btn btn-primary btn-large" disabled>Cooperate</button></td>
+                        <td><b style="color: #97cef0;">5</b>, <b style="color: #97cef0;">5</b></td>
+                        <td><b style="color: #97cef0;">5</b>, <b style="color: #c64d9c;">8</b></td>
                 </tr>
-            <tr class="highlight-row-on-hover">
-                    <th rowspan="2"><span class="rotate90">You</span></th>
-                    <td><button name="decision" value="C" class="btn btn-primary btn-large" disabled>Collaborate</button></td>
-                    <td>5, 5</td>
-                    <td>5, 8</td>
-            </tr>
-            <tr class="highlight-row-on-hover">
-                    <td><button name="decision" value="D" class="btn btn-primary btn-large" disabled>Don't collaborate</button></td>
-                    <td>8, 5</td>
-                    <td>2, 2</td>
-            </tr>
+                <tr class="highlight-row-on-hover">
+                        <td><button name="decision" value="D" class="btn btn-primary btn-large" disabled>Don't cooperate</button></td>
+                        <td><b style="color: #c64d9c;">8</b>, <b style="color: #97cef0;">5</b></td>
+                        <td><b style="color: #c64d9c;">2</b>, <b style="color: #c64d9c;">2</b></td>
+                </tr>
 </table>
 
 <br>

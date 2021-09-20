@@ -68,7 +68,7 @@ class Decision(Page):
         rand18 = Constants.opponents_list[me.id_in_group - 1][17]
         rand19 = Constants.opponents_list[me.id_in_group - 1][18]
         rand20 = Constants.opponents_list[me.id_in_group - 1][19]
-        rand_you = Constants.opponents_list[me.id_in_group - 1][20]
+        rand_you = max(Constants.opponents_list[me.id_in_group - 1][:20]) + 1#Constants.opponents_list[me.id_in_group - 1][20]
 
         # Return to template
         return dict(tax=int(tax), p_CC=p_CC, p_CD=p_CD, p_DC=p_DC, p_DD=p_DD, n_C=n_C, n_D=n_D, n_C_1=n_C_1, \
@@ -154,22 +154,31 @@ class End(Page):
         rand18 = Constants.opponents_list[me.id_in_group - 1][17]
         rand19 = Constants.opponents_list[me.id_in_group - 1][18]
         rand20 = Constants.opponents_list[me.id_in_group - 1][19]
-        rand_you = Constants.opponents_list[me.id_in_group - 1][20]
+        rand_you = max(Constants.opponents_list[me.id_in_group - 1][:20]) + 1#Constants.opponents_list[me.id_in_group - 1][20]
 
         print(n_C)
+
+        pot = tax * (n_C_1 * coop_payoff + n_D_1 * def_payoff)
         
         # Return to template
         return dict(init=init, my_decision=my_decision, my_payoff=float(me.payoff), n_C=n_C, n_D=n_D, \
-            n_C_1=n_C_1, n_D_1=n_D_1, tax=float(tax*100), bonus=bonus, bonus_coop=bonus_coop, \
+            n_C_1=n_C_1, n_D_1=n_D_1, tax=float(tax*100), bonus=bonus, bonus_coop=round(bonus_coop, 1), \
             coop_payoff=coop_payoff, def_payoff=def_payoff, round_num=me.round_number, \
             my_cumulative_payoff=cumulative_payoff, \
             rand1=rand1, rand2=rand2, rand3=rand3, rand4=rand4, rand5=rand5, rand6=rand6, rand7=rand7, rand8=rand8,\
             rand9=rand9, rand10=rand10, rand11=rand11, rand12=rand12, rand13=rand13, rand14=rand14, rand15=rand15, rand16=rand16, \
-            rand17=rand17, rand18=rand18, rand19=rand19, rand20=rand20, rand_you=rand_you, pot=bonus_coop*n_C_1)
+            rand17=rand17, rand18=rand18, rand19=rand19, rand20=rand20, rand_you=rand_you, pot=round(pot, 1))
 
 class Debrief(Page):
     form_model = 'player'
     form_fields = ['debrief']
+
+    def error_message(player, values):
+        if values['debrief'] == '50-75%' or values['debrief'] == '76-100%':
+            return 'The correct answer is 13.5%, so you were a bit far off :( Good one anyway!'
+        elif values['debrief'] == '0-10%' or values['debrief'] == '26-50%':
+            return 'The correct answer is 13.5%, so close but not yet there :| Nice try!'
+
 
     def is_displayed(self):
         return self.player.round_number == 5
