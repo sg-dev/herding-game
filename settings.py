@@ -26,11 +26,17 @@ SESSION_CONFIGS = [
     #     num_demo_participants=20,
     #     app_sequence=['survey', 'one_shot_multi_new'],
     # ),
+    # dict(
+    #     name='repeated_multi',
+    #     display_name='Repeated Multi-Player Prisoners Dilemma' ,
+    #     num_demo_participants=32,
+    #     app_sequence=['survey', 'repeated_multi'],
+    # ),
     dict(
-        name='repeated_multi',
-        display_name='Repeated Multi-Player Prisoners Dilemma' ,
+        name='bonus_game',
+        display_name='The Bonus Game' ,
         num_demo_participants=32,
-        app_sequence=['survey', 'repeated_multi'],
+        app_sequence=['survey_bonus', 'bonus_game'],
     ),
 ]
 
