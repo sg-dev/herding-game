@@ -41,7 +41,7 @@ class Constants(BaseConstants):
     neigh_size = 20
 
     # Fraction of defectors
-    fractions = [[0.8, 0.6, 0.5, 0.4, 0.3, 0.3, 0.3]]#[[0.00, 0.25, 0.5, 0.75, 1.00],  [0.25, 0.25, 0.25, 0.25, 0.25],\
+    fractions = [[0.8, 0.6, 0.5, 0.4, 0.3, 0.3, 0.3], [0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3], [0.8, 0.6, 0.5, 0.4, 0.3, 0.2, 0.2]]#[[0.00, 0.25, 0.5, 0.75, 1.00],  [0.25, 0.25, 0.25, 0.25, 0.25],\
              #[0.75, 0.75, 0.75, 0.75, 0.75], [1.00, 0.75, 0.5, 0.25, 0.00]]
 
     # [Fraction of defectors]: [0.8, 0.6, 0.5, 0.4, 0.3, 0.2, 0.2]; [0.8, 0.6, 0.5, 0.4, 0.3, 0.3, 0.3]; [0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3]
@@ -60,9 +60,6 @@ class Constants(BaseConstants):
     for n in range(num_all_players): 
         random.shuffle(all_participants)
         opponents_list.append(all_participants[:21])
-
-    # Final message to show on Thanks page
-    final_message = 'Yes, you are right: the correct tax rate is 30% :) Great one!'
 
 class Subsession(BaseSubsession):
     def creating_session(self):
