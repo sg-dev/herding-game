@@ -31,33 +31,33 @@
 
 <div class="card card-body bg-light instructions">
     <p>Given the earnings table, what is the fraction of defectors below which it is always better to <b>not collaborate</b> and above which it is always better to <b>collaborate</b>?</p>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
-            <div class="col-xs-6 float-start">
+            <div class="col float-start">
                 {{ form.debrief }}
             </div>
-            <div class="col-xs-6 ml-auto">
+            <div class="col ml-auto">
                 <table class="table table-bordered text-center" style="width: auto; margin: auto">
+                <tr>
+                    <th colspan="2" rowspan="2"></th>
+                    <th colspan="2"><center style="color: gray;">Player X</center></th>
+                    </tr>
                     <tr>
-                        <th colspan="2" rowspan="2"></th>
-                        <th colspan="2"><center style="color: gray;">Player X</center></th>
-                        </tr>
-                        <tr>
-                            <th><center>Collaborate</center></th>
-                            <th><center>Don't collaborate</center></th>
-                        </tr>
-                    <tr class="highlight-row-on-hover">
-                            <th rowspan="2"><span style="color: blue;">You</span></th>
-                            <td><button name="decision" value="C" class="btn btn-primary btn-large" disabled>Collaborate</button></td>
-                            <td  style="font-size: 2em;"><b style="color: blue;">5</b>, <b style="color: gray;">5</b></td>
-                            <td  style="font-size: 2em;"><b style="color: blue;">1</b>, <b style="color: gray;">8</b></td>
+                        <th><center style="color: gray;">Collaborate</center></th>
+                        <th><center style="color: gray;">Don't collaborate</center></th>
                     </tr>
-                    <tr class="highlight-row-on-hover">
-                            <td><button name="decision" value="D" class="btn btn-primary btn-large" disabled>Don't collaborate</button></td>
-                            <td style="font-size: 2em;"><b style="color: blue">8</b>, <b style="color: gray;">1</b></td>
-                            <td style="font-size: 2em;"><b style="color: blue">2</b>, <b style="color: gray;">2</b></td>
-                    </tr>
-                </table>
+                <tr class="highlight-row-on-hover">
+                        <th rowspan="2"><span style="color: blue;">You</span></th>
+                        <td> <center style="color: blue;"><b>Collaborate<b></center> </td>
+                        <td  style="font-size: 1.5em;"><b style="color: blue;">5</b>, <b style="color: gray;">5</b></td>
+                        <td  style="font-size: 1.5em;"><b style="color: blue;">1</b>, <b style="color: gray;">8</b></td>
+                </tr>
+                <tr class="highlight-row-on-hover">
+                        <td><center style="color: blue;"><b>Don't collaborate</b></center></td>
+                        <td style="font-size: 1.5em;"><b style="color: blue">8</b>, <b style="color: gray;">1</b></td>
+                        <td style="font-size: 1.5em;"><b style="color: blue">2</b>, <b style="color: gray;">2</b></td>
+                </tr>
+              </table>
             </div>
         </div>
     </div>
