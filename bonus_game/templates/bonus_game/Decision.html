@@ -243,26 +243,26 @@
                   <line class="a" x1="306.13" y1="90.65" x2="306.9" y2="88.27"/>
                 </g>
               </g>
-              <text class="c" transform="translate(258.31 44.49) rotate(-90)">P{{ rand1 }}</text>
-              <text class="c" transform="translate(258.31 508.29) rotate(-90)">P{{ rand2 }}</text>
-              <text class="c" transform="translate(180.02 497.75) rotate(-72)">P{{ rand3 }}</text>
-              <text class="c" transform="translate(108.82 463.53) rotate(-54)">P{{ rand4 }}</text>
-              <text class="c" transform="translate(51.68 408.99) rotate(-36)">P{{ rand5 }}</text>
-              <text class="c" transform="translate(14.19 339.45) rotate(-18)">P{{ rand6 }}</text>
-              <text class="c" transform="translate(0 261.76)">P{{ rand7 }}</text>
-              <text class="c" transform="matrix(0.95, 0.31, -0.31, 0.95, 10.53, 183.47)">P{{ rand8 }}</text>
-              <text class="c" transform="matrix(0.81, 0.59, -0.59, 0.81, 44.75, 112.26)">P{{ rand9 }}</text>
-              <text class="c" transform="matrix(0.59, 0.81, -0.81, 0.59, 99.29, 55.1)">P{{ rand10 }}</text>
-              <text class="c" transform="translate(168.83 17.61) rotate(72)">P{{ rand11 }}</text>
-              <text class="c" transform="translate(312.18 458.72) rotate(72)">P{{ rand12 }}</text>
-              <text class="c" transform="translate(371.94 430.33) rotate(54)">P{{ rand13 }}</text>
-              <text class="c" transform="matrix(0.81, 0.59, -0.59, 0.81, 420, 384.87)">P{{ rand14 }}</text>
-              <text class="c" transform="translate(451.66 326.77) rotate(18)">P{{ rand15 }}</text>
-              <text class="c" transform="translate(463.82 261.74)">P{{ rand16 }}</text>
-              <text class="c" transform="matrix(0.95, -0.31, 0.31, 0.95, 455.29, 196.14)">P{{ rand17 }}</text>
-              <text class="c" transform="matrix(0.81, -0.59, 0.59, 0.81, 426.9, 136.38)">P{{ rand18 }}</text>
-              <text class="c" transform="matrix(0.59, -0.81, 0.81, 0.59, 381.44, 88.31)">P{{ rand19 }}</text>
-              <text class="c" transform="translate(323.35 56.65) rotate(-72)">P{{ rand20 }}</text>
+              <text class="c" transform="translate(258.31 44.49) rotate(-90)">P{{ opponents.0 }}</text>
+              <text class="c" transform="translate(258.31 508.29) rotate(-90)">P{{ opponents.1 }}</text>
+              <text class="c" transform="translate(180.02 497.75) rotate(-72)">P{{ opponents.2 }}</text>
+              <text class="c" transform="translate(108.82 463.53) rotate(-54)">P{{ opponents.3 }}</text>
+              <text class="c" transform="translate(51.68 408.99) rotate(-36)">P{{ opponents.4 }}</text>
+              <text class="c" transform="translate(14.19 339.45) rotate(-18)">P{{ opponents.5 }}</text>
+              <text class="c" transform="translate(0 261.76)">P{{ opponents.6 }}</text>
+              <text class="c" transform="matrix(0.95, 0.31, -0.31, 0.95, 10.53, 183.47)">P{{ opponents.7 }}</text>
+              <text class="c" transform="matrix(0.81, 0.59, -0.59, 0.81, 44.75, 112.26)">P{{ opponents.8 }}</text>
+              <text class="c" transform="matrix(0.59, 0.81, -0.81, 0.59, 99.29, 55.1)">P{{ opponents.9 }}</text>
+              <text class="c" transform="translate(168.83 17.61) rotate(72)">P{{ opponents.10 }}</text>
+              <text class="c" transform="translate(312.18 458.72) rotate(72)">P{{ opponents.11 }}</text>
+              <text class="c" transform="translate(371.94 430.33) rotate(54)">P{{ opponents.12 }}</text>
+              <text class="c" transform="matrix(0.81, 0.59, -0.59, 0.81, 420, 384.87)">P{{ opponents.13 }}</text>
+              <text class="c" transform="translate(451.66 326.77) rotate(18)">P{{ opponents.14 }}</text>
+              <text class="c" transform="translate(463.82 261.74)">P{{ opponents.15 }}</text>
+              <text class="c" transform="matrix(0.95, -0.31, 0.31, 0.95, 455.29, 196.14)">P{{ opponents.16 }}</text>
+              <text class="c" transform="matrix(0.81, -0.59, 0.59, 0.81, 426.9, 136.38)">P{{ opponents.17 }}</text>
+              <text class="c" transform="matrix(0.59, -0.81, 0.81, 0.59, 381.44, 88.31)">P{{ opponents.18 }}</text>
+              <text class="c" transform="translate(323.35 56.65) rotate(-72)">P{{ opponents.19 }}</text>
               <!-- <g>
                 <circle id=circ0 class="d" cx="252.44" cy="79.65" r="21.68"/>
                 <text id=text0 class="e" transform="translate(242.09 89.24)">N</text>
@@ -348,7 +348,7 @@
                 <circle id=circ0 class="d" cx="252.44" cy="79.65" r="21.68"/>
                 <text id=text0 class="e" transform="translate(242.09 89.24)">N</text>
               </g>
-              <text class="h" transform="translate(230.75 248.46)"><tspan class="i">You</tspan><tspan class="k"><tspan x="-4.9" y="28.68"> {{ rand_you }}</tspan></tspan></text>
+              <text class="h" transform="translate(230.75 248.46)"><tspan class="i">You</tspan><tspan class="k"><tspan x="-4.9" y="28.68"> {{ opponents.20 }}</tspan></tspan></text>
               <g>
                 <g>
                   <circle class="f" cx="52.16" cy="561.83" r="21.68"/>
@@ -414,29 +414,6 @@
 
     var neigh_size = n_C + n_D;
     var list = [9, 3, 15, 17, 5, 10, 7, 11, 12, 1, 14, 13, 16, 8, 6, 18, 2, 0, 4, 19];
-
-    // document.write(list);
-
-    // for (var i = 0; i < list.length; i++) {
-    //   if (n_C > 0){ //Non-cooperators
-    //     document.getElementById('circ' + String(list[i])).style.fill = "Red";//"#c64d9c";
-    //     document.getElementById('text' + String(list[i])).textContent = "N";
-    //   }
-    //   else { //Cooperators
-    //     document.getElementById('circ' + String(list[i])).style.fill = "Blue";//"#97cef0";
-    //     document.getElementById('text' + String(list[i])).textContent = "C";
-    //   }
-    //   n_C = n_C - 1;
-    // }
-    // if (n_C_1 != -1) {
-    //     if (me == 0) {
-    //         document.getElementById('circ20').style.fill = "#c64d9c";
-    //     }
-    //     else {
-    //         document.getElementById('circ20').style.fill = "#97cef0";
-    //     }
-    // }
-
 
     for (var i = 0; i < list.length; i++) {
       if (n_C > 0){ //Cooperators

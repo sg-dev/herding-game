@@ -30,5 +30,8 @@ class Attention1(Page):
 #     	if values['q2'] == 'I would Cooperate':
 #     		return 'Wrong answer, try again.'
 
+class InterimWaitPage(Page):
+    timeout_seconds = 1 # Change as you wish (for realistic view purposes)
 
-page_sequence = [Instructions1, Attention1]#, Instructions2, Attention2]
+
+page_sequence = [Instructions1, Attention1, InterimWaitPage]#, Instructions2, Attention2]
