@@ -2,40 +2,10 @@ from os import environ
 
 
 SESSION_CONFIGS = [
-    # dict(
-    #     name='one_shot',
-    #     display_name='One-Shot 2-Player Prisoners Dilemma' ,
-    #     num_demo_participants=4,
-    #     app_sequence=['one_shot'],
-    # ),
-    # dict(
-    #     name='one_shot_multi',
-    #     display_name='One-Shot Multi-Player Prisoners Dilemma' ,
-    #     num_demo_participants=20,
-    #     app_sequence=['one_shot_multi'],
-    # ),
-    # dict(
-    #     name='one_shot_new',
-    #     display_name='One-Shot 2-Player Prisoners Dilemma' ,
-    #     num_demo_participants=4,
-    #     app_sequence=['survey', 'one_shot_new'],
-    # ),
-    # dict(
-    #     name='one_shot_multi_new',
-    #     display_name='One-Shot Multi-Player Prisoners Dilemma' ,
-    #     num_demo_participants=20,
-    #     app_sequence=['survey', 'one_shot_multi_new'],
-    # ),
-    # dict(
-    #     name='repeated_multi',
-    #     display_name='Repeated Multi-Player Prisoners Dilemma' ,
-    #     num_demo_participants=32,
-    #     app_sequence=['survey', 'repeated_multi'],
-    # ),
     dict(
         name='bonus_game',
         display_name='The Bonus Game' ,
-        num_demo_participants=32,
+        num_demo_participants=60,
         app_sequence=['survey_bonus', 'bonus_game'],
     ),
 ]
@@ -80,3 +50,5 @@ Here are some oTree games.
 SECRET_KEY = '%c(+094mz4$hp4gud-&*hs*s$-)ejkbz5sw7$d@526uj$i$nuw'
 
 INSTALLED_APPS = ['otree']
+
+# DATABASE_URL  = postgres://postgres@localhost/django_db

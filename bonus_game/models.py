@@ -19,7 +19,7 @@ doc = """
 Repeated multi-player Prisoner's Dilemma implementation with arbitrary payoffs and tax rate.
 """
 
-num_all_players = 32
+num_all_players = 60
 
 
 class Constants(BaseConstants):
@@ -35,7 +35,7 @@ class Constants(BaseConstants):
     P = c(2) # Both defecting
 
     # Bonus for cooperators
-    bonus = 8
+    bonus = c(8) # cast to Currency
 
     # Neighborhood size
     neigh_size = 20
@@ -54,6 +54,7 @@ class Constants(BaseConstants):
     print(fractions_ext, ": after shuffling")
 
 
+    # For graphics
     # Randomly assigned numbers to players (fixed for the whole game)
     all_participants = list(range(500))
     opponents_list = []
