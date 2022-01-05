@@ -1,0 +1,238 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 508.32 584.89" width="500px" height="650px">
+    <defs>
+        <style>
+            .a,
+            .b {
+                fill: none;
+                stroke: #cccccb;
+            }
+
+            .a,
+            .b,
+            .d,
+            .f {
+                stroke-miterlimit: 10;
+            }
+
+            .b {
+                stroke-dasharray: 4 4;
+            }
+
+            .c {
+                font-size: 20px;
+            }
+
+            .c,
+            .e,
+            .h,
+            .l {
+                fill: #231f20;
+            }
+
+            .c,
+            .e,
+            .k {
+                font-family: Helvetica;
+            }
+
+            .d {
+                fill: #c64d9c;
+            }
+
+            .d,
+            .f {
+                stroke: #fff;
+            }
+
+            .e {
+                font-size: 28px;
+            }
+
+            .f {
+                fill: #97cef0;
+            }
+
+            .g {
+                fill: #cccccb;
+            }
+
+            .h {
+                font-size: 23.9px;
+            }
+
+            .h,
+            .m {
+                font-family: Helvetica-Bold, Helvetica;
+                font-weight: 700;
+            }
+
+            .i {
+                letter-spacing: -0.07em;
+            }
+
+            .j {
+                letter-spacing: 0em;
+            }
+
+            .k {
+                font-weight: 400;
+            }
+
+            .l {
+                font-size: 15px;
+                font-family: Helvetica-Light, Helvetica;
+                font-weight: 300;
+            }
+        </style>
+    </defs>
+
+    <g id='player-1'>
+        <line class="b" x1="252.44" y1="248.48" x2="252.44" y2="84.59" />
+        <text class="c" transform="translate(258.31 44.49) rotate(-90)">P1</text>
+        <circle class="d" cx="252.44" cy="79.65" r="21.68" />
+        <text class="e" transform="translate(242.09 89.24)">N</text>
+    </g>
+
+    <g id='player-2'>
+        <line class="b" x1="254.73" y1="248.84" x2="305.37" y2="92.98" />
+        <text class="c" transform="translate(323.35 56.65) rotate(-72)">P2</text>
+        <circle class="f" cx="306.9" cy="88.27" r="21.68" />
+        <text class="e" transform="matrix(0.95, 0.31, -0.31, 0.95, 294.09, 94.2)">2</text>
+    </g>
+    <g id='player-3'>
+        <line class="b" x1="256.79" y1="249.89" x2="353.12" y2="117.31" />
+        <text class="c" transform="matrix(0.59, -0.81, 0.81, 0.59, 381.44, 88.31)">P3</text>
+        <circle class="d" cx="356.02" cy="113.3" r="21.68" />
+        <text class="e" transform="matrix(0.81, 0.59, -0.59, 0.81, 342.01, 114.98)">N</text>
+    </g>
+    <g id='player-4'>
+        <line class="b" x1="258.42" y1="251.53" x2="391.01" y2="155.2" />
+        <text class="c" transform="matrix(0.81, -0.59, 0.59, 0.81, 426.9, 136.38)">P4</text>
+        <circle class="f" cx="395.01" cy="152.29" r="21.68" />
+        <text class="e" transform="matrix(0.59, 0.81, -0.81, 0.59, 381.17, 149.56)">4</text>
+    </g>
+    <g id='player-5'>
+        <line class="b" x1="259.47" y1="253.59" x2="415.34" y2="202.94" />
+        <text class="c" transform="matrix(0.95, -0.31, 0.31, 0.95, 455.29, 196.14)">P5</text>
+        <circle class="d" cx="420.04" cy="201.42" r="21.68" />
+        <text class="e" transform="matrix(0.31, 0.95, -0.95, 0.31, 407.72, 194.54)">N</text>
+    </g>
+    <g id='player-6'>
+        <line class="b" x1="259.84" y1="255.87" x2="423.72" y2="255.87" />
+        <text class="c" transform="translate(463.82 261.74)">P6</text>
+        <circle class="d" cx="428.67" cy="255.87" r="21.68" />
+        <text class="e" transform="translate(419.07 245.52) rotate(90)">6</text>
+    </g>
+    <g id='player-7'>
+        <line class="b" x1="259.47" y1="258.16" x2="415.34" y2="308.8" />
+        <text class="c" transform="translate(451.66 326.77) rotate(18)">P7</text>
+        <circle class="d" cx="420.04" cy="310.33" r="21.68" />
+        <text class="e" transform="matrix(-0.31, 0.95, -0.95, -0.31, 414.12, 297.52)">N</text>
+    </g>
+    <g id='player-8'>
+        <line class="b" x1="258.42" y1="260.22" x2="391.01" y2="356.55" />
+        <text class="c" transform="matrix(0.81, 0.59, -0.59, 0.81, 420, 384.87)">P8</text>
+        <circle class="d" cx="395.01" cy="359.45" r="21.68" />
+        <text class="e" transform="translate(393.33 345.44) rotate(126)">N</text>
+    </g>
+    <g id='player-9'>
+        <line class="b" x1="256.79" y1="261.85" x2="353.12" y2="394.44" />
+        <text class="c" transform="translate(371.94 430.33) rotate(54)">P9</text>
+        <circle class="d" cx="356.02" cy="398.44" r="21.68" />
+        <text class="e" transform="matrix(-0.81, 0.59, -0.59, -0.81, 358.76, 384.59)">N</text>
+    </g>
+    <g id='player-10'>
+        <line class="b" x1="254.73" y1="262.9" x2="305.37" y2="418.77" />
+        <text class="c" transform="translate(312.18 458.72) rotate(72)">P10</text>
+        <circle class="f" cx="306.9" cy="423.47" r="21.68" />
+        <text class="e" transform="translate(313.78 411.15) rotate(162)">C</text>
+    </g>
+    <g id='player-11'>
+        <line class="b" x1="252.44" y1="263.26" x2="252.44" y2="427.15" />
+        <text class="c" transform="translate(258.31 508.29) rotate(-90)">P11</text>
+        <circle class="d" cx="252.44" cy="432.1" r="21.68" />
+        <text class="e" transform="translate(262.79 422.5) rotate(180)">N</text>
+    </g>
+    <g id='player-12'>
+        <line class="b" x1="250.16" y1="262.9" x2="199.52" y2="418.77" />
+        <text class="c" transform="translate(180.02 497.75) rotate(-72)">P12</text>
+        <circle class="f" cx="197.99" cy="423.47" r="21.68" />
+        <text class="e" transform="translate(210.8 417.54) rotate(-162)">C</text>
+    </g>
+    <g id='player-13'>
+        <line class="b" x1="248.1" y1="261.85" x2="151.77" y2="394.44" />
+        <text class="c" transform="translate(108.82 463.53) rotate(-54)">P13</text>
+        <circle class="d" cx="148.86" cy="398.44" r="21.68" />
+        <text class="e" transform="matrix(-0.81, -0.59, 0.59, -0.81, 162.87, 396.76)">N</text>
+    </g>
+    <g id='player-14'>
+        <line class="b" x1="246.46" y1="260.22" x2="113.88" y2="356.55" />
+        <text class="c" transform="translate(51.68 408.99) rotate(-36)">P14</text>
+        <circle class="f" cx="109.87" cy="359.45" r="21.68" />
+        <text class="e" transform="matrix(-0.59, -0.81, 0.81, -0.59, 123.72, 362.19)">C</text>
+    </g>
+    <g id='player-15'>
+        <line class="b" x1="245.41" y1="258.16" x2="89.55" y2="308.8" />
+        <text class="c" transform="translate(14.19 339.45) rotate(-18)">P15</text>
+        <circle class="d" cx="84.84" cy="310.33" r="21.68" />
+        <text class="e" transform="matrix(-0.31, -0.95, 0.95, -0.31, 97.17, 317.21)">N</text>
+    </g>
+    <g id='player-16'>
+        <line class="b" x1="245.05" y1="255.87" x2="81.17" y2="255.87" />
+        <text class="c" transform="translate(0 261.76)">P16</text>
+        <circle class="f" cx="76.22" cy="255.87" r="21.68" />
+        <text class="e" transform="matrix(0, -1, 1, 0, 85.81, 266.22)">C</text>
+    </g>
+    <g id='player-17'>
+        <line class="b" x1="245.41" y1="253.59" x2="89.55" y2="202.94" />
+        <text class="c" transform="matrix(0.95, 0.31, -0.31, 0.95, 10.53, 183.47)">P17</text>
+        <circle class="d" cx="84.84" cy="201.42" r="21.68" />
+        <text class="e" transform="matrix(0.31, -0.95, 0.95, 0.31, 90.77, 214.22)">N</text>
+    </g>
+    <g id='player-18'>
+        <line class="b" x1="246.46" y1="251.53" x2="113.88" y2="155.2" />
+        <text class="c" transform="matrix(0.81, 0.59, -0.59, 0.81, 44.75, 112.26)">P18</text>
+        <circle class="f" cx="109.87" cy="152.29" r="21.68" />
+        <text class="e" transform="matrix(0.59, -0.81, 0.81, 0.59, 111.55, 166.3)">C</text>
+    </g>
+    <g id='player-19'>
+        <line class="b" x1="248.1" y1="249.89" x2="151.77" y2="117.31" />
+        <text class="c" transform="matrix(0.59, 0.81, -0.81, 0.59, 99.29, 55.1)">P19</text>
+        <circle class="d" cx="148.86" cy="113.3" r="21.68" />
+        <text class="e" transform="matrix(0.81, -0.59, 0.59, 0.81, 146.13, 127.15)">N</text>
+    </g>
+    <g id='player-20'>
+        <line class="b" x1="250.16" y1="248.84" x2="199.52" y2="92.98" />
+        <text class="c" transform="translate(168.83 17.61) rotate(72)">P20</text>
+        <circle class="f" cx="197.99" cy="88.27" r="21.68" />
+        <text class="e" transform="matrix(0.95, -0.31, 0.31, 0.95, 191.11, 100.6)">C</text>
+    </g>
+    <g id='node-you'>
+        <circle class="g" cx="252.44" cy="255.87" r="41.65" />
+        <text class="h" transform="translate(230.75 248.46)">
+            <tspan class="i">You</tspan>
+            <tspan x="0" y="29">202</tspan>
+        </text>
+    </g>
+    <g id='legend'>
+    <g>
+        <g>
+            <circle class="f" cx="52.16" cy="561.83" r="21.68" />
+            <text class="e" transform="translate(41.81 571.42)">C</text>
+        </g>
+        <text class="l" transform="translate(95.84 557.31)">Chose to <tspan class="m" x="64.2" y="0">Cooperate</tspan>
+            <tspan x="0" y="18">in last round</tspan>
+        </text>
+    </g>
+    <g>
+        <text class="l" transform="translate(323.35 557.3)">Chose to <tspan class="m" x="64.2" y="0">Not Cooperate
+            </tspan>
+            <tspan x="0" y="18">in last round</tspan>
+        </text>
+        <g>
+            <circle class="d" cx="279.67" cy="561.83" r="21.68" />
+            <text class="e" transform="translate(269.32 571.42)">N</text>
+        </g>
+    </g>
+    </g>
+</svg>
