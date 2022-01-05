@@ -34,16 +34,6 @@ class Attention1(Page):
             return None
 
 
-# class Attention2(Page):
-#     form_model = 'player'
-#     form_fields = ['q1', 'q2']
-
-#     def error_message(player, values):
-#     	if values['q1'] == 'I would Defect':
-#     		return 'Wrong answer, try again.'
-#     	if values['q2'] == 'I would Cooperate':
-#     		return 'Wrong answer, try again.'
-
 class InterimWaitPage(Page):
     timeout_seconds = 1 # Change as you wish (for realistic view purposes)
 
