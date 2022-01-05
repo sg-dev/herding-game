@@ -5,15 +5,10 @@ from otree.api import (
     BaseSubsession,
     BaseGroup,
     BasePlayer,
-    Currency as c,
-    currency_range,
+    Currency as c
 )
 
 import random
-import itertools
-
-
-author = 'Matteo Russo'
 
 doc = """
 Repeated multi-player Prisoner's Dilemma implementation with arbitrary payoffs and tax rate.

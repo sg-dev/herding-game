@@ -6,7 +6,6 @@ from otree.api import (
     BaseGroup,
     BasePlayer,
     Currency as c,
-    currency_range,
 )
 
 
@@ -35,14 +34,13 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-
     q1 = models.StringField(
         choices = [
             [1, 'I chose one single action to be played against all other players.'],
             [2, 'I chose an action for every player (20 in total).'],
             [3, 'I do not choose anything.']
             ],
-        label='Q1: In each round, how many actions do you choose?',
+        label='<strong>Q1:</strong> In each round, how many actions do you choose?',
         widget=widgets.RadioSelect,
     )
 
@@ -53,7 +51,7 @@ class Player(BasePlayer):
             [5, '5'],
             [8, '8']
             ],
-        label='Q2: In the payoff matrix if you choose Not Collaborate and one opponent chooses Collaborate what is your payoff?',
+        label='<strong>Q2:</strong> In the payoff matrix if you choose Not Collaborate and one opponent chooses Collaborate what is your payoff?',
         widget=widgets.RadioSelect,
     )
 
@@ -62,7 +60,7 @@ class Player(BasePlayer):
             [1, 'Choice of other players in the current round'],
             [2, 'Choice of other players in the last round']
             ],
-        label='Q3: What does the colour and letter in the summary figure show?',
+        label='<strong>Q3:</strong> What does the colour and letter in the summary figure show?',
         widget=widgets.RadioSelect,
     )
 
@@ -72,7 +70,7 @@ class Player(BasePlayer):
             [2, 'Not Cooperate'],
             [3, 'Any']
             ],
-        label='Q4: Which choice entitles you to get bonus points?',
+        label='<strong>Q4:</strong> Which choice entitles you to get bonus points?',
         widget=widgets.RadioSelect,
     )
 
@@ -82,6 +80,6 @@ class Player(BasePlayer):
             [2, 'I get 8 points for each player, if I cooperate.'],
             [3, 'I get 8 points for each player playing "Cooperate" if I do not cooperate.']
             ],
-        label='Q5: Which of the following statements is correct?',
+        label='<strong>Q5:</strong> Which of the following statements is correct?',
         widget=widgets.RadioSelect,
     )
