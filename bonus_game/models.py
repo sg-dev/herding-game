@@ -30,35 +30,33 @@ class Constants(BaseConstants):
 
     # Payoffs
     R = c(5) # Both cooperating
-    S = c(1) # The one cooperating and the other defecting
+    S = c(0) # The one cooperating and the other defecting
     T = c(8) # The one defecting and the other cooperating
-    P = c(2) # Both defecting
+    P = c(1) # Both defecting
 
     # Bonus for cooperators
-    bonus = c(8) # cast to Currency
+    bonus = c(4)
 
     # Neighborhood size
     neigh_size = 20
 
     # Fraction of defectors
-    fractions = [[0.8, 0.6, 0.5, 0.4, 0.3, 0.3, 0.3], [0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3], [0.8, 0.6, 0.5, 0.4, 0.3, 0.2, 0.2]]#[[0.00, 0.25, 0.5, 0.75, 1.00],  [0.25, 0.25, 0.25, 0.25, 0.25],\
-             #[0.75, 0.75, 0.75, 0.75, 0.75], [1.00, 0.75, 0.5, 0.25, 0.00]]
-
-    # [Fraction of defectors]: [0.8, 0.6, 0.5, 0.4, 0.3, 0.2, 0.2]; [0.8, 0.6, 0.5, 0.4, 0.3, 0.3, 0.3]; [0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3]
-    # f* = 0.3 <-- threshold of defectors ratio
+    fractions = [
+        [0.8, 0.6, 0.5, 0.4, 0.3, 0.3, 0.3],
+        [0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3],
+        [0.8, 0.6, 0.5, 0.4, 0.3, 0.2, 0.2]
+    ]
 
     # Create extended lists of fractions and randomly assing them
     fractions_ext = fractions * trials
-    print(fractions_ext, ": before shuffling")
     random.shuffle(fractions_ext)
-    print(fractions_ext, ": after shuffling")
 
 
     # For graphics
     # Randomly assigned numbers to players (fixed for the whole game)
     all_participants = list(range(500))
     opponents_list = []
-    for n in range(num_all_players): 
+    for n in range(num_all_players):
         random.shuffle(all_participants)
         opponents_list.append(all_participants[:21])
 

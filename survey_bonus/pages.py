@@ -4,21 +4,35 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 class Instructions1(Page):
-	pass
+    pass
 
 class Instructions2(Page):
-	pass
+    pass
+
 
 class Attention1(Page):
-	timeout_seconds = 180
-	form_model = 'player'
-	form_fields = ['q1', 'q2', 'q3', 'q4', 'q5']
+    timeout_seconds = 1080
+    form_model = 'player'
+    form_fields = ['q1', 'q2', 'q3', 'q4', 'q5']
 
-	def error_message(player, values):
-		if values['q1'] != 'I choose one single action to be played against all other players.' or values['q2'] != '8' or \
-		values['q3'] != 'Choice of other players in the last round' or values['q4'] != 'Cooperate' or \
-		values['q5'] != 'I get 8 points for each player playing "Not Cooperate", if I cooperate.':
-			return 'Wrong answer, try again.'
+    def error_message(player, values):
+        q = {
+            'q1': 1,
+            'q2': 8,
+            'q3': 2,
+            'q4': 1,
+            'q5': 1
+            }
+        incorrect = []
+        for q_name, q_text in q.items():
+            if values[q_name] != str(q_text):
+                incorrect.append(q_name[1:])
+        if incorrect:
+            return f'Please correct your answers to questions {", ".join(incorrect)}.'
+
+        else:
+            return None
+
 
 # class Attention2(Page):
 #     form_model = 'player'

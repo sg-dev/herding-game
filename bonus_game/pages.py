@@ -27,7 +27,6 @@ class Decision(Page):
             n_C = math.ceil((1-f_prev) * Constants.neigh_size)
             n_D = math.floor(f_prev * Constants.neigh_size)
 
-            #print(me_prev.decision)
 
             # Get number cooperators & defectors and unit payoff per cooperator and defector
             if me_prev.decision == 'D':
@@ -48,22 +47,17 @@ class Decision(Page):
             coop_payoff = n_C * unit_coop_payoff
             # my_payoff = me.payoff
 
-            # print('Here: ', my_payoff)
-
             # Unit bonus
             unit_bonus = Constants.bonus
 
-        else: 
+        else:
             n_C_1 = -1
 
             ## Get player's and bot's decision
             me = self.player.in_round(self.player.round_number)
             my_decision = None
 
-            print(my_decision)
-
             # Get fraction of coops/defs
-            print('Here', me.id_in_group, me.round_number)
             f_prev = Constants.fractions_ext[me.id_in_group - 1][me.round_number - 1]
 
             ## Number of cooperators and defectors
@@ -146,13 +140,12 @@ class Thanks(Page):
             final_message = 'The correct answer is 30%, so close but not yet there :| Nice try!'
         else:
             final_message = 'Yes, you are right: the correct tax rate is 30% :) Great one!'
-        
+
         cumulative_payoff = 0
         for t in range(Constants.num_rounds):
             me = self.player.in_round(self.player.round_number - t)
             cumulative_payoff += me.payoff
-            print(me.payoff)
-        
+
         return dict(message = final_message, cumulative_payoff = cumulative_payoff)
 
 
