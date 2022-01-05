@@ -6,7 +6,7 @@ SESSION_CONFIGS = [
         name='bonus_game',
         display_name='The Bonus Game' ,
         num_demo_participants=60,
-        app_sequence=['survey_bonus', 'bonus_game'],
+        app_sequence=['introduction', 'bonus_game'],
     ),
 ]
 
