@@ -5,29 +5,29 @@ from otree.api import (
     BaseSubsession,
     BaseGroup,
     BasePlayer,
-    Currency as c
+    Currency as c,
 )
 
 import random
 
 doc = """
-Repeated multi-player Prisoner's Dilemma implementation with arbitrary payoffs and tax rate.
+The Bonus game docs
 """
 
 num_all_players = 60
 
 
 class Constants(BaseConstants):
-    name_in_url = 'bonus_game'
+    name_in_url = "bonus_game"
     players_per_group = None
     num_rounds = 7
     trials = 2 * num_all_players
 
     # Payoffs
-    R = c(5) # Both cooperating
-    S = c(0) # The one cooperating and the other defecting
-    T = c(8) # The one defecting and the other cooperating
-    P = c(1) # Both defecting
+    R = c(5)  # Both cooperating
+    S = c(0)  # The one cooperating and the other defecting
+    T = c(8)  # The one defecting and the other cooperating
+    P = c(1)  # Both defecting
 
     # Bonus for cooperators
     bonus = c(4)
@@ -39,13 +39,12 @@ class Constants(BaseConstants):
     fractions = [
         [0.8, 0.6, 0.5, 0.4, 0.3, 0.3, 0.3],
         [0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3],
-        [0.8, 0.6, 0.5, 0.4, 0.3, 0.2, 0.2]
+        [0.8, 0.6, 0.5, 0.4, 0.3, 0.2, 0.2],
     ]
 
     # Create extended lists of fractions and randomly assing them
     fractions_ext = fractions * trials
     random.shuffle(fractions_ext)
-
 
     # For graphics
     # Randomly assigned numbers to players (fixed for the whole game)
@@ -54,6 +53,7 @@ class Constants(BaseConstants):
     for n in range(num_all_players):
         random.shuffle(all_participants)
         opponents_list.append(all_participants[:21])
+
 
 class Subsession(BaseSubsession):
     def creating_session(self):
@@ -66,12 +66,18 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     decision = models.CharField(
-        choices=['C', 'D'],
+        choices=["C", "D"],
         doc="""This player's decision""",
-        widget=widgets.RadioSelect()
+        widget=widgets.RadioSelect(),
     )
     debrief = models.StringField(
-        choices=[['0-10%', '0-10%'], ['11-25%', '11-25%'], ['26-50%', '26-50%'], ['51-75%', '51-75%'], ['76-100%', '76-100%']],
-        #label='The collected taxes (public pot) is redistributed among:',
+        choices=[
+            ["0-10%", "0-10%"],
+            ["11-25%", "11-25%"],
+            ["26-50%", "26-50%"],
+            ["51-75%", "51-75%"],
+            ["76-100%", "76-100%"],
+        ],
+        # label='The collected taxes (public pot) is redistributed among:',
         widget=widgets.RadioSelect,
-        )
+    )

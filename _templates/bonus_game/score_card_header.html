@@ -1,42 +1,53 @@
 <div class="card">
     <div class="card-header"> Your Points </div>
     <div class="card-body" style="margin-bottom: -10px; font-family: Helvetica !important;">
-      <div class="container">
-        <div class="row">
-          <div class="col-8 float-start">
-            <ul style="list-style-type: none; padding: 0;">
-              <li><b>{{ n_D }}</b> players chose to <b>not collaborate</b> | <b>{{ n_C }}</b> chose to <b>collaborate</b>.</li>
-              {% if my_decision != None %}
-            <li>
-                <b> {{ unit_def_payoff }} points </b> for each player choosing <b> Not collaborate </b>: {{ unit_def_payoff}} × {{ n_D }} = {{ def_payoff }}
-              </li>
-              <li>
-                <b> {{ unit_coop_payoff }} points </b> for each player choosing <b> Collaborate </b>: {{ unit_coop_payoff }} × {{ n_C }} = {{ coop_payoff }}
-              </li>
-              <li>
-                {% if bonus %}
-                  You chose {{ my_decision }}. You get a bonus of {{ unit_bonus }} × {{ n_D }} = {{ bonus }}.
-                {% else %}
-                  You chose {{ my_decision }}. You don't get a bonus.
-                {% endif %}
-              </li>
-              {% else %}
-              <li>First round. No points yet.</li>
-              {% endif %}
-
-            </ul>
-          </div>
-          <div class="col-4 ml-auto" style="text-align:right;">
-            <ul style="list-style-type: none; padding: 0;">
-              <li>
-                <b> Points earned: {{ coop_payoff }} + {{ def_payoff }} + {{ bonus }} = {{ last_payoff }} </b>
-              </li>
-              <li>
-                <b> Total points: </b> {{ last_payoff }}
-              </li>
-            </ul>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-8 float-start">
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li><b>{{ n_D }}</b> players chose to <b>not collaborate</b> | <b>{{ n_C }}</b> chose to
+                            <b>Collaborate</b>.</li>
+                        {% if my_decision == 'C' %}
+                            <li>
+                                Payoff from "Collaborate": {{
+                                R}} × {{ n_C }} = {{ coop_payoff }}
+                            </li>
+                            <li>
+                                Payoff from "Not Collaborate": {{
+                                S }} × {{ n_D }} = {{ def_payoff }}
+                            </li>
+                            <li>
+                                You get a bonus of {{ bonus }} × {{ n_D }} = {{ bonus }}.
+                            </li>
+                        {% else if my_decision == 'D' %}
+                            <li>
+                                Payoff from "Collaborate": {{
+                                T}} × {{ n_C }} = {{ coop_payoff }}
+                            </li>
+                            <li>
+                                Payoff from "Not Collaborate": {{
+                                P }} × {{ n_D }} = {{ def_payoff }}
+                            </li>
+                            <li>
+                                No bonus points.
+                            </li>
+                        {% else %}
+                        <li>First round. No points yet.</li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="col-4 ml-auto" style="text-align:right;">
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li>
+                            <b> Points earned: {{ coop_payoff }} + {{ def_payoff }} + {{ bonus }} = {{ last_payoff }}
+                            </b>
+                        </li>
+                        <li>
+                            <b> Total points: </b> {{ last_payoff }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>

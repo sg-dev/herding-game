@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+
+<div class="card card-body bg-light instructions">
+    <h4>Point Calculation</h4>
+    <br>
+    <p>Your earnings will be calculated in two parts.</p>
+    <p>The <b>first</b> part of the earnings is determined by your choice to <b>Collaborate</b> or <b>Not Collaborate</b> and the choice of the other 20 players. According to the table below you will receive for each opponent the points corresponding to your and their choice.</p>
+    <br>
+    {% include "global/payoff_matrix.html" %}
+    <br>
+
+    <p>The <b>second</b> part of the payoff comes in the form of a bonus. <b>IF you Collaborate</b> you will receive <b>{{bonus}}</b> for each player choosing to "Not Collaborate".</p>
+</div>
+
+<br>
+<br>
+
+{% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+<style type="text/css">
+    .big {
+        font-size: large;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="{% static 'global/matrix.css' %}" />
+
+<style>
+    .highlight-row-on-hover:hover td {
+        background-color: #fcf8e3;
+    }
+</style>
+
+{% endblock %}

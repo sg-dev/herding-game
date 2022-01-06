@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+<div class="card card-body bg-light instructions">
+    <h4>Overview of game steps</h4>
+    <p>
+    <ol>
+        <li>We ask a few questions to make sure you understood the basics of the game.</li>
+        <li>You are placed in an ongoing game with 20 other players.</li>
+        <li>Your payoff is determined by your and the other player's choices.</li>
+        <li>You play for several rounds.</li>
+        <li>At the end we will ask a few debriefing questions.</li>
+    </ol>
+    </p>
+</div>
+<br>
+<br>
+{% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+<style type="text/css">
+    .big {
+        font-size: large;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="{% static 'global/matrix.css' %}" />
+
+<style>
+    .highlight-row-on-hover:hover td {
+        background-color: #fcf8e3;
+    }
+</style>
+
+{% endblock %}

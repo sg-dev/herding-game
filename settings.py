@@ -3,10 +3,10 @@ from os import environ
 
 SESSION_CONFIGS = [
     dict(
-        name='bonus_game',
-        display_name='The Bonus Game' ,
-        num_demo_participants=60,
-        app_sequence=['introduction', 'bonus_game'],
+        name="bonus_game",
+        display_name="The Bonus Game",
+        num_demo_participants=3,
+        app_sequence=["introduction", "bonus_game"],
     ),
 ]
 
@@ -21,34 +21,34 @@ SESSION_CONFIG_DEFAULTS = dict(
 
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = "en"
 
 # e.g. EUR, GBP, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'USD'
+REAL_WORLD_CURRENCY_CODE = "GBP"
 USE_POINTS = True
 
 ROOMS = [
-    dict(
-        name='econ101',
-        display_name='Econ 101 class',
-        participant_label_file='_rooms/econ101.txt',
-    ),
-    dict(name='live_demo', display_name='Room for live demo (no participant labels)'),
+    # dict(
+    #     name='econ101',
+    #     display_name='Econ 101 class',
+    #     participant_label_file='_rooms/econ101.txt',
+    # ),
+    dict(name="live_demo", display_name="Room for live demo (no participant labels)"),
 ]
 
-ADMIN_USERNAME = 'admin'
+ADMIN_USERNAME = "admin"
 # for security, best to set admin password in an environment variable
-ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')
+ADMIN_PASSWORD = environ.get("OTREE_ADMIN_PASSWORD")
 
 DEMO_PAGE_INTRO_HTML = """
 Here are some oTree games.
 """
 
-#OTREE_PRODUCTION = 1
+# OTREE_PRODUCTION = 1
 
 
-SECRET_KEY = '%c(+094mz4$hp4gud-&*hs*s$-)ejkbz5sw7$d@526uj$i$nuw'
+SECRET_KEY = "%c(+094mz4$hp4gud-&*hs*s$-)ejkbz5sw7$d@526uj$i$nuw"
 
-INSTALLED_APPS = ['otree']
+INSTALLED_APPS = ["otree"]
 
 # DATABASE_URL  = postgres://postgres@localhost/django_db

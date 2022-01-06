@@ -1,0 +1,70 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+<div class="card card-body bg-light instructions">
+    <h4>The Game</h4>
+    <br>
+    <p>
+        In this game you will play with <b>20 other players</b> in <b>real time</b>.
+        You will join an ongoing game.
+        The other players will be waiting until you have completed your round, so please be considerate.
+    </p>
+    <p>
+        In each round you will be asked to choose one of two actions <b>Collaborate</b> or <b>Not Collaborate</b>.
+        Your choice will be played with all other players simultaneously. In other words, in each round, you choose one
+        action which will be played against each other player.
+    </p>
+    <p>In each round, you will see the action, which the players have chosen in the <b>last round</b>. This information
+        will be summarised via the following image.
+    </p>
+    <p>
+        In each round, the game will stop with a probability of 10%.
+    </p>
+    <div style="margin: auto">
+        {% include "global/game.svg" %}
+    </div>
+</div>
+<br>
+{% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+<style type="text/css">
+    .big {
+        font-size: large;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="{% static 'global/matrix.css' %}" />
+
+<style>
+    .highlight-row-on-hover:hover td {
+        background-color: #fcf8e3;
+    }
+</style>
+
+<script>
+    var n_C = {{ n_C }};
+    var n_D = {{ n_D }};
+    var n_C_1 = {{ n_C }} - 1;
+
+    var neigh_size = n_C + n_D;
+    var list = [9, 3, 15, 17, 5, 10, 7, 11, 12, 1, 14, 13, 16, 8, 6, 18, 2, 0, 4, 19];
+
+    for (var i = 2; i <= neigh_size; i++) {
+
+        if (i <= n_C){ //Cooperators
+        console.log('#player-' + String(i) +' circle')
+        document.querySelector('#player-' + String(i) +' circle').style.fill = "#97cef0";
+        document.querySelector('#player-' + String(i) +' .e').textContent = "C";
+        }
+        else { //Non-cooperators
+        document.querySelector('#player-' + String(i) +' circle').style.fill = "#c64d9c";
+        document.querySelector('#player-' + String(i) +' .e').textContent = "N";
+        }
+    }
+</script>
+
+{% endblock %}

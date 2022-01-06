@@ -1,0 +1,75 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+
+
+
+<div class="card card-body bg-light instructions">
+    <h4>Example Round</h4>
+
+
+<div>
+  <br>
+  <div container="container">
+    <div class="row">
+        <div class="col float-start">
+            <div style="text-align:center">
+            {% include "global/game.svg" %}
+            </div>
+        </div>
+        <div class="col ml-auto">
+            <div class="form-group required">
+              <br>
+              <br>
+              <br>
+              {% include "global/payoff_matrix.html" %}
+            </div>
+            <br>
+        </div>
+    </div>
+  </div>
+</div>
+    <br>
+    <p>3 other players choose to <b>Collaborate</b> and 17 choose to <b>Not Collaborate</b></p>
+    <br>
+    <h5><b>You choose "Collaborate"</b></h5>
+    <ol>
+        <li>for each player choosing to <b>Collaborate</b> you earn {{ R }}: {{ R }} x 3 = {{ Rx3 }}
+        </li>
+        <li>for each player choosing to <b>Not Collaborate</b> you earn {{S}}: {{S}} x 17 = {{Sx17}} </li>
+        <li>Direct payoff: {{Rx3}} + {{Sx17}} = {{Rx3pSx17}}</li>
+        <li>You get {{bonus}} for each player choosing <b>Not Collaborate</b>: {{bonus}} * 17 = {{bonusx17}}</li>
+    </ol>
+    <p>Payoff: {{bonusx17}} + {{Rx3pSx17}} = <strong>{{Rx3pSx17pbonusx17}}</strong><p>
+    <h5><b>You choose "Not collaborate"</b></h5>
+    <ol>
+        <li>for each player choosing to <b>Collaborate</b> you earn {{T}}: {{T}} x 3 = {{Tx3}} </li>
+        <li>for each player choosing to <b>Not Collaborate</b> you earn {{P}}: {{P}} x 17 = {{Px17}} </li>
+        <li>Since you chose to <b>Not Collaborate</b> you do not get any additional points.</li>
+    </ol>
+    <p>Payoff: {{Tx3}} + {{Px17}} = <strong>{{Tx3pPx17}}</strong><p>
+</div>
+<br>
+<br>
+
+{% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+<style type="text/css">
+    .big {
+        font-size: large;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="{% static 'global/matrix.css' %}" />
+
+<style>
+    .highlight-row-on-hover:hover td {
+        background-color: #fcf8e3;
+    }
+</style>
+
+{% endblock %}

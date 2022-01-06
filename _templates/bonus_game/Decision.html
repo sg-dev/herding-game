@@ -18,7 +18,7 @@
 
 {% block content %}
 
-{% include "bonus_game/score_card_header.html" %}
+{{ include "bonus_game/score_card_header.html" }}
 
 
 <!-- viewBox="0 0 508.32 584.89" -->
@@ -29,7 +29,7 @@
     <div class="row">
         <div class="col float-start">
             <div style="text-align:center">
-            {% include "bonus_game/popularity_image.html" %}
+            {% include "global/game.svg" %}
             </div>
         </div>
         <div class="col ml-auto">
@@ -37,7 +37,7 @@
               <br>
               <br>
               <br>
-              {% include "bonus_game/payoff_matrix.html" %}
+              {% include "global/payoff_matrix.html" %}
             </div>
             <br>
             <div style="margin: auto; text-align:center;">
@@ -51,33 +51,7 @@
 
 <!-- JS for colouring -->
 <script>
-    var n_C = {{ n_C }};
-    var n_D = {{ n_D }};
-    var n_C_1 = {{ n_C_1 }};
-    var me = n_C_1 - n_C;
-
-    var neigh_size = n_C + n_D;
-    var list = [9, 3, 15, 17, 5, 10, 7, 11, 12, 1, 14, 13, 16, 8, 6, 18, 2, 0, 4, 19];
-
-    for (var i = 0; i < list.length; i++) {
-      if (n_C > 0){ //Cooperators
-        document.getElementById('circ' + String(list[i])).style.fill = "#97cef0";
-        document.getElementById('text' + String(list[i])).textContent = "C";
-      }
-      else { //Non-cooperators
-        document.getElementById('circ' + String(list[i])).style.fill = "#c64d9c";
-        document.getElementById('text' + String(list[i])).textContent = "N";
-      }
-      n_C = n_C - 1;
-    }
-    if (n_C_1 != -1) {
-        if (me == 0) {
-            document.getElementById('circ20').style.fill = "#c64d9c";
-        }
-        else {
-            document.getElementById('circ20').style.fill = "#97cef0";
-        }
-    }
+    {{ include "global/color_game.js"}}
 </script>
 
 {% endblock %}
