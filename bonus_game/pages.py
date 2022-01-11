@@ -4,26 +4,29 @@ from .models import Constants
 import math
 
 
-def compute_player_payoff(own_choice, n_collaborators, n_defectors):
-    payoff_from_defectors = 0
-    payoff_from_cooperators = 0
-    if own_choice == "C":
-        payoff_from_cooperators += n_collaborators * Constants.R
-        payoff_from_defectors += n_defectors * Constants.S
-        payoff_from_defectors += n_defectors * Constants.bonus
-    elif own_choice == "D":
-        payoff_from_defectors += n_defectors * Constants.P
-        payoff_from_cooperators += n_collaborators * Constants.T
-    else:
-        raise ValueError("Invalid choice")
-
-    return payoff_from_defectors, payoff_from_cooperators
-
 
 
 class Decision(Page):
     form_model = "player"
     form_fields = ["decision"]
+
+    @staticmethod
+    def compute_player_payoff(own_choice, n_collaborators, n_defectors):
+        payoff_from_defectors = 0
+        payoff_from_cooperators = 0
+        if own_choice == "C":
+            payoff_from_cooperators += n_collaborators * Constants.R
+            payoff_from_defectors += n_defectors * Constants.S
+            payoff_from_defectors += n_defectors * Constants.bonus
+        elif own_choice == "D":
+            payoff_from_defectors += n_defectors * Constants.P
+            payoff_from_cooperators += n_collaborators * Constants.T
+        else:
+            raise ValueError("Invalid choice")
+
+        return payoff_from_defectors, payoff_from_cooperators
+
+
 
     def number_strategies_last_round(self):
         me = self.player
@@ -47,10 +50,7 @@ class Decision(Page):
             player.payoff = last_payoff
         else:  # first round
             my_decision = None
-
-            # Payoffs and bonus
             payoff_from_defectors, payoff_from_cooperators = 0, 0
-
             last_payoff = 0
 
         # Return to template
@@ -73,7 +73,7 @@ class Decision(Page):
 
     def js_vars(self):
         n_C, n_D = self.number_strategies_last_round()
-        return dict(neigh_size=Constants.neigh_size, nC=n_C, secAnimation=5)
+        return dict(neigh_size=Constants.neigh_size, nC=n_C, secAnimation=3)
 
 class ResultsWaitPage(Page):
     timeout_seconds = 1  # Change as you wish (for realistic view purposes)

@@ -46,4 +46,4 @@ for (var i = 1; i <= neigh_size; i++) {
 }
 
 var me = draw.circle(100).move(DX/2-50, DY/2-50).attr({fill: '#f7f7f7'});
-var playerStrategy = draw.text("Me").attr({x:DX/2, y:DY/2}).font({anchor: "middle", size: 30}).attr({fill: "black"});
+var playerStrategy = draw.text("You").attr({x:DX/2, y:DY/2}).font({anchor: "middle", size: 30}).attr({fill: "black"});
