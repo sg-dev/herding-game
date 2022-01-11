@@ -42,7 +42,7 @@ class Decision(Page):
         # Last round's info
         if player.round_number > 1:
             my_decision = player.in_round(self.player.round_number-1).decision
-            payoff_from_defectors, payoff_from_cooperators = compute_player_payoff(
+            payoff_from_defectors, payoff_from_cooperators = self.compute_player_payoff(
                 my_decision, n_C, n_D
             )
 
