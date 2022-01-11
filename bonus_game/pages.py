@@ -77,10 +77,10 @@ class Decision(Page):
     def js_vars(self):
         round_number = self.player.round_number - 1
         n_C, n_D = number_strategies_round(round_number)
-        return dict(neigh_size=Constants.neigh_size, nC=n_C, secAnimation=0, nD=n_D)
+        return dict(neigh_size=Constants.neigh_size, nC=n_C, secAnimation=.2, nD=n_D, shuffle=False)
 
 class ResultsWaitPage(Page):
-    timeout_seconds = Constants.simulated_playing_time
+    timeout_seconds = Constants.simulated_playing_time + 3
 
     def vars_for_template(self):
         cumulative_payoff = sum([p.payoff for p in self.player.in_all_rounds()])
@@ -108,7 +108,7 @@ class ResultsWaitPage(Page):
     def js_vars(self):
         round_number = self.player.round_number
         n_C, n_D = number_strategies_round(round_number)
-        return dict(neigh_size=Constants.neigh_size, nC=n_C, secAnimation=self.timeout_seconds, nD=n_D)
+        return dict(neigh_size=Constants.neigh_size, nC=n_C, secAnimation=self.timeout_seconds, nD=n_D, shuffle=True)
 
 
 
