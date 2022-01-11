@@ -1,14 +1,17 @@
 {% extends "global/Page.html" %}
 {% load otree static %}
 {% block content %}
-<head>
-</head>
 
-<body>
-    <div class="main-content">
-        <h3>Waiting for other players to make their choices.</h3>
-    </div>
-</body>
+{{ include "bonus_game/score_card_header.html" }}
+
+<div>
+  <div container="container">
+        <div style="margin: auto; text-align:center;">
+            {{ include "global/game-wheel.html" }}
+            <h3>Waiting for players ...</h3>
+        </div>
+  </div>
+</div>
 
 <style>
     .otree-timer {

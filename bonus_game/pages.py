@@ -3,7 +3,11 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 import math
 
+def number_strategies_round(round_number):
+    n_D = Constants.strategy_schedule[round_number]
+    n_C = Constants.neigh_size - n_D
 
+    return n_C, n_D
 
 
 class Decision(Page):
@@ -28,16 +32,12 @@ class Decision(Page):
 
 
 
-    def number_strategies_last_round(self):
-        me = self.player
-        n_D = Constants.strategy_schedule[me.round_number-1]
-        n_C = Constants.neigh_size - n_D
 
-        return n_C, n_D
 
     def vars_for_template(self):
         player = self.player
-        n_C, n_D = self.number_strategies_last_round()
+        round_number = self.player.round_number
+        n_C, n_D = number_strategies_round(round_number - 1)
 
         # Last round's info
         if player.round_number > 1:
@@ -53,6 +53,8 @@ class Decision(Page):
             payoff_from_defectors, payoff_from_cooperators = 0, 0
             last_payoff = 0
 
+        cumulative_payoff = sum([p.payoff for p in self.player.in_all_rounds()])
+
         # Return to template
         return dict(
             R=Constants.R,
@@ -66,17 +68,48 @@ class Decision(Page):
             bonus=Constants.bonus,
             total_bonus=Constants.bonus * n_D if my_decision == "C" else 0,
             last_payoff=last_payoff,
+            cumulative_payoff = cumulative_payoff,
             my_decision=my_decision,
             RXnC = Constants.R * n_C,
             SXnD = Constants.S * n_D,
         )
 
     def js_vars(self):
-        n_C, n_D = self.number_strategies_last_round()
-        return dict(neigh_size=Constants.neigh_size, nC=n_C, secAnimation=3)
+        round_number = self.player.round_number - 1
+        n_C, n_D = number_strategies_round(round_number)
+        return dict(neigh_size=Constants.neigh_size, nC=n_C, secAnimation=0, nD=n_D)
 
 class ResultsWaitPage(Page):
-    timeout_seconds = 1  # Change as you wish (for realistic view purposes)
+    timeout_seconds = Constants.simulated_playing_time
+
+    def vars_for_template(self):
+        cumulative_payoff = sum([p.payoff for p in self.player.in_all_rounds()])
+
+        # Return to template
+        return dict(
+            R=Constants.R,
+            S=Constants.S,
+            T=Constants.T,
+            P=Constants.P,
+            n_C='?',
+            n_D='?',
+            def_payoff='?',
+            coop_payoff='?',
+            bonus=Constants.bonus,
+            total_bonus='?',
+            last_payoff='?',
+            cumulative_payoff = cumulative_payoff,
+            my_decision='?',
+            RXnC = '?',
+            SXnD = '?',
+        )
+
+
+    def js_vars(self):
+        round_number = self.player.round_number
+        n_C, n_D = number_strategies_round(round_number)
+        return dict(neigh_size=Constants.neigh_size, nC=n_C, secAnimation=self.timeout_seconds, nD=n_D)
+
 
 
 class Debrief(Page):
@@ -112,4 +145,8 @@ class Thanks(Page):
         return dict(message=final_message, cumulative_payoff=cumulative_payoff)
 
 
-page_sequence = [Decision, ResultsWaitPage, Debrief, Thanks]
+page_sequence = [
+    Decision,
+    ResultsWaitPage,
+    Debrief,
+    Thanks]

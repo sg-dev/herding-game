@@ -21,7 +21,8 @@ class Constants(BaseConstants):
     name_in_url = "bonus_game"
     players_per_group = None
     num_rounds = 7
-    trials = 2 * num_all_players
+
+    simulated_playing_time = 10
 
     # Payoffs
     R = c(5)  # Both cooperating
