@@ -1,5 +1,5 @@
 var neigh_size = js_vars.neigh_size;
-
+var skip = js_vars.skip;
 let circleRadius = 45;
 let wheelRadius = 180;
 let DX = 500;
@@ -46,12 +46,23 @@ function shuffle(array) {
   }
 
 var playing_c = Array(nC).fill('C')
-var playing_d = Array(nC).fill('D')
+var playing_d = Array(neigh_size-nC).fill('D')
 var strategies = playing_c.concat(playing_d)
 
 if (js_vars.shuffle == true) {
     strategies = shuffle(strategies)
 }
+
+
+if (skip > 0) {
+    var playerRange = Array.from({length: neigh_size}, (x, i) => i);
+    playerRange = shuffle(playerRange)
+    var playersToSkip = playerRange.slice(0, skip)
+    console.log(playersToSkip)
+} else {
+    var playersToSkip = []
+}
+
 
 for (var i = 1; i <= neigh_size; i++) {
     var unit_shift = 360/neigh_size;
@@ -67,7 +78,14 @@ for (var i = 1; i <= neigh_size; i++) {
 
     var lol = draw.use(lolli).attr({fill:'#f7f7f7'})
     lol.rotate(playerRotation, DX/2, DY/2)
-    lol.delay(Math.random()*secondsAnimated*1000).animate().attr({fill: strategyColor})
+    if (playersToSkip.includes(i)) {
+        lol.attr({fill: strategyColor})
+    } else {
+        if (js_vars.shuffle == true) {
+            lol.delay(Math.random()*secondsAnimated*1000).animate().attr({fill: strategyColor}) }
+        else {
+            lol.delay(secondsAnimated/neigh_size).animate().attr({fill: strategyColor}) }
+    }
 }
 
 var me = draw.circle(100).move(DX/2-50, DY/2-50).attr({fill: '#f7f7f7'});

@@ -25,16 +25,18 @@ class Instructions_setting(Page):
             "T": Constants.T,
             "P": Constants.P,
             "bonus": Constants.bonus,
-            'n_C': 10,
-            'n_D': 10,
-            'n_C_1': 9,
+            "n_C": 10,
+            "n_D": 10,
+            "n_C_1": 9,
         }
 
     def js_vars(self):
         return {
-            'neigh_size': Constants.n_players,
-            'nC': 10,
-            'secAnimation': .2
+            "neigh_size": Constants.n_players,
+            "nC": 10,
+            "secAnimation": 0.2,
+            "shuffle": False,
+            "skip": 0,
         }
 
 
@@ -73,11 +75,12 @@ class Instructions_example_round(Page):
 
     def js_vars(self):
         return {
-            'neigh_size': Constants.n_players,
-            'nC': 3,
-            'secAnimation': 0
+            "neigh_size": Constants.n_players,
+            "nC": 3,
+            "secAnimation": 0,
+            "shuffle": False,
+            "skip": 0,
         }
-
 
 
 class Instructions_next_steps(Page):
