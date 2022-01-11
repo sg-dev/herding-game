@@ -41,9 +41,11 @@ for (var i = 1; i <= neigh_size; i++) {
 
     var lol = draw.use(lolli).attr({fill:'#f7f7f7'})
     lol.rotate(playerRotation, DX/2, DY/2)
-    lol.delay(Math.random()*secondsAnimated*1000).animate(
-
-    ).attr({fill: strategyColor})
+    if (secondsAnimated > 0.1) {
+        lol.delay(Math.random()*secondsAnimated*1000).animate().attr({fill: strategyColor})
+    } else {
+        lol.attr({fill: strategyColor})
+    }
 }
 
 var me = draw.circle(100).move(DX/2-50, DY/2-50).attr({fill: '#f7f7f7'});
