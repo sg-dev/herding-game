@@ -5,41 +5,37 @@
             <div class="row">
                 <div class="col-8 float-start">
                     <ul style="list-style-type: none; padding: 0;">
-                        <li><b>{{ n_D }}</b> players chose to <b>not collaborate</b> | <b>{{ n_C }}</b> chose to
-                            <b>Collaborate</b>.</li>
+                        <li>others: <b>{{ n_C }}</b> chose <b>C</b> | <b>{{ n_D }}</b> chose <b>D</b></li>
                         {% if my_decision == 'C' %}
                             <li>
-                                Payoff from "Collaborate": {{
-                                R}} × {{ n_C }} = {{ coop_payoff }}
+                                From "D": {{R}} × {{ n_C }} = {{ RXnC }}
                             </li>
                             <li>
-                                Payoff from "Not Collaborate": {{
-                                S }} × {{ n_D }} = {{ def_payoff }}
+                                From "C": {{S }} × {{ n_D }} = {{ SXnD }}
                             </li>
                             <li>
-                                You get a bonus of {{ bonus }} × {{ n_D }} = {{ bonus }}.
+                                Bonus: {{ bonus }} × {{ n_D }} = {{ total_bonus }}.
                             </li>
                         {% else if my_decision == 'D' %}
                             <li>
-                                Payoff from "Collaborate": {{
+                                Payoff from <b>C</b>: {{
                                 T}} × {{ n_C }} = {{ coop_payoff }}
                             </li>
                             <li>
-                                Payoff from "Not Collaborate": {{
+                                Payoff from <b>D</b>: {{
                                 P }} × {{ n_D }} = {{ def_payoff }}
                             </li>
                             <li>
                                 No bonus points.
                             </li>
                         {% else %}
-                        <li>First round. No points yet.</li>
                         {% endif %}
                     </ul>
                 </div>
                 <div class="col-4 ml-auto" style="text-align:right;">
                     <ul style="list-style-type: none; padding: 0;">
                         <li>
-                            <b> Points earned: {{ coop_payoff }} + {{ def_payoff }} + {{ bonus }} = {{ last_payoff }}
+                            <b> Points earned: {{ coop_payoff }} + {{ def_payoff }}
                             </b>
                         </li>
                         <li>

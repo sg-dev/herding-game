@@ -14,15 +14,10 @@
   <div container="container">
     <div class="row">
         <div class="col float-start">
-            <div style="text-align:center">
-            {% include "global/game.svg" %}
-            </div>
+            {{ include "global/game-wheel.html" }}
         </div>
         <div class="col ml-auto">
             <div class="form-group required">
-              <br>
-              <br>
-              <br>
               {% include "global/payoff_matrix.html" %}
             </div>
             <br>

@@ -19,24 +19,13 @@
 {% block content %}
 
 {{ include "bonus_game/score_card_header.html" }}
-
-
-<!-- viewBox="0 0 508.32 584.89" -->
-
 <div>
-  <br>
   <div container="container">
-    <div class="row">
-        <div class="col float-start">
-            <div style="text-align:center">
-            {% include "global/game.svg" %}
-            </div>
+        <div style="margin: auto; text-align:center;">
+            {{ include "global/game-wheel.html" }}
         </div>
         <div class="col ml-auto">
             <div class="form-group required">
-              <br>
-              <br>
-              <br>
               {% include "global/payoff_matrix.html" %}
             </div>
             <br>
@@ -45,13 +34,6 @@
               <button name="decision" value="D" class="btn btn-primary btn-large">Don't collaborate</button>
             </div>
         </div>
-    </div>
   </div>
 </div>
-
-<!-- JS for colouring -->
-<script>
-    {{ include "global/color_game.js"}}
-</script>
-
 {% endblock %}

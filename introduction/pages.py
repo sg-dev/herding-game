@@ -30,6 +30,13 @@ class Instructions_setting(Page):
             'n_C_1': 9,
         }
 
+    def js_vars(self):
+        return {
+            'neigh_size': Constants.n_players,
+            'nC': 10,
+            'secAnimation': .2
+        }
+
 
 class Instructions_points(Page):
     def vars_for_template(self):
@@ -63,6 +70,14 @@ class Instructions_example_round(Page):
             "Px17": Constants.P * 17,
             "Tx3pPx17": Constants.T * 3 + Constants.P * 17,
         }
+
+    def js_vars(self):
+        return {
+            'neigh_size': Constants.n_players,
+            'nC': 3,
+            'secAnimation': 0
+        }
+
 
 
 class Instructions_next_steps(Page):

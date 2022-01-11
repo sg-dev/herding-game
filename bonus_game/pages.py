@@ -1,7 +1,6 @@
 from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants
-import random
 import math
 
 
@@ -21,74 +20,60 @@ def compute_player_payoff(own_choice, n_collaborators, n_defectors):
     return payoff_from_defectors, payoff_from_cooperators
 
 
+
 class Decision(Page):
     form_model = "player"
     form_fields = ["decision"]
 
-    def vars_for_template(self):
+    def number_strategies_last_round(self):
         me = self.player
-        R = Constants.R
-        S = Constants.S
-        T = Constants.T
-        P = Constants.P
+        n_D = Constants.strategy_schedule[me.round_number-1]
+        n_C = Constants.neigh_size - n_D
+
+        return n_C, n_D
+
+    def vars_for_template(self):
+        player = self.player
+        n_C, n_D = self.number_strategies_last_round()
 
         # Last round's info
-        if self.player.round_number > 1:
-            # Get player's and bot's decision
-            me = self.player.in_round(self.player.round_number - 1)
-
-            # Get fraction of defectors
-            f_prev = Constants.fractions_ext[me.id_in_group - 1][me.round_number - 1]
-
-            # Number of cooperators and defectors
-            n_C = math.ceil((1 - f_prev) * Constants.neigh_size)
-            n_D = math.floor(f_prev * Constants.neigh_size)
-
-            my_decision = me.decision
+        if player.round_number > 1:
+            my_decision = player.in_round(self.player.round_number-1).decision
             payoff_from_defectors, payoff_from_cooperators = compute_player_payoff(
                 my_decision, n_C, n_D
             )
 
-            me.payoff = payoff_from_defectors + payoff_from_cooperators
+            last_payoff = payoff_from_defectors + payoff_from_cooperators
+            player.payoff = last_payoff
         else:  # first round
-            me = self.player.in_round(self.player.round_number)
             my_decision = None
-
-            # Get fraction of coops/defs
-            f_prev = Constants.fractions_ext[me.id_in_group - 1][me.round_number - 1]
-
-            ## Number of cooperators and defectors
-            n_C = math.ceil((1 - f_prev) * Constants.neigh_size)
-            n_D = math.floor(f_prev * Constants.neigh_size)
 
             # Payoffs and bonus
             payoff_from_defectors, payoff_from_cooperators = 0, 0
 
-            me.payoff = 0
-
-        # Opponents
-        opponents = []
-        for i in range(Constants.neigh_size):
-            opponents.append(Constants.opponents_list[me.id_in_group - 1][i])
-        opponents.append(max(Constants.opponents_list[me.id_in_group - 1][:20]) + 1)
+            last_payoff = 0
 
         # Return to template
         return dict(
-            R=R,
-            S=S,
-            T=T,
-            P=P,
+            R=Constants.R,
+            S=Constants.S,
+            T=Constants.T,
+            P=Constants.P,
             n_C=n_C,
             n_D=n_D,
             def_payoff=payoff_from_defectors,
             coop_payoff=payoff_from_cooperators,
             bonus=Constants.bonus,
-            total_bonus=Constants.bonus * n_D,
-            last_payoff=me.payoff,
+            total_bonus=Constants.bonus * n_D if my_decision == "C" else 0,
+            last_payoff=last_payoff,
             my_decision=my_decision,
-            opponents=opponents,
+            RXnC = Constants.R * n_C,
+            SXnD = Constants.S * n_D,
         )
 
+    def js_vars(self):
+        n_C, n_D = self.number_strategies_last_round()
+        return dict(neigh_size=Constants.neigh_size, nC=n_C, secAnimation=5)
 
 class ResultsWaitPage(Page):
     timeout_seconds = 1  # Change as you wish (for realistic view purposes)

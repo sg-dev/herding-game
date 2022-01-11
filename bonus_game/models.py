@@ -36,15 +36,9 @@ class Constants(BaseConstants):
     neigh_size = 20
 
     # Fraction of defectors
-    fractions = [
-        [0.8, 0.6, 0.5, 0.4, 0.3, 0.3, 0.3],
-        [0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3],
-        [0.8, 0.6, 0.5, 0.4, 0.3, 0.2, 0.2],
-    ]
+    strategy_schedule = [18, 14, 12, 10, 8, 8, 8, 8, 8, 8]
 
     # Create extended lists of fractions and randomly assing them
-    fractions_ext = fractions * trials
-    random.shuffle(fractions_ext)
 
     # For graphics
     # Randomly assigned numbers to players (fixed for the whole game)
