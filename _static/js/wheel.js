@@ -28,7 +28,8 @@ function draw_lollipop(playerId, playerName, label) {
 }
 
 for (var i = 1; i <= neigh_size; i++) {
-    var playerRotation = 360/neigh_size*(i-1)
+    var unit_shift = 360/neigh_size;
+    var playerRotation = unit_shift*(i-1)+unit_shift/2;
     console.log(nC)
     if (i <= nC) {
         var strategyColor = '#f1a340'
