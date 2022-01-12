@@ -12,14 +12,13 @@ let nC = js_vars.nC;
 var draw = SVG().addTo('#wheel-canvas').size(DX, DY);
 // var rect = draw.rect(100, 100).attr({ fill: '#f06' })
 
-function draw_lollipop(playerId, playerName, label) {
+function draw_lollipop(playerId, label) {
 
     var symbol = draw.symbol();
-    var group = symbol.group().attr({id: playerId});
-    var circle = symbol.circle(circleRadius).move(DX/2-circleRadius/2, 50);
-    var line = symbol.line(DX/2, DY/2, DX/2, DY/2-wheelRadius).stroke({ width: 2, color: '#ccc'});
-    var playerName = symbol.text(playerName).attr({x:DX/2, y:40}).font({anchor: "middle"});
-    var playerStrategy = symbol.text(label).attr({x:DX/2, y:82}).font({anchor: "middle", size: 30}).attr({fill: "#f7f7f7"});
+    var group = symbol.group().attr({ id: playerId });
+    var circle = symbol.circle(circleRadius).move(DX / 2 - circleRadius / 2, 50);
+    var line = symbol.line(DX / 2, DY / 2, DX / 2, DY / 2 - wheelRadius).stroke({ width: 2, color: '#ccc' });
+    var playerStrategy = symbol.text(label).attr({ x: DX / 2, y: 82 }).font({ anchor: "middle", size: 30 }).attr({ fill: "#f7f7f7" });
     group.add(line)
     group.add(circle)
     group.add(playerName)
@@ -28,25 +27,12 @@ function draw_lollipop(playerId, playerName, label) {
 }
 
 function shuffle(array) {
-    let currentIndex = array.length,  randomIndex;
-
-    // While there remain elements to shuffle...
-    while (currentIndex != 0) {
-
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
-
-    return array;
-  }
+    // shuffle elements of a list
+    return array.sort(() => Math.random() - 0.5);
+}
 
 var playing_c = Array(nC).fill('C')
-var playing_d = Array(neigh_size-nC).fill('D')
+var playing_d = Array(neigh_size - nC).fill('D')
 var strategies = playing_c.concat(playing_d)
 
 if (js_vars.shuffle == true) {
@@ -55,7 +41,7 @@ if (js_vars.shuffle == true) {
 
 
 if (skip > 0) {
-    var playerRange = Array.from({length: neigh_size}, (x, i) => i);
+    var playerRange = Array.from({ length: neigh_size }, (x, i) => i);
     playerRange = shuffle(playerRange)
     var playersToSkip = playerRange.slice(0, skip)
     console.log(playersToSkip)
@@ -65,28 +51,30 @@ if (skip > 0) {
 
 
 for (var i = 1; i <= neigh_size; i++) {
-    var unit_shift = 360/neigh_size;
-    var playerRotation = unit_shift*(i-1)+unit_shift/2;
-    var strategy = strategies[i-1]
+    var unit_shift = 360 / neigh_size;
+    var playerRotation = unit_shift * (i - 1) + unit_shift / 2;
+    var strategy = strategies[i - 1]
     if (strategy == 'C') {
         var strategyColor = '#f1a340'
-        var lolli = draw_lollipop(i, '', 'C')
+        var lolli = draw_lollipop(i, strategy)
     } else {
         var strategyColor = '#998ec3'
-        var lolli = draw_lollipop(i, '', 'D')
+        var lolli = draw_lollipop(i, strategy)
     }
 
-    var lol = draw.use(lolli).attr({fill:'#f7f7f7'})
-    lol.rotate(playerRotation, DX/2, DY/2)
+    var lol = draw.use(lolli).attr({ fill: '#f7f7f7' })
+    lol.rotate(playerRotation, DX / 2, DY / 2)
     if (playersToSkip.includes(i)) {
-        lol.attr({fill: strategyColor})
+        lol.attr({ fill: strategyColor })
     } else {
         if (js_vars.shuffle == true) {
-            lol.delay(Math.random()*secondsAnimated*1000).animate().attr({fill: strategyColor}) }
+            lol.delay(Math.random() * secondsAnimated * 1000).animate().attr({ fill: strategyColor })
+        }
         else {
-            lol.delay(secondsAnimated/neigh_size).animate().attr({fill: strategyColor}) }
+            lol.delay(secondsAnimated / neigh_size).animate().attr({ fill: strategyColor })
+        }
     }
 }
 
-var me = draw.circle(100).move(DX/2-50, DY/2-50).attr({fill: '#f7f7f7'});
-var playerStrategy = draw.text("You").attr({x:DX/2, y:DY/2}).font({anchor: "middle", size: 30}).attr({fill: "black"});
+var me = draw.circle(100).move(DX / 2 - 50, DY / 2 - 50).attr({ fill: '#f7f7f7' });
+var playerStrategy = draw.text("You").attr({ x: DX / 2, y: DY / 2 }).font({ anchor: "middle", size: 30 }).attr({ fill: "black" });
