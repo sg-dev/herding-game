@@ -1,7 +1,7 @@
 from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants
-import math
+import random
 
 
 def number_strategies_round(round_number):
@@ -112,19 +112,36 @@ class ResultsWaitPage(Page):
     def js_vars(self):
         round_number = self.player.round_number
         n_C, n_D = number_strategies_round(round_number)
+
+        # Get how many seconds it took the player to answer
+        to_skip = random.randint(0, 14)
+
+
         return dict(
             neigh_size=Constants.neigh_size,
             nC=n_C,
             secAnimation=self.timeout_seconds,
             nD=n_D,
             shuffle=True,
-            skip=5,
+            skip=to_skip,
         )
 
 
 class Debrief(Page):
     form_model = "player"
     form_fields = ["debrief"]
+
+    def vars_for_template(self):
+        cumulative_payoff = sum([p.payoff for p in self.player.in_all_rounds()])
+
+        # Return to template
+        return dict(
+            R=Constants.R,
+            S=Constants.S,
+            T=Constants.T,
+            P=Constants.P,
+            bonus=Constants.bonus,
+        )
 
     def is_displayed(self):
         return self.player.round_number == Constants.num_rounds

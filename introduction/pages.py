@@ -86,6 +86,9 @@ class Instructions_example_round(Page):
 class Instructions_next_steps(Page):
     pass
 
+class Start_game(Page):
+    pass
+
 
 class Attention1(Page):
     timeout_seconds = 1080
@@ -124,5 +127,5 @@ page_sequence = [
     Instructions_example_round,
     Instructions_next_steps,
     Attention1,
-    InterimWaitPage,
+    Start_game
 ]
