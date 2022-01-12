@@ -5,15 +5,11 @@
 {% endblock %}
 
 {% block styles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'global/matrix.css' %}" />
-
     <style>
         .highlight-row-on-hover:hover td {
             background-color: #fcf8e3;
         }
-
     </style>
-
 {% endblock %}
 
 {% block content %}
@@ -37,4 +33,18 @@
         </div>
   </div>
 </div>
+
+<style>
+    .otree-timer {
+        display: none;
+    }
+    .blink_me {
+        animation: blinker 1s linear infinite;
+      }
+
+      @keyframes blinker {
+        50% { opacity: 0; }
+      }
+</style>
+
 {% endblock %}

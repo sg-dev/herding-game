@@ -38,9 +38,10 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     q1 = models.StringField(
         choices=[
-            [1, "I chose one single action to be played against all other players."],
-            [2, "I chose an action for every player (20 in total)."],
-            [3, "I do not choose anything."],
+            [1, "1 action against all other players."],
+            [2, f"1 for every player. {Constants.n_players} in total."],
+            [3, "No choice, it is automatic."],
+            [4, f"2 for every player. {2*Constants.n_players} in total."],
         ],
         label="<strong>Q1:</strong> In each round, how many actions do you choose?",
         widget=widgets.RadioSelect,
@@ -48,26 +49,28 @@ class Player(BasePlayer):
 
     q2 = models.StringField(
         choices=[
-            [1, Constants.bonus],
-            [3, Constants.R],
-            [5, Constants.S],
-            [8, Constants.T],
+            [1, f"{Constants.R}*{Constants.n_players}={Constants.R*Constants.n_players}"],
+            [3, f"{Constants.bonus}*{Constants.n_players}={Constants.bonus*Constants.n_players}"],
+            [5, f"{Constants.S}*{Constants.n_players}={Constants.S*Constants.n_players}"],
+            [8, f"{Constants.T}*{Constants.n_players}={Constants.T*Constants.n_players}"], # correct
         ],
-        label="<strong>Q2:</strong> In the payoff matrix if you choose Not Collaborate and one opponent chooses Collaborate what is your payoff?",
+        label=f"<strong>Q2:</strong> In the payoff matrix above. If you choose <b>D</b> and {Constants.n_players} players chooses <b>C</b> what is your payoff?",
         widget=widgets.RadioSelect,
     )
 
     q3 = models.StringField(
         choices=[
             [1, "Choice of other players in the current round"],
-            [2, "Choice of other players in the last round"],
+            [2, "Choice of other players in the previous round"],
+            [4, "Choice of other players in the next round"],
+            [4, "My choices up to now"],
         ],
         label="<strong>Q3:</strong> What does the colour and letter in the summary figure show?",
         widget=widgets.RadioSelect,
     )
 
     q4 = models.StringField(
-        choices=[[1, "Cooperate"], [2, "Not Cooperate"], [3, "Any"]],
+        choices=[[1, "C"], [2, "D"], [3, "C and D"], [4, "Neither C nor D"]],
         label="<strong>Q4:</strong> Which choice entitles you to get bonus points?",
         widget=widgets.RadioSelect,
     )
@@ -76,14 +79,15 @@ class Player(BasePlayer):
         choices=[
             [
                 1,
-                f'I get an extra {Constants.bonus} for each player playing "Not Cooperate" if I chose "Cooperate".',
+                f'I get an extra {Constants.bonus} for each player choosing "D" if I choose "C".',
             ],
-            [2, f'I get an extra {Constants.T} per player choosing "Cooperate".'],
+            [2, f'I get an extra {Constants.R} per player choosing "C".'],
             [
                 3,
-                f'I get an extra {Constants.bonus} per player choosing "Cooperate" if I choose "Not cooperate".',
+                f'I get an extra {Constants.T} per player choosing "C" if I choose "D".',
             ],
         ],
         label="<strong>Q5:</strong> Which of the following statements is correct?",
         widget=widgets.RadioSelect,
     )
+
