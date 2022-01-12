@@ -13,7 +13,6 @@ var draw = SVG().addTo('#wheel-canvas').size(DX, DY);
 // var rect = draw.rect(100, 100).attr({ fill: '#f06' })
 
 function draw_lollipop(playerId, label) {
-
     var symbol = draw.symbol();
     var group = symbol.group().attr({ id: playerId });
     var circle = symbol.circle(circleRadius).move(DX / 2 - circleRadius / 2, 50);
@@ -21,7 +20,6 @@ function draw_lollipop(playerId, label) {
     var playerStrategy = symbol.text(label).attr({ x: DX / 2, y: 82 }).font({ anchor: "middle", size: 30 }).attr({ fill: "#f7f7f7" });
     group.add(line)
     group.add(circle)
-    group.add(playerName)
     group.add(playerStrategy)
     return group
 }
