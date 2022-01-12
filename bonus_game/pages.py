@@ -47,8 +47,8 @@ class Decision(Page):
             player.payoff = last_payoff
         else:  # first round
             my_decision = None
-            payoff_from_defectors, payoff_from_cooperators = 0, 0
-            last_payoff = 0
+            payoff_from_defectors, payoff_from_cooperators = '?', '?'
+            last_payoff = '?'
 
         cumulative_payoff = sum([p.payoff for p in self.player.in_all_rounds()])
 

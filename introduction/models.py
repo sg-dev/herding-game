@@ -84,7 +84,7 @@ class Player(BasePlayer):
             [2, f'I get an extra {Constants.R} per player choosing "C".'],
             [
                 3,
-                f'I get an extra {Constants.T} per player choosing "C" if I choose "D".',
+                f'I get an extra {Constants.S} per player choosing "C" if I choose "D".',
             ],
         ],
         label="<strong>Q5:</strong> Which of the following statements is correct?",
