@@ -49,10 +49,22 @@ class Player(BasePlayer):
 
     q2 = models.StringField(
         choices=[
-            [1, f"{Constants.R}*{Constants.n_players}={Constants.R*Constants.n_players}"],
-            [3, f"{Constants.bonus}*{Constants.n_players}={Constants.bonus*Constants.n_players}"],
-            [5, f"{Constants.S}*{Constants.n_players}={Constants.S*Constants.n_players}"],
-            [8, f"{Constants.T}*{Constants.n_players}={Constants.T*Constants.n_players}"], # correct
+            [
+                1,
+                f"{Constants.R}*{Constants.n_players}={Constants.R*Constants.n_players}",
+            ],
+            [
+                3,
+                f"{Constants.bonus}*{Constants.n_players}={Constants.bonus*Constants.n_players}",
+            ],
+            [
+                5,
+                f"{Constants.S}*{Constants.n_players}={Constants.S*Constants.n_players}",
+            ],
+            [
+                8,
+                f"{Constants.T}*{Constants.n_players}={Constants.T*Constants.n_players}",
+            ],  # correct
         ],
         label=f"<strong>Q2:</strong> In the payoff matrix above. If you choose <b>D</b> and {Constants.n_players} players chooses <b>C</b> what is your payoff?",
         widget=widgets.RadioSelect,
@@ -90,4 +102,3 @@ class Player(BasePlayer):
         label="<strong>Q5:</strong> Which of the following statements is correct?",
         widget=widgets.RadioSelect,
     )
-

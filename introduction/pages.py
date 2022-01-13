@@ -86,6 +86,7 @@ class Instructions_example_round(Page):
 class Instructions_next_steps(Page):
     pass
 
+
 class Start_game(Page):
     pass
 
@@ -127,5 +128,5 @@ page_sequence = [
     Instructions_example_round,
     Instructions_next_steps,
     Attention1,
-    Start_game
+    Start_game,
 ]

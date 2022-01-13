@@ -47,8 +47,8 @@ class Decision(Page):
             player.payoff = last_payoff
         else:  # first round
             my_decision = None
-            payoff_from_defectors, payoff_from_cooperators = '?', '?'
-            last_payoff = '?'
+            payoff_from_defectors, payoff_from_cooperators = "?", "?"
+            last_payoff = "?"
 
         cumulative_payoff = sum([p.payoff for p in self.player.in_all_rounds()])
 
@@ -115,7 +115,6 @@ class ResultsWaitPage(Page):
 
         # Get how many seconds it took the player to answer
         to_skip = random.randint(0, 14)
-
 
         return dict(
             neigh_size=Constants.neigh_size,
