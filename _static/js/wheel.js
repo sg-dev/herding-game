@@ -1,9 +1,9 @@
 var neigh_size = js_vars.neigh_size;
 var skip = js_vars.skip;
-let circleRadius = 45;
-let wheelRadius = 180;
-let DX = 500;
-let DY = 500;
+let circleRadius = 35;
+let wheelRadius = 140;
+let DX = 300;
+let DY = 300;
 let border = 10;
 
 let secondsAnimated = js_vars.secAnimation;
@@ -15,9 +15,9 @@ var draw = SVG().addTo('#wheel-canvas').size(DX, DY);
 function draw_lollipop(playerId, label) {
     var symbol = draw.symbol();
     var group = symbol.group().attr({ id: playerId });
-    var circle = symbol.circle(circleRadius).move(DX / 2 - circleRadius / 2, 50);
+    var circle = symbol.circle(circleRadius).move(DX / 2 - circleRadius / 2, 10);
     var line = symbol.line(DX / 2, DY / 2, DX / 2, DY / 2 - wheelRadius).stroke({ width: 2, color: '#ccc' });
-    var playerStrategy = symbol.text(label).attr({ x: DX / 2, y: 82 }).font({ anchor: "middle", size: 30 }).attr({ fill: "#f7f7f7" });
+    var playerStrategy = symbol.text(label).attr({ x: DX / 2, y: 37 }).font({ anchor: "middle", size: 25 }).attr({ fill: "#f7f7f7" });
     group.add(line)
     group.add(circle)
     group.add(playerStrategy)

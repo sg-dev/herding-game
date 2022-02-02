@@ -1,0 +1,43 @@
+{% extends "global/Base.html" %}
+{% load otree_tags staticfiles %}
+
+{% block title %}
+    Debriefing
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .highlight-row-on-hover:hover td {
+            background-color: #fcf8e3;
+        }
+
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="card card-body bg-light instructions">
+    <p>We would like to ask you a few questions before we let you go.
+    These answers do not affect your final payout.</p>
+</div>
+
+<br>
+<br>
+
+<div class="card card-body bg-light instructions">
+    <div class="container">
+        <div class="row">
+            <div class="col float-start">
+                {% formfields %}
+            </div>
+            <!-- {{ include "global/payoff_matrix.html" }} -->
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<button class="otree-btn-next btn btn-primary">Submit Answers</button>
+
+
+{% endblock %}

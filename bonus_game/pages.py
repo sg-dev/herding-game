@@ -128,7 +128,7 @@ class ResultsWaitPage(Page):
 
 class Debrief(Page):
     form_model = "player"
-    form_fields = ["debrief"]
+    form_fields = ["debrief", "debrief_2"]
 
     def vars_for_template(self):
         cumulative_payoff = sum([p.payoff for p in self.player.in_all_rounds()])

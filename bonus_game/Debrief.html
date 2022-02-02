@@ -16,22 +16,20 @@
 
 {% block content %}
 <div class="card card-body bg-light instructions">
-    <p>We would like to ask you a final open-ended question before we let you go.
-    Answering this questions will not affect the final payout, guessing is allowed.
-    Please press next once you are done answering.</p>
+    <p>We would like to ask you a few questions before we let you go.
+    These answers do not affect your final payout.</p>
 </div>
 
 <br>
 <br>
 
 <div class="card card-body bg-light instructions">
-    <p>Given the earnings table, what is the fraction of defectors below which it is always better to <b>D</b> and above which it is always better to <b>C</b>?</p>
     <div class="container">
         <div class="row">
             <div class="col float-start">
-                {{ form.debrief }}
+                {% formfields %}
             </div>
-            {{ include "global/payoff_matrix.html" }}
+            <!-- {{ include "global/payoff_matrix.html" }} -->
         </div>
     </div>
 </div>
@@ -39,6 +37,7 @@
 <br>
 <br>
 
-{% next_button %}
+<button class="otree-btn-next btn btn-primary">Submit Answers</button>
+
 
 {% endblock %}

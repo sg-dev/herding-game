@@ -13,12 +13,11 @@
 {% endblock %}
 
 {% block content %}
-
 {{ include "bonus_game/score_card_header.html" }}
 <div>
   <div container="container">
         <div style="margin: auto; text-align:center;">
-            <i>Choices in last round</i>
+            <i><b>Last</b> round</i>&nbsp;&nbsp;<b>C:</b> {{ n_C }} -  <b>D:</b> {{ n_D }}
             {{ include "global/game-wheel.html" }}
         </div>
         <div class="col ml-auto">

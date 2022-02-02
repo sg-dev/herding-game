@@ -1,29 +1,27 @@
 <div class="card">
-    <div class="card-header"> Your Points </div>
+    <div class="card-header">Points</div>
     <div class="card-body" style="margin-bottom: -10px; font-family: Helvetica !important;">
         <div class="container">
             <div class="row">
                 <div class="col-8 float-start">
                     <ul style="list-style-type: none; padding: 0;">
-                        <li>others: <b>{{ n_C }}</b> chose <b>C</b> | <b>{{ n_D }}</b> chose <b>D</b></li>
                         {% if my_decision == 'C' %}
                             <li>
-                                From "D": {{R}} × {{ n_C }} = {{ RXnC }}
+                                From "D": {{R}} × {{ n_C }} players = {{ RXnC }}
                             </li>
                             <li>
-                                From "C": {{S }} × {{ n_D }} = {{ SXnD }}
+                                From "C": {{S}} × {{ n_D }} players = {{ SXnD }}
                             </li>
                             <li>
-                                Bonus: {{ bonus }} × {{ n_D }} = {{ total_bonus }}.
+                                Bonus: {{ bonus }} × {{ n_D }} players = {{ total_bonus }}.
                             </li>
                         {% else if my_decision == 'D' %}
                             <li>
-                                Payoff from <b>C</b>: {{
-                                T}} × {{ n_C }} = {{ coop_payoff }}
+                                Payoff from <b>C</b>: {{T}} × {{ n_C }} players = {{ coop_payoff }}
                             </li>
                             <li>
                                 Payoff from <b>D</b>: {{
-                                P }} × {{ n_D }} = {{ def_payoff }}
+                                P }} × {{ n_D }} players = {{ def_payoff }}
                             </li>
                             <li>
                                 No bonus points.
@@ -35,14 +33,13 @@
                 <div class="col-4 ml-auto" style="text-align:right;">
                     <ul style="list-style-type: none; padding: 0;">
                         <li>
-                            <b> Points earned: {{ coop_payoff }} + {{ def_payoff }}
-                            </b>
+                            Points: <b>{{coop_payoff }} + {{ def_payoff }} = {{ last_payoff }}</b>
                         </li>
                         <li>
-                            <b> Total points: </b> {{ last_payoff }}
+                            <b> Running total</b>
                         </li>
                         <li>
-                            <b> Running total: </b> {{ cumulative_payoff }}
+                            {{ cumulative_payoff }}
                         </li>
                     </ul>
                 </div>
