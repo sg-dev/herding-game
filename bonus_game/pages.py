@@ -171,4 +171,4 @@ class Thanks(Page):
         return dict(message=final_message, cumulative_payoff=cumulative_payoff)
 
 
-page_sequence = [Decision, ResultsWaitPage, Debrief, Thanks]
+page_sequence = [Decision, ResultsWaitPage]

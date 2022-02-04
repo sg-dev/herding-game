@@ -26,8 +26,8 @@ class C(BaseConstants):
 
     # number of rows and columns
     # i.e. the total number of boxes is determined by <num_rows> times <num_cols>
-    NUM_ROWS = 8
-    NUM_COLS = 8
+    NUM_ROWS = 10
+    NUM_COLS = 10
 
     # box height and box width in pixels
     # make sure that the size of the boxes fits the screen of the device
@@ -36,7 +36,7 @@ class C(BaseConstants):
     BOX_WIDTH = "50px"
 
     # number of rounds to be played
-    NUM_ROUNDS = 2
+    NUM_ROUNDS = 1
 
     # determines whether all rounds played are payed-off or whether one round is randomly chosen for payment
     # if <random_payoff = True>, one round is randomly determined for payment
@@ -71,13 +71,13 @@ class C(BaseConstants):
 
     # time interval between single boxes being collected (in seconds)
     # note that this only affects game play if <dynamic = True>
-    TIME_INTERVAL = 1.00
+    TIME_INTERVAL = 0.2
 
     # collect boxes randomly or systematically
     # if <random = False>, boxes are collected row-wise one-by-one, starting in the top-left corner
     # if <random = True>, boxes are collected randomly (Fisher-Yates Algorithm)
     # note that this affects game play in both cases, <dynamic = True> and <dynamic = False>
-    RANDOM = True
+    RANDOM = False
 
     # determines whether static game play allows for selecting boxes by clicking or by entering a number
     # if <devils_game = True>, game play is similar to Slovic (1965), i.e. boxes are collected by subjects

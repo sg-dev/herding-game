@@ -37,8 +37,8 @@ class Constants(BaseConstants):
     neigh_size = 20
 
     # Fraction of defectors
-    # strategy_schedule = [18, 14, 12, 10, 8, 8, 8, 8, 8, 8]
-    strategy_schedule = [10, 10, 10, 10, 8, 8, 8, 8, 8, 8]
+    strategy_schedule = [18, 14, 12, 10, 8, 8, 8, 8, 8, 8]
+    # strategy_schedule = [10, 10, 10, 10, 8, 8, 8, 8, 8, 8]
 
     # Create extended lists of fractions and randomly assing them
 
@@ -67,31 +67,31 @@ class Player(BasePlayer):
         widget=widgets.RadioSelect(),
     )
 
-    debrief = models.StringField(
-        choices=[
-            ["only_c", "Mostly play C"],
-            ["only_d", "Mostly play D"],
-            ["minority", "Follow the minority's strategy"],
-            ["majority", "Follow the majority's strategy"],
-            ["random", "Randomly choose between C and D"],
-            ["sophisticated", "Following a more complex strategy"],
-        ],
-        label="Which describes your strategy best?",
-        widget=widgets.RadioSelect,
-    )
+    # debrief = models.StringField(
+    #     choices=[
+    #         ["only_c", "Mostly play C"],
+    #         ["only_d", "Mostly play D"],
+    #         ["minority", "Follow the minority's strategy"],
+    #         ["majority", "Follow the majority's strategy"],
+    #         ["random", "Randomly choose between C and D"],
+    #         ["sophisticated", "Following a more complex strategy"],
+    #     ],
+    #     label="Which describes your strategy best?",
+    #     widget=widgets.RadioSelect,
+    # )
 
-    debrief_2 = models.StringField(
-        choices=[
-            ["only_c", "Mostly play C"],
-            ["only_d", "Mostly play D"],
-            ["minority", "Follow the minority's strategy"],
-            ["majority", "Follow the majority's strategy"],
-            ["random", "Randomly choose between C and D"],
-            ["sophisticated", "Following a more complex strategy"],
-        ],
-        label="How, do you think most of your opponents chose?",
-        widget=widgets.RadioSelect,
-    )
+    # debrief_2 = models.StringField(
+    #     choices=[
+    #         ["only_c", "Mostly play C"],
+    #         ["only_d", "Mostly play D"],
+    #         ["minority", "Follow the minority's strategy"],
+    #         ["majority", "Follow the majority's strategy"],
+    #         ["random", "Randomly choose between C and D"],
+    #         ["sophisticated", "Following a more complex strategy"],
+    #     ],
+    #     label="How, do you think most of your opponents chose?",
+    #     widget=widgets.RadioSelect,
+    # )
 
     # debrief = models.StringField(
     #     choices=[
