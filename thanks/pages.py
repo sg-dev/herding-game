@@ -13,9 +13,10 @@ class Thanks(Page):
         # Pass variables to Thanks page
         cumulative_payoff = self.player.participant.payoff
 
+
         return {
             "cumulative_payoff":
-            cumulative_payoff,
+            cumulative_payoff.to_real_world_currency(self.session),
         }
 
 
