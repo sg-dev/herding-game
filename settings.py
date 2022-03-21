@@ -7,6 +7,7 @@ SESSION_CONFIGS = [
         display_name="The Bonus Game",
         num_demo_participants=3,
         app_sequence=["introduction", "bonus_game", "bret", "debrief", "thanks"],
+        # app_sequence=["debrief", "thanks"],
     ),
 ]
 
@@ -18,6 +19,14 @@ SESSION_CONFIGS = [
 SESSION_CONFIG_DEFAULTS = dict(
     real_world_currency_per_point=1.00, participation_fee=0.00, doc=""
 )
+
+SESSION_FIELDS = [
+    "prolific_completion_url"
+]
+
+PARTICIPANT_FIELDS = [
+    "finished"
+]
 
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans

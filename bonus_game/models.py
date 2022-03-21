@@ -37,8 +37,7 @@ class Constants(BaseConstants):
     neigh_size = 20
 
     # Fraction of defectors
-    strategy_schedule = [18, 14, 12, 10, 8, 8, 8, 8, 8, 8]
-    # strategy_schedule = [10, 10, 10, 10, 8, 8, 8, 8, 8, 8]
+    strategy_schedule = [18, 14, 12, 10, 8, 6, 6, 6, 6, 6]
 
     # Create extended lists of fractions and randomly assing them
 
