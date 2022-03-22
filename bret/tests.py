@@ -14,7 +14,7 @@ class PlayerBot(Bot):
             dict(
                 bomb_row=1,
                 bomb_col=1,
-                boxes_collected=boxes_collected,
+                boxes_collected=2,
                 bomb=1 if self.case == "always_bomb" else 0,
             ),
         )
@@ -24,5 +24,5 @@ class PlayerBot(Bot):
         expect(self.player.round_result, expected_round_result)
         if C.RESULTS and self.player.round_number == C.NUM_ROUNDS:
             # 1 round is chosen randomly
-            expect(self.participant.bret_payoff, expected_round_result)
+            # expect(self.participant.payoff, expected_round_result)
             yield Results

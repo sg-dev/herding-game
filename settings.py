@@ -5,9 +5,9 @@ SESSION_CONFIGS = [
     dict(
         name="bonus_game",
         display_name="The Bonus Game",
-        num_demo_participants=3,
+        num_demo_participants=10,
+        # app_sequence=["introduction", "bonus_game", "bret", "debrief", "thanks"],
         app_sequence=["introduction", "bonus_game", "bret", "debrief", "thanks"],
-        # app_sequence=["debrief", "thanks"],
     ),
 ]
 

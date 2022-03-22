@@ -22,7 +22,7 @@ class Constants(BaseConstants):
     players_per_group = None
     num_rounds = 7
 
-    simulated_playing_time = 10
+    simulated_playing_time = 0.5
 
     # Payoffs
     R = c(5)  # Both cooperating

@@ -8,12 +8,10 @@ from .models import Constants
 class PlayerBot(Bot):
     def play_round(self):
 
-        yield pages.Demographics, dict(age=24, gender="Male")
+        yield pages.Instructions_setting
+        yield pages.Instructions_points
+        yield pages.Instructions_example_round
+        yield pages.Instructions_next_steps
+        yield (pages.Attention1, {"q1": 1, "q2": 8, "q3": 2, "q4": 1, "q5": 1})
+        yield pages.Start_game
 
-        yield (
-            pages.CognitiveReflectionTest,
-            dict(crt_bat=10, crt_widget=5, crt_lake=48),
-        )
-
-        for value in [self.player.crt_bat, self.player.payoff]:
-            expect(value, "!=", None)
