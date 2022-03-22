@@ -66,7 +66,7 @@ class Player(BasePlayer):
                 f"{Constants.T}*{Constants.n_players}={Constants.T*Constants.n_players}",
             ],  # correct
         ],
-        label=f"<strong>Q2:</strong> In the payoff matrix above. If you choose <b>D</b> and {Constants.n_players} players chooses <b>C</b> what is your payoff?",
+        label=f"<strong>Q2:</strong> In the payoff matrix above. If you choose <b>D</b> and {Constants.n_players} players choose <b>C</b> what is your payoff?",
         widget=widgets.RadioSelect,
     )
 

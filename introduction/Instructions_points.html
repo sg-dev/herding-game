@@ -7,11 +7,13 @@
     <h4>Point Calculation</h4>
     <br>
     <p>Your earnings will be calculated in two parts.</p>
-    <p><b>First:</b> Depending on your and the other players' choices: You received for each opponent the points shown in the table.</p>
-    <p><b>Second:</b> You receive a Bonus (<b>{{bonus}}</b>) for each player choosing <b>D</b>, <b>if</b> you choose <b>C</b>.
+    <p>The <b>first payoff</b> depends on your and the others' choices. Your choice is the row; the other's choices are the columns. The payoff is the cell in the table corresponding to your and their choice. The total payoff is the sum of all the other players' choices (an example follows).
+    </p>
+    <p>The <b>second</b> payoff is a <em>bonus</em> (<b>{{bonus}}</b>). You receive it for ever player choosing <b>D</b>, <em>if and only if</em> you choose <b>C</b>.
     </p>
     {% include "global/payoff_matrix.html" %}
     <br>
+
 </div>
 
 <br>
