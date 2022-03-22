@@ -19,9 +19,7 @@
 {{ endblock }}
 
 
-{{ block title }}
-    {{ Lexicon.your_decision }}
-{{ endblock }}
+
 
 
 {{ block content }}
@@ -82,22 +80,18 @@
 
                         <div data-ng-if="!bombTaskController.input">
                             <strong>
-                                {{ Lexicon.boxes_collected }}
+                                Collected:
                             </strong>
-                            <span data-ng-bind="bombTaskController.getCollectedBoxes()"></span>
-                            <br>
-                            <strong>
-                                {{ Lexicon.boxes_remaining }}
-                            </strong>
-                            <span data-ng-bind="bombTaskController.getRemainingBoxes()"></span>
+                            <span data-ng-bind="bombTaskController.getCollectedBoxes()"></span>/
+                            {{ C.NUM_BOXES }}
                         </div>
                         <div data-ng-if="bombTaskController.input">
                             <label>
                                 {{ Lexicon.boxes_to_collect }}
 
-                                <input 
-                                    min="0" 
-                                    type="number" 
+                                <input
+                                    min="0"
+                                    type="number"
                                     class="form-control"
                                     data-ng-change="bombTaskController.select()"
                                     data-ng-disabled="bombTaskController.stopped"
@@ -133,7 +127,7 @@
                                 </span>
                             </button>
 
-                            <button 
+                            <button
                                 type="button"
                                 href="javascript:void(0)"
                                 class="btn btn-primary btn-md resolve"
