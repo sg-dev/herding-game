@@ -218,7 +218,7 @@ class Results(Page):
             bomb=player.bomb,
             bomb_row=player.bomb_row,
             bomb_col=player.bomb_col,
-            bomb_location=player.bomb_row * C.NUM_COLS + player.bomb_col,
+            bomb_location=player.bomb_row * (C.NUM_COLS-1) + player.bomb_col,
             round_result=player.round_result,
             round_to_pay=participant.vars["round_to_pay"],
             payoff=player.payoff,
