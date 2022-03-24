@@ -13,7 +13,7 @@ def number_strategies_round(round_number):
 
 class Decision(Page):
     form_model = "player"
-    form_fields = ["decision"]
+    form_fields = ["decision", "time_spent"]
 
     @staticmethod
     def compute_player_payoff(own_choice, n_collaborators, n_defectors):

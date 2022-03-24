@@ -14,7 +14,7 @@ class PlayerBot(Bot):
         coin_flip = ["C", "D"]
         decision = random.choice(coin_flip)
         # sleep(timeout_seconds)
-        yield pages.Decision, dict(decision=decision)
+        yield pages.Decision, dict(decision=decision, time_spent=0)
         yield Submission(pages.ResultsWaitPage, check_html=False)
 
 

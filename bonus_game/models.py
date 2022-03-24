@@ -60,6 +60,7 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+    time_spent = models.FloatField()
     decision = models.CharField(
         choices=["C", "D"],
         doc="""This player's decision""",
