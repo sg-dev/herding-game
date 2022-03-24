@@ -20,13 +20,9 @@ SESSION_CONFIG_DEFAULTS = dict(
     real_world_currency_per_point=0.005, participation_fee=0.00, doc=""
 )
 
-SESSION_FIELDS = [
-    "prolific_completion_url"
-]
+SESSION_FIELDS = ["prolific_completion_url"]
 
-PARTICIPANT_FIELDS = [
-    "finished"
-]
+PARTICIPANT_FIELDS = ["finished"]
 
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans
