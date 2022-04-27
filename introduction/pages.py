@@ -50,6 +50,7 @@ class Instructions_points(Page):
             "bonus": Constants.bonus,
             "Rx3": Constants.R * 3,
             "Sx17": Constants.S * 17,
+            "value_of_200_points": c(200).to_real_world_currency(self.session),
         }
 
 
@@ -70,8 +71,7 @@ class Instructions_example_round(Page):
             + Constants.bonus * 17,
             "Tx3": Constants.T * 3,
             "Px17": Constants.P * 17,
-            "Tx3pPx17": Constants.T * 3 + Constants.P * 17,
-            "value_of_200_points": c(200).to_real_world_currency(self.session),
+            "Tx3pPx17": Constants.T * 3 + Constants.P * 17
         }
 
     def js_vars(self):

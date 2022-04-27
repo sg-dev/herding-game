@@ -12,14 +12,18 @@
     <p>The <b>second</b> payoff is a <em>bonus</em> (<b>{{bonus}}</b>). You receive it for every player choosing <b>D</b>, <em>if and only if</em> you choose <b>C</b>.
     </p>
     {% include "global/payoff_matrix.html" %}
-    <br>
 
+<br>
+    <h3>Note</h3>
+    <p>Conversion rate: 200 points are worth {{ value_of_200_points }}</p>
+    <p>Your actual payoff is a payoff of a randomly chosen round.</p>
+    <br>
+    <br>
+    {% next_button %}
 </div>
 
-<br>
-<br>
 
-{% next_button %}
+
 
 {% endblock %}
 
