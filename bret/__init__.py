@@ -26,14 +26,14 @@ class C(BaseConstants):
 
     # number of rows and columns
     # i.e. the total number of boxes is determined by <num_rows> times <num_cols>
-    NUM_ROWS = 10
+    NUM_ROWS = 2
     NUM_COLS = 10
 
     # box height and box width in pixels
     # make sure that the size of the boxes fits the screen of the device
     # note that the layout is responsive, i.e. boxes will break into new rows if they don't fit
-    BOX_HEIGHT = "20px"
-    BOX_WIDTH = "20px"
+    BOX_HEIGHT = "25px"
+    BOX_WIDTH = "25px"
 
     # number of rounds to be played
     NUM_ROUNDS = 1
@@ -71,7 +71,7 @@ class C(BaseConstants):
 
     # time interval between single boxes being collected (in seconds)
     # note that this only affects game play if <dynamic = True>
-    TIME_INTERVAL = 0.2
+    TIME_INTERVAL = 1
 
     # collect boxes randomly or systematically
     # if <random = False>, boxes are collected row-wise one-by-one, starting in the top-left corner
@@ -218,7 +218,7 @@ class Results(Page):
             bomb=player.bomb,
             bomb_row=player.bomb_row,
             bomb_col=player.bomb_col,
-            bomb_location=player.bomb_row * (C.NUM_COLS - 1) + player.bomb_col,
+            bomb_location=player.bomb_row * (C.NUM_ROWS - 1) + player.bomb_col,
             round_result=player.round_result,
             round_to_pay=participant.vars["round_to_pay"],
             payoff=player.payoff,

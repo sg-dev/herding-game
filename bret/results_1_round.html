@@ -1,9 +1,9 @@
 
-    You collected {{ boxes_collected }} out of {{ C.NUM_BOXES }} boxes. The bomb was in box {{ bomb_location }}.
+    You collected {{ boxes_collected }} boxes. The bomb was in box {{ bomb_location }}.
+    <br>
     {{ if bomb }}
         Unfortunately you collected the bomb 💣 and lost all {{ boxes_collected }} boxes.
     {{ else }}
-        Hurray, you did not collect the bomb.
-        You receive {{ box_value }} x {{ boxes_collected }} boxes = <b>{{ payoff }}</b>
+        You receive {{ payoff }}.
     {{ endif }}
     <br/>
