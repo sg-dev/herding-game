@@ -10,11 +10,16 @@ class Thanks(Page):
         return self.player.round_number == Constants.num_rounds
 
     def vars_for_template(self):
-        # Pass variables to Thanks page
-        cumulative_payoff = self.player.participant.payoff
+        participant = self.participant
+        payoff = participant.payoff
 
         return {
-            "cumulative_payoff": cumulative_payoff.to_real_world_currency(self.session),
+            "round_to_pay_bonus": participant.vars["round_to_pay_bonus"],
+            "payoff_bonus": participant.vars["payoff_bonus_game"],
+            "bret_payoff": participant.vars["bret_payoff"],
+            "payoff": payoff,
+            "real_payoff": payoff.to_real_world_currency(self.session),
+            "points_earned": payoff,
         }
 
 

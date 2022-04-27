@@ -44,11 +44,12 @@ class Decision(Page):
             )
 
             last_payoff = payoff_from_defectors + payoff_from_cooperators
-            player.payoff = last_payoff
+            player.set_payoff(last_payoff)
         else:  # first round
             my_decision = None
             payoff_from_defectors, payoff_from_cooperators = "?", "?"
             last_payoff = "?"
+            player.set_payoff(0)
 
         cumulative_payoff = sum([p.payoff for p in self.player.in_all_rounds()])
 
@@ -69,6 +70,7 @@ class Decision(Page):
             my_decision=my_decision,
             RXnC=Constants.R * n_C,
             SXnD=Constants.S * n_D,
+            round_to_pay=self.player.participant.vars["round_to_pay_bonus"],
         )
 
     def js_vars(self):
@@ -89,7 +91,6 @@ class ResultsWaitPage(Page):
 
     def vars_for_template(self):
         cumulative_payoff = sum([p.payoff for p in self.player.in_all_rounds()])
-
         # Return to template
         return dict(
             R=Constants.R,
@@ -107,6 +108,7 @@ class ResultsWaitPage(Page):
             my_decision="?",
             RXnC="?",
             SXnD="?",
+            round_to_pay=self.player.participant.vars["round_to_pay_bonus"],
         )
 
     def js_vars(self):
@@ -124,51 +126,6 @@ class ResultsWaitPage(Page):
             shuffle=True,
             skip=to_skip,
         )
-
-
-class Debrief(Page):
-    form_model = "player"
-    form_fields = ["debrief", "debrief_2"]
-
-    def vars_for_template(self):
-        cumulative_payoff = sum([p.payoff for p in self.player.in_all_rounds()])
-
-        # Return to template
-        return dict(
-            R=Constants.R,
-            S=Constants.S,
-            T=Constants.T,
-            P=Constants.P,
-            bonus=Constants.bonus,
-        )
-
-    def is_displayed(self):
-        return self.player.round_number == Constants.num_rounds
-
-
-class Thanks(Page):
-    def is_displayed(self):
-        return self.player.round_number == Constants.num_rounds
-
-    def vars_for_template(self):
-        # Pass variables to Thanks page
-        if self.player.debrief == "0-10%" or self.player.debrief == "76-100%":
-            final_message = "The correct answer is 30%, so you were a bit far off :( Good one anyway!"
-        elif self.player.debrief == "11-25%" or self.player.debrief == "51-75%":
-            final_message = (
-                "The correct answer is 30%, so close but not yet there :| Nice try!"
-            )
-        else:
-            final_message = (
-                "Yes, you are right: the correct tax rate is 30% :) Great one!"
-            )
-
-        cumulative_payoff = 0
-        for t in range(Constants.num_rounds):
-            me = self.player.in_round(self.player.round_number - t)
-            cumulative_payoff += me.payoff
-
-        return dict(message=final_message, cumulative_payoff=cumulative_payoff)
 
 
 page_sequence = [Decision, ResultsWaitPage]

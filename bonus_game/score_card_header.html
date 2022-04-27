@@ -7,20 +7,20 @@
                     <ul style="list-style-type: none; padding: 0;">
                         {% if my_decision == 'C' %}
                             <li>
-                                Payoff from <b>C</b>: {{R}} × {{ n_C }} players = {{ RXnC }}
+                                From <b>{{ n_C }} C </b>:  {{ n_C }} × {{R}} = {{ RXnC }}
                             </li>
                             <li>
-                                Payoff from <b>D</b>: {{S}} × {{ n_D }} players = {{ SXnD }}
+                                From <b>{{ n_D }} C </b>: {{ n_D }} × {{S}} = {{ SXnD }}
                             </li>
                             <li>
-                                Bonus: {{ bonus }} × {{ n_D }} players = {{ total_bonus }}.
+                                <b>Bonus:</b> {{ n_D }} players × {{ bonus }}  = {{ total_bonus }}.
                             </li>
                         {% else if my_decision == 'D' %}
                             <li>
-                                Payoff from <b>C</b>: {{T}} × {{ n_C }} players = {{ coop_payoff }}
+                                From <b>C</b>: {{T}} × {{ n_C }} players = {{ coop_payoff }}
                             </li>
                             <li>
-                                Payoff from <b>D</b>: {{
+                                From <b>D</b>: {{
                                 P }} × {{ n_D }} players = {{ def_payoff }}
                             </li>
                             <li>
@@ -33,10 +33,13 @@
                 <div class="col-4 ml-auto" style="text-align:right;">
                     <ul style="list-style-type: none; padding: 0;">
                         <li>
-                            Points: <b>{{coop_payoff }} + {{ def_payoff }} = {{ last_payoff }}</b>
+                            <b>{{coop_payoff }}</b>
                         </li>
                         <li>
-                            <b> Running total: {{ cumulative_payoff }}</b>
+                            <b>+ {{ def_payoff }}</b>
+                        </li>
+                        <li style="border-top: 1px solid black">
+                            Total: <b>{{ last_payoff }}</b>
                         </li>
                     </ul>
                 </div>

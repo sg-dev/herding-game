@@ -8,8 +8,6 @@ from otree.api import (
     Currency as c,
 )
 
-import random
-
 doc = """
 The Bonus game docs
 """

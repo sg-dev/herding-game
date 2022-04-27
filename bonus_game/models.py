@@ -22,7 +22,7 @@ class Constants(BaseConstants):
     players_per_group = None
     num_rounds = 7
 
-    simulated_playing_time = 5
+    simulated_playing_time = 1
 
     # Payoffs
     R = c(6)  # Both cooperating
@@ -61,46 +61,26 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     time_spent = models.FloatField()
+    potential_payoff = models.CurrencyField()
     decision = models.CharField(
         choices=["C", "D"],
         doc="""This player's decision""",
         widget=widgets.RadioSelect(),
     )
 
-    # debrief = models.StringField(
-    #     choices=[
-    #         ["only_c", "Mostly play C"],
-    #         ["only_d", "Mostly play D"],
-    #         ["minority", "Follow the minority's strategy"],
-    #         ["majority", "Follow the majority's strategy"],
-    #         ["random", "Randomly choose between C and D"],
-    #         ["sophisticated", "Following a more complex strategy"],
-    #     ],
-    #     label="Which describes your strategy best?",
-    #     widget=widgets.RadioSelect,
-    # )
+    # set random payoff round
+    def set_payoff(self, payoff):
+        self.potential_payoff = payoff
 
-    # debrief_2 = models.StringField(
-    #     choices=[
-    #         ["only_c", "Mostly play C"],
-    #         ["only_d", "Mostly play D"],
-    #         ["minority", "Follow the minority's strategy"],
-    #         ["majority", "Follow the majority's strategy"],
-    #         ["random", "Randomly choose between C and D"],
-    #         ["sophisticated", "Following a more complex strategy"],
-    #     ],
-    #     label="How, do you think most of your opponents chose?",
-    #     widget=widgets.RadioSelect,
-    # )
+        if self.round_number == 1:
+            self.participant.vars["round_to_pay_bonus"] = random.randint(
+                1, Constants.num_rounds
+            )
 
-    # debrief = models.StringField(
-    #     choices=[
-    #         [1, "0-20%"],
-    #         [2, "20-40%"],
-    #         [3, "40-60%"],
-    #         [4, "60-80%"],
-    #         [5, "80-100%"],
-    #     ],
-    #     label='How large should the group to follow be?',
-    #     widget=widgets.RadioSelect,
-    # )
+        if self.participant.vars["round_to_pay_bonus"] == self.round_number:
+            # actually pay this round
+            self.payoff += payoff
+            self.participant.vars["payoff_bonus_game"] = payoff
+        else:
+            # do not pay this round
+            self.payoff += 0
