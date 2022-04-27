@@ -25,10 +25,10 @@ class Constants(BaseConstants):
     simulated_playing_time = 5
 
     # Payoffs
-    R = c(5)  # Both cooperating
+    R = c(6)  # Both cooperating
     S = c(0)  # The one cooperating and the other defecting
-    T = c(8)  # The one defecting and the other cooperating
-    P = c(1)  # Both defecting
+    T = c(10)  # The one defecting and the other cooperating
+    P = c(0)  # Both defecting
 
     # Bonus for cooperators
     bonus = c(4)
