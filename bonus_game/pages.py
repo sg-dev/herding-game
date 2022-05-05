@@ -19,11 +19,11 @@ class Decision(Page):
     def compute_player_payoff(own_choice, n_collaborators, n_defectors):
         payoff_from_defectors = 0
         payoff_from_cooperators = 0
-        if own_choice == "C":
+        if own_choice == "A":
             payoff_from_cooperators += n_collaborators * Constants.R
             payoff_from_defectors += n_defectors * Constants.S
             payoff_from_defectors += n_defectors * Constants.bonus
-        elif own_choice == "D":
+        elif own_choice == "B":
             payoff_from_defectors += n_defectors * Constants.P
             payoff_from_cooperators += n_collaborators * Constants.T
         else:

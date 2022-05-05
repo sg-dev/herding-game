@@ -1,11 +1,9 @@
-from otree.api import Currency as c, currency_range, expect
+from otree.api import Currency as c
 from otree.bots import Submission
 
-from bonus_game.pages import Thanks
 from . import pages
 from ._builtin import Bot
 from .models import Constants
-import random
 
 
 class PlayerBot(Bot):

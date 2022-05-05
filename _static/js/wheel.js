@@ -29,8 +29,8 @@ function shuffle(array) {
     return array.sort(() => Math.random() - 0.5);
 }
 
-var playing_c = Array(nC).fill('C')
-var playing_d = Array(neigh_size - nC).fill('D')
+var playing_c = Array(nC).fill('A')
+var playing_d = Array(neigh_size - nC).fill('B')
 var strategies = playing_c.concat(playing_d)
 
 if (js_vars.shuffle == true) {
@@ -52,7 +52,7 @@ for (var i = 1; i <= neigh_size; i++) {
     var unit_shift = 360 / neigh_size;
     var playerRotation = unit_shift * (i - 1) + unit_shift / 2;
     var strategy = strategies[i - 1]
-    if (strategy == 'C') {
+    if (strategy == 'A') {
         var strategyColor = '#f1a340'
         var lolli = draw_lollipop(i, strategy)
     } else {
@@ -75,4 +75,4 @@ for (var i = 1; i <= neigh_size; i++) {
 }
 
 var me = draw.circle(100).move(DX / 2 - 50, DY / 2 - 50).attr({ fill: '#f7f7f7' });
-var playerStrategy = draw.text("You").attr({ x: DX / 2, y: DY / 2 }).font({ anchor: "middle", size: 30 }).attr({ fill: "black" });
+var playerStrategy = draw.text("You").attr({ x: DX / 2, y: DY / 2 +12 }).font({ anchor: "middle", size: 30 }).attr({ fill: "black" });

@@ -26,7 +26,7 @@ class C(BaseConstants):
 
     # number of rows and columns
     # i.e. the total number of boxes is determined by <num_rows> times <num_cols>
-    NUM_ROWS = 2
+    NUM_ROWS = 10
     NUM_COLS = 10
 
     # box height and box width in pixels
@@ -71,7 +71,7 @@ class C(BaseConstants):
 
     # time interval between single boxes being collected (in seconds)
     # note that this only affects game play if <dynamic = True>
-    TIME_INTERVAL = 1
+    TIME_INTERVAL = .2
 
     # collect boxes randomly or systematically
     # if <random = False>, boxes are collected row-wise one-by-one, starting in the top-left corner

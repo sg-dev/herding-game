@@ -63,7 +63,7 @@ class Player(BasePlayer):
     time_spent = models.FloatField()
     potential_payoff = models.CurrencyField()
     decision = models.CharField(
-        choices=["C", "D"],
+        choices=["A", "B"],
         doc="""This player's decision""",
         widget=widgets.RadioSelect(),
     )

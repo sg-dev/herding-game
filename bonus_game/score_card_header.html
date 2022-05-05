@@ -5,22 +5,22 @@
             <div class="row">
                 <div class="col-8 float-start">
                     <ul style="list-style-type: none; padding: 0;">
-                        {% if my_decision == 'C' %}
+                        {% if my_decision == 'A' %}
                             <li>
-                                From <b>{{ n_C }} C </b>:  {{ n_C }} × {{R}} = {{ RXnC }}
+                                From <b>A</b>:  {{ n_C }} × {{R}} = {{ RXnC }}
                             </li>
                             <li>
-                                From <b>{{ n_D }} C </b>: {{ n_D }} × {{S}} = {{ SXnD }}
+                                From <b>B</b>: {{ n_D }} × {{S}} = {{ SXnD }}
                             </li>
                             <li>
                                 <b>Bonus:</b> {{ n_D }} players × {{ bonus }}  = {{ total_bonus }}.
                             </li>
-                        {% else if my_decision == 'D' %}
+                        {% else if my_decision == 'B' %}
                             <li>
-                                From <b>C</b>: {{T}} × {{ n_C }} players = {{ coop_payoff }}
+                                From <b>A</b>: {{T}} × {{ n_C }} players = {{ coop_payoff }}
                             </li>
                             <li>
-                                From <b>D</b>: {{
+                                From <b>B</b>: {{
                                 P }} × {{ n_D }} players = {{ def_payoff }}
                             </li>
                             <li>

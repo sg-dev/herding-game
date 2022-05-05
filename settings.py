@@ -6,7 +6,6 @@ SESSION_CONFIGS = [
         name="bonus_game",
         display_name="The Bonus Game",
         num_demo_participants=10,
-        # app_sequence=["introduction", "bonus_game", "bret", "debrief", "thanks"],
         app_sequence=["introduction", "bonus_game", "bret", "debrief", "thanks"],
     ),
 ]

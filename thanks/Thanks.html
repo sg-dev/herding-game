@@ -17,10 +17,11 @@
                     In the bomb game you earned <b>{{bret_payoff}}</b>.
                 </p>
                 <br>
-                <h4>In total you earned {{ payoff }} worth</h4>
+                <h4>In total you earned a bonus of {{ payoff }} worth</h4>
                 <h2>{{ real_payoff }}</h2>
+                <p>This is <b>in addition</b> to the show-up fee.</p>
                 <br>
-                <a href="{ session.prolific_completion_url }}"><span class="btn btn-primary submit">Click here to complete the study</button></span></a>
+                <a href="{{ session.prolific_completion_url }}"><span class="btn btn-primary submit">Click here to complete the study</button></span></a>
             </div>
         </div>
     </div>

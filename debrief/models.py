@@ -33,20 +33,14 @@ class Constants(BaseConstants):
 
 
 class Player(BasePlayer):
-    decision = models.CharField(
-        choices=["C", "D"],
-        doc="""This player's decision""",
-        widget=widgets.RadioSelect(),
-    )
-
     debrief = models.StringField(
         choices=[
-            ["only_c", "Mostly play C"],
-            ["only_d", "Mostly play D"],
-            ["minority", "Follow the minority's strategy"],
-            ["majority", "Follow the majority's strategy"],
-            ["random", "Randomly choose between C and D"],
-            ["sophisticated", "Following an other strategy"],
+            ["only_c", "I mostly played A (choice yielding a bonus)"],
+            ["only_d", "I mostly played B (choice without a bonus)"],
+            ["minority", "I followed the minority's strategy"],
+            ["majority", "I followed the majority's strategy"],
+            ["random", "I randomly choose between A and B"],
+            ["sophisticated", "I followed a different strategy"],
         ],
         label="Which describes your strategy best?",
         widget=widgets.RadioSelect,
@@ -54,12 +48,12 @@ class Player(BasePlayer):
 
     debrief_2 = models.StringField(
         choices=[
-            ["only_c", "Mostly play C"],
-            ["only_d", "Mostly play D"],
-            ["minority", "Follow the minority's strategy"],
-            ["majority", "Follow the majority's strategy"],
-            ["random", "Randomly choose between C and D"],
-            ["sophisticated", "Following an other strategy"],
+            ["only_c", "The others mostly played A"],
+            ["only_d", "The others mostly played B"],
+            ["minority", "They followed the minority's strategy"],
+            ["majority", "They followed the majority's strategy"],
+            ["random", "They randomly choose between A and B"],
+            ["sophisticated", "They followed a different strategy"],
         ],
         label="How, do you think most of your opponents chose?",
         widget=widgets.RadioSelect,

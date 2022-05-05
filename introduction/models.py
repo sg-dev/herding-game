@@ -63,7 +63,7 @@ class Player(BasePlayer):
                 f"{Constants.T}*{Constants.n_players}={Constants.T*Constants.n_players}",
             ],  # correct
         ],
-        label=f"<strong>Q2:</strong> In the payoff matrix above. If you choose <b>D</b> and {Constants.n_players} players choose <b>C</b> what is your payoff?",
+        label=f"<strong>Q2:</strong> In the payoff matrix above. If you choose <b>B</b> and {Constants.n_players} players choose <b>A</b> what is your payoff?",
         widget=widgets.RadioSelect,
     )
 
@@ -79,7 +79,7 @@ class Player(BasePlayer):
     )
 
     q4 = models.StringField(
-        choices=[[1, "C"], [2, "D"], [3, "C and D"], [4, "Neither C nor D"]],
+        choices=[[1, "A"], [2, "B"], [3, "A and B"], [4, "Neither A nor B"]],
         label="<strong>Q4:</strong> Which choice entitles you to get bonus points?",
         widget=widgets.RadioSelect,
     )
@@ -88,12 +88,12 @@ class Player(BasePlayer):
         choices=[
             [
                 1,
-                f'I get an extra {Constants.bonus} for each player choosing "D" if I choose "C".',
+                f'I get an extra {Constants.bonus} for each player choosing "B" if I choose "A".',
             ],
-            [2, f'I get an extra {Constants.R} per player choosing "C".'],
+            [2, f'I get an extra {Constants.R} per player choosing "A".'],
             [
                 3,
-                f'I get an extra {Constants.S} per player choosing "C" if I choose "D".',
+                f'I get an extra {Constants.R} per player choosing "A" if I choose "B".',
             ],
         ],
         label="<strong>Q5:</strong> Which of the following statements is correct?",
