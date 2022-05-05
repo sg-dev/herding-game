@@ -11,15 +11,23 @@ class Thanks(Page):
 
     def vars_for_template(self):
         participant = self.participant
-        payoff = participant.payoff
+        bonus_game_points = participant.vars["payoff_bonus_game"]
+        bret_game_points = participant.vars["bret_payoff"]
+        game_points = participant.payoff
+        real_participation_fee = self.session.config["participation_fee"]
+        real_game_payoff = game_points.to_real_world_currency(self.session)
+        total_real_payout = real_game_payoff + real_participation_fee
+
+        bonus_round_paid = participant.vars["round_to_pay_bonus"]
 
         return {
-            "round_to_pay_bonus": participant.vars["round_to_pay_bonus"],
-            "payoff_bonus": participant.vars["payoff_bonus_game"],
-            "bret_payoff": participant.vars["bret_payoff"],
-            "payoff": payoff,
-            "real_payoff": payoff.to_real_world_currency(self.session),
-            "points_earned": payoff,
+            "bonus_game_points": bonus_game_points,
+            "round_to_pay_bonus": bonus_round_paid,
+            "bret_game_points": bret_game_points,
+            "game_points": game_points,
+            "game_payoff": real_game_payoff,
+            "real_participation_fee": real_participation_fee,
+            "total_real_payout": total_real_payout
         }
 
 

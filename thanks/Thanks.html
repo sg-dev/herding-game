@@ -11,17 +11,16 @@
                 <br>
                 <br>
                 <p>
-                    In the Bonus game round <b>{{ round_to_pay_bonus}}</b> was chosen at radom for your payoff.<br>In that round you earned <b>{{payoff_bonus}}</b>.
-                </p>
-                <p>
-                    In the bomb game you earned <b>{{bret_payoff}}</b>.
+                    In the Bonus game round <b>{{ round_to_pay_bonus}}</b> was chosen at radom for your payoff.<br>In that round you earned <b>{{bonus_game_points}}</b>.
+                    <br>In the bomb game you earned <b>{{bret_game_points}}</b>.
                 </p>
                 <br>
-                <h4>In total you earned a bonus of {{ payoff }} worth</h4>
-                <h2>{{ real_payoff }}</h2>
-                <p>This is <b>in addition</b> to the show-up fee.</p>
+                <h3>You earned {{ total_real_payout }}</h3>
+                <p>Bonus: <b>{{ game_payoff }}</b> ({{ game_points }})
+                </p>
+                <p>Participation fee: <b>{{ real_participation_fee }}</b></p>
                 <br>
-                <a href="{{ session.prolific_completion_url }}"><span class="btn btn-primary submit">Click here to complete the study</button></span></a>
+                <a href="{ session.prolific_completion_url }}"><span class="btn btn-primary submit">Click here to complete the study</button></span></a>
             </div>
         </div>
     </div>

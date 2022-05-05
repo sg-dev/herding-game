@@ -35,32 +35,32 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     q1 = models.StringField(
         choices=[
-            [1, "1 action against all other players."],
-            [2, f"1 for every player. {Constants.n_players} in total."],
-            [3, "No choice, it is automatic."],
-            [4, f"2 for every player. {2*Constants.n_players} in total."],
+            [1, "1: A single action against all other players"],
+            [3, "0: None. I don't have to choose."],
+            [2, f"{Constants.n_players}: 1 for every player."],
+            [4, f"{2*Constants.n_players}: 2 for every player."],
         ],
         label="<strong>Q1:</strong> In each round, how many actions do you choose?",
-        widget=widgets.RadioSelect,
+        widget=widgets.RadioSelect
     )
 
     q2 = models.StringField(
         choices=[
             [
                 1,
-                f"{Constants.R}*{Constants.n_players}={Constants.R*Constants.n_players}",
+                f"{Constants.n_players} × {Constants.R} = {Constants.R*Constants.n_players}",
             ],
             [
                 3,
-                f"{Constants.bonus}*{Constants.n_players}={Constants.bonus*Constants.n_players}",
+                f"{Constants.n_players} × {Constants.bonus} = {Constants.bonus*Constants.n_players}",
             ],
             [
                 5,
-                f"{Constants.S}*{Constants.n_players}={Constants.S*Constants.n_players}",
+                f"{Constants.n_players} × {Constants.S} = {Constants.S*Constants.n_players}",
             ],
             [
                 8,
-                f"{Constants.T}*{Constants.n_players}={Constants.T*Constants.n_players}",
+                f"{Constants.n_players} × {Constants.T} = {Constants.T*Constants.n_players}",
             ],  # correct
         ],
         label=f"<strong>Q2:</strong> In the payoff matrix above. If you choose <b>B</b> and {Constants.n_players} players choose <b>A</b> what is your payoff?",
@@ -88,12 +88,12 @@ class Player(BasePlayer):
         choices=[
             [
                 1,
-                f'I get an extra {Constants.bonus} for each player choosing "B" if I choose "A".',
+                f'I get an extra {Constants.bonus} for each player choosing B if I choose A.',
             ],
-            [2, f'I get an extra {Constants.R} per player choosing "A".'],
+            [2, f'I get an extra {Constants.R} per player choosing A.'],
             [
                 3,
-                f'I get an extra {Constants.R} per player choosing "A" if I choose "B".',
+                f'I get an extra {Constants.R} per player choosing A if I choose B.',
             ],
         ],
         label="<strong>Q5:</strong> Which of the following statements is correct?",
