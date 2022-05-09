@@ -7,26 +7,34 @@
                     <ul style="list-style-type: none; padding: 0;">
                         {% if my_decision == 'A' %}
                             <li>
-                                From <b>A</b>:  {{ n_C }} × {{R}} = {{ RXnC }}
+                                From <b>A</b>: {{R}} × {{ n_C }} = {{ RXnC }}
                             </li>
                             <li>
-                                From <b>B</b>: {{ n_D }} × {{S}} = {{ SXnD }}
+                                From <b>B</b>: {{S}} × {{ n_D }} = {{ SXnD }}
                             </li>
                             <li>
-                                <b>Bonus:</b> {{ n_D }} players × {{ bonus }}  = {{ total_bonus }}.
+                                <b>Bonus:</b> {{ bonus }} × {{ n_D }} = {{ total_bonus }}
                             </li>
-                        {% else if my_decision == 'B' %}
+                        {% elif my_decision == 'B' %}
                             <li>
-                                From <b>A</b>: {{T}} × {{ n_C }} players = {{ coop_payoff }}
-                            </li>
-                            <li>
-                                From <b>B</b>: {{
-                                P }} × {{ n_D }} players = {{ def_payoff }}
+                                From <b>A</b>: {{T}} × {{ n_C }} = {{ coop_payoff }}
                             </li>
                             <li>
-                                No bonus points.
+                                From <b>B</b>: {{ P }} × {{ n_D }} = {{ def_payoff }}
+                            </li>
+                            <li>
+                                <b>Bonus:</b> No bonus points.
                             </li>
                         {% else %}
+                        <li>
+                            From <b>A</b>: ?
+                        </li>
+                        <li>
+                            From <b>B</b>: ?
+                        </li>
+                        <li>
+                            <b>Bonus:</b> ?
+                        </li>
                         {% endif %}
                     </ul>
                 </div>

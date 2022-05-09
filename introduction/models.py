@@ -88,12 +88,12 @@ class Player(BasePlayer):
         choices=[
             [
                 1,
-                f'I get an extra {Constants.bonus} for each player choosing B if I choose A.',
+                f'I get a bonus of {Constants.bonus} for each player choosing B if I choose A.',
             ],
-            [2, f'I get an extra {Constants.R} per player choosing A.'],
+            [2, f'I get a bonus of {Constants.R} for each player choosing A.'],
             [
                 3,
-                f'I get an extra {Constants.R} per player choosing A if I choose B.',
+                f'I get a bonus of {Constants.R} for each player choosing A if I choose B.',
             ],
         ],
         label="<strong>Q5:</strong> Which of the following statements is correct?",

@@ -93,6 +93,12 @@ class ResultsWaitPage(Page):
     def vars_for_template(self):
         cumulative_payoff = sum([p.payoff for p in self.player.in_all_rounds()])
         # Return to template
+        round_number = self.player.round_number
+        if round_number >= 1:
+            my_decision = self.player.in_round(round_number).decision
+        else:
+            my_decision = None
+
         return dict(
             R=Constants.R,
             S=Constants.S,
@@ -106,7 +112,7 @@ class ResultsWaitPage(Page):
             total_bonus="?",
             last_payoff="?",
             cumulative_payoff=cumulative_payoff,
-            my_decision="?",
+            my_decision=my_decision,
             RXnC="?",
             SXnD="?",
             round_to_pay=self.player.participant.vars["round_to_pay_bonus"],

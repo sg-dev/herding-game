@@ -1,6 +1,6 @@
 /*!
  * BOMB RISK ELICITATION TASK (BRET) APP
- * 
+ *
  * @author Armin Pfurtscheller
  * @license MIT
  */
@@ -117,8 +117,8 @@
 			// by given time interval, so
 			// by random order or rows
 			if( this.dynamic )
-			{				
-				var me = this, 
+			{
+				var me = this,
 					max = this.iterator.length;
 
 				this._intIndex = index || 0;
@@ -150,7 +150,7 @@
 		{
 			if( this.dynamic && this._intervalId )
 				this.$interval.cancel(this._intervalId);
-			
+
 			if( !this.feedback ) // @see: template!
 				this.resolved = true;
 
@@ -183,7 +183,7 @@
 			{
 				if( index<0 )
 					this.collection.push(column);
-				
+
 				column.$$active = true;
 			}
 			else
@@ -364,7 +364,7 @@
 					var column = this._getColumn(
 						state.iterator[i]
 					);
-					
+
 					this.iterator.push(column);
 				}
 			}
@@ -416,11 +416,11 @@
 	 */
 	BombTaskController.prototype._initMembers = function()
 		{
-			this.collection = [];			
+			this.collection = [];
 			this.started = false;
 			this.stopped = false;
 			this.resolved = false;
-			
+
 			this.input_value = 0;
 		};
 
@@ -461,9 +461,9 @@
 				var columns = [];
 				for( var j=0; j<this.cols; j++ )
 				{
-					var data = { 
-						row: i+1, 
-						col: j+1 
+					var data = {
+						row: i+1,
+						col: j+1
 					};
 
 					columns.push(data);
@@ -580,7 +580,7 @@
 	 * @var {Boolean} isClickable Cards clickability.
 	 */
 	CardController.prototype.isClickable = true;
-	
+
 	/**
 	 * Toggles card's current activity state.
 	 * @return {Void}
@@ -614,6 +614,6 @@
 		};
 
 	});
-	
+
 
 })(angular);

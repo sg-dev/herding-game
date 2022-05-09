@@ -112,6 +112,15 @@ class Attention1(Page):
             "is_in_deception_regime": self.session.config["deception"]
         }
 
+    def js_vars(self):
+        return {
+            "neigh_size": Constants.n_players,
+            "nC": 10,
+            "secAnimation": 0,
+            "shuffle": False,
+            "skip": 0,
+        }
+
     def error_message(self, values):
         q = {"q1": 1, "q2": 8, "q3": 2, "q4": 1, "q5": 1}
         incorrect = []

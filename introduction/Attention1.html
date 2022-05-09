@@ -7,13 +7,22 @@
 
 {% block content %}
 
+
+    <div container="container">
+        <div class="row">
+            <div class="col float-start">
+                {{ include "global/game-wheel.html" }}
+            </div>
+            <div class="col float-end align-self-center">
+                  {{ include "global/payoff_matrix.html" }}
+            </div>
+        </div>
+    </div>
+    <br>
     <p>
         <b>Please answer the following questions.</b>
     </p>
-
-    {{ include "global/payoff_matrix.html" }}
-
-    {% formfields %}
+      {% formfields %}
 
     <br>
     <button class="otree-btn-next btn btn-primary btn-block">Submit Answers</button>

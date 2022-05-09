@@ -16,14 +16,11 @@
         <div class="col float-start">
             {{ include "global/game-wheel.html" }}
         </div>
-        <div class="col ml-auto">
-            <div class="form-group required">
-              {% include "global/payoff_matrix.html" %}
-            </div>
-            <br>
+        <div class="col float-end align-self-center">
+              {{ include "global/payoff_matrix.html" }}
         </div>
     </div>
-  </div>
+</div>
 </div>
     <br>
     {{ if is_in_deception_regime }}
@@ -34,37 +31,37 @@
 
     {{ if is_in_deception_regime }}
     <br>
-    <h5>You chose <b>A</b></h5>
+    <h5>If you chose <b>A</b></h5>
     <ol>
         <li>For each player choosing <b>A</b> you earn {{ R }} &#8594; {{ R }} &times; 3 = {{ Rx3 }}</li>
         <li>For each player choosing <b>B</b> you earn {{S}} &#8594; {{S}} &times; 17 = {{Sx17}} </li>
-        <li>Direct payoff &#8594; {{Rx3}} + {{Sx17}} = {{Rx3pSx17}}</li>
+        <li>First payoff &#8594; {{Rx3}} + {{Sx17}} = {{Rx3pSx17}}</li>
         <li>You chose A, so you get a bonus of {{bonus}} for each <b>B</b> &#8594; {{bonus}} &times; 17 = {{bonusx17}}</li>
     </ol>
-    <p>Payoff: {{Rx3pSx17}} + {{bonusx17}}  = <strong>{{Rx3pSx17pbonusx17}}</strong><p>
-        <h5>You chose <b>B</b></h5>
+    <p>Total: {{Rx3pSx17}} + {{bonusx17}}  = <strong>{{Rx3pSx17pbonusx17}}</strong><p>
+    <h5>If you chose <b>B</b></h5>
     <ol>
-        <li>For each player choosing to <b>A</b> you earn {{T}} &#8594; {{T}} &times; 3 = {{Tx3}} </li>
-        <li>For each player choosing to <b>B</b> you earn {{P}} &#8594; {{P}} &times; 17 = {{Px17}} </li>
-        <li>Since you chose to <b>B</b> you do not get a bonus.</li>
+        <li>For each player choosing<b>A</b> you earn {{T}} &#8594; {{T}} &times; 3 = {{Tx3}} </li>
+        <li>For each player choosing<b>B</b> you earn {{P}} &#8594; {{P}} &times; 17 = {{Px17}} </li>
+        <li>Since you chose <b>B</b>, you do not get a bonus.</li>
     </ol>
-    <p>Payoff: {{Tx3}} + {{Px17}} = <strong>{{Tx3pPx17}}</strong><p>
+    <p>Total: {{Tx3}} + {{Px17}} = <strong>{{Tx3pPx17}}</strong><p>
     <br>
     {{ else }}
     <br>
-    <h5>You chose <b>A</b></h5>
+    <h5>If you chose <b>A</b></h5>
     <ol>
         <li>For each bot choosing <b>A</b> you earn {{ R }} &#8594; {{ R }} &times; 3 = {{ Rx3 }}</li>
         <li>For each bot choosing <b>B</b> you earn {{S}} &#8594; {{S}} &times; 17 = {{Sx17}} </li>
-        <li>Direct payoff &#8594; {{Rx3}} + {{Sx17}} = {{Rx3pSx17}}</li>
+        <li>First payoff &#8594; {{Rx3}} + {{Sx17}} = {{Rx3pSx17}}</li>
         <li>You chose A, so you get a bonus of {{bonus}} for each <b>B</b> &#8594; {{bonus}} &times; 17 = {{bonusx17}}</li>
     </ol>
-    <p>Payoff: {{Rx3pSx17}} + {{bonusx17}}  = <strong>{{Rx3pSx17pbonusx17}}</strong><p>
-        <h5>You chose <b>B</b></h5>
+    <p>Total: {{Rx3pSx17}} + {{bonusx17}}  = <strong>{{Rx3pSx17pbonusx17}}</strong><p>
+    <h5>If you chose <b>B</b></h5>
     <ol>
-        <li>For each bot choosing to <b>A</b> you earn {{T}} &#8594; {{T}} &times; 3 = {{Tx3}} </li>
-        <li>For each bot choosing to <b>B</b> you earn {{P}} &#8594; {{P}} &times; 17 = {{Px17}} </li>
-        <li>Since you chose to <b>B</b> you do not get a bonus.</li>
+        <li>For each bot choosing<b>A</b> you earn {{T}} &#8594; {{T}} &times; 3 = {{Tx3}} </li>
+        <li>For each bot choosing<b>B</b> you earn {{P}} &#8594; {{P}} &times; 17 = {{Px17}} </li>
+        <li>Since you chose <b>B</b>, you do not get a bonus.</li>
     </ol>
     <p>Payoff: {{Tx3}} + {{Px17}} = <strong>{{Tx3pPx17}}</strong><p>
     <br>
