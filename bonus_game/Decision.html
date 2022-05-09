@@ -17,7 +17,11 @@
 <div>
   <div container="container">
         <div style="margin: auto; text-align:center;">
-            <i><b>Last</b> round</i>&nbsp;&nbsp;<b>A:</b> {{ n_C }} -  <b>B:</b> {{ n_D }}
+            {{ if is_in_deception_regime }}
+            <i><b>Last</b> round</i>&nbsp;&nbsp;{{ n_C }} played <b>A</b> - {{ n_D }} played <b>B</b>
+            {{ else }}
+            <i><b>Last</b> round</i>&nbsp;&nbsp;{{ n_C }} bots played <b>A</b> - {{ n_D }} bots played <b>B</b>
+            {{ endif }}
             {{ include "global/game-wheel.html" }}
         </div>
         <div class="col ml-auto">

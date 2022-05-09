@@ -20,14 +20,13 @@ num_all_players = 60
 class Constants(BaseConstants):
     name_in_url = "bonus_game"
     players_per_group = None
-    num_rounds = 7
 
     simulated_playing_time = 1
 
     # Payoffs
     R = c(6)  # Both cooperating
     S = c(0)  # The one cooperating and the other defecting
-    T = c(10)  # The one defecting and the other cooperating
+    T = c(10) # The one defecting and the other cooperating
     P = c(0)  # Both defecting
 
     # Bonus for cooperators
@@ -37,7 +36,8 @@ class Constants(BaseConstants):
     neigh_size = 20
 
     # Fraction of defectors
-    strategy_schedule = [18, 14, 12, 10, 8, 6, 6, 6, 6, 6]
+    strategy_schedule = [18, 14, 12, 10, 8, 6, 6, 6]
+    num_rounds = len(strategy_schedule)-1
 
     # Create extended lists of fractions and randomly assing them
 

@@ -70,6 +70,7 @@ class Decision(Page):
             my_decision=my_decision,
             RXnC=Constants.R * n_C,
             SXnD=Constants.S * n_D,
+            is_in_deception_regime=self.session.config["deception"],
             round_to_pay=self.player.participant.vars["round_to_pay_bonus"],
         )
 
@@ -109,6 +110,7 @@ class ResultsWaitPage(Page):
             RXnC="?",
             SXnD="?",
             round_to_pay=self.player.participant.vars["round_to_pay_bonus"],
+            is_in_deception_regime=self.session.config["deception"],
         )
 
     def js_vars(self):

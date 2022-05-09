@@ -14,6 +14,7 @@ class Instructions1(Page):
             "bonus": Constants.bonus,
             "Rx3": Constants.R * 3,
             "Sx17": Constants.S * 17,
+            "is_in_deception_regime": self.session.config["deception"]
         }
 
 
@@ -28,6 +29,7 @@ class Instructions_setting(Page):
             "n_C": 10,
             "n_D": 10,
             "n_C_1": 9,
+            "is_in_deception_regime": self.session.config["deception"]
         }
 
     def js_vars(self):
@@ -37,6 +39,7 @@ class Instructions_setting(Page):
             "secAnimation": 0.2,
             "shuffle": False,
             "skip": 0,
+            "is_in_deception_regime": self.session.config["deception"]
         }
 
 
@@ -51,6 +54,7 @@ class Instructions_points(Page):
             "Rx3": Constants.R * 3,
             "Sx17": Constants.S * 17,
             "value_of_200_points": c(200).to_real_world_currency(self.session),
+            "is_in_deception_regime": self.session.config["deception"]
         }
 
 
@@ -71,7 +75,8 @@ class Instructions_example_round(Page):
             + Constants.bonus * 17,
             "Tx3": Constants.T * 3,
             "Px17": Constants.P * 17,
-            "Tx3pPx17": Constants.T * 3 + Constants.P * 17
+            "Tx3pPx17": Constants.T * 3 + Constants.P * 17,
+            "is_in_deception_regime": self.session.config["deception"]
         }
 
     def js_vars(self):
@@ -104,6 +109,7 @@ class Attention1(Page):
             "T": Constants.T,
             "P": Constants.P,
             "bonus": Constants.bonus,
+            "is_in_deception_regime": self.session.config["deception"]
         }
 
     def error_message(self, values):

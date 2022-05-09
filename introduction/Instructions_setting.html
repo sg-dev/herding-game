@@ -5,12 +5,29 @@
 <div class="card card-body bg-light instructions">
     <h4>The Game</h4>
     <br>
+    {{ if is_in_deception_regime}}
     <p>
-        You will join an ongoing game playing against 20 players in real-time. The other players will be waiting until you have completed your round, so please be considerate. In each round, you will be asked to choose one of two actions: <b>A</b> or <b>B</b>. This choice will be played against all other players simultaneously.
+        You will join an ongoing game playing against 20 players <b>in real-time</b>.
+        The other players will be waiting until you have completed your round, so please be considerate.
+        In each round you choose one of two actions: <b>A</b> or <b>B</b>.
+        This choice will be played against all other players simultaneously.
     </p>
     <p>
-        You choose <b>one action</b> to play against each player simultaneously. The <b>actions</b> in the </b>last round</b> are summarised in the image below.
-    {{ include "global/game-wheel.html" }}
+        <b>You choose one action</b> to play against each player simultaneously.
+        The actions of the <b>other players in the last round</b> are summarised in the image below.
+    </p>
+    {{ else }}
+    <p>
+        You will play game against 20 <b>robot players, i.e., non-human players</b>—bot for short.
+        In each round you choose one of two actions: <b>A</b> or <b>B</b>.
+        This choice will be played against all other robots simultaneously.
+    </p>
+    <p>
+        <b>You choose one action</b> to play against each bot simultaneously.
+        The actions of the <b>bots in the last round</b> are summarised in the image below.
+    </p>
+    {{ endif }}
+        {{ include "global/game-wheel.html" }}
 </div>
 <br>
 {% next_button %}
