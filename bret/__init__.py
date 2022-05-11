@@ -71,7 +71,7 @@ class C(BaseConstants):
 
     # time interval between single boxes being collected (in seconds)
     # note that this only affects game play if <dynamic = True>
-    TIME_INTERVAL = .3
+    TIME_INTERVAL = 0.3
 
     # collect boxes randomly or systematically
     # if <random = False>, boxes are collected row-wise one-by-one, starting in the top-left corner
@@ -155,10 +155,9 @@ class Instructions(Page):
         return dict(
             num_nobomb=C.NUM_BOXES - 1,
             Lexicon=Lexicon,
-            real_value_100pt=real_value_1pt*100,
+            real_value_100pt=real_value_1pt * 100,
             **which_language,
         )
-
 
 
 class Game(Page):

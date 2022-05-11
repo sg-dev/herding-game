@@ -18,7 +18,7 @@ num_all_players = 60
 class Constants(BaseConstants):
     name_in_url = "thanks"
     players_per_group = None
-    num_rounds = 7
+    num_rounds = 1
 
 
 class Subsession(BaseSubsession):

@@ -26,7 +26,7 @@ class Constants(BaseConstants):
     # Payoffs
     R = c(6)  # Both cooperating
     S = c(0)  # The one cooperating and the other defecting
-    T = c(10) # The one defecting and the other cooperating
+    T = c(10)  # The one defecting and the other cooperating
     P = c(0)  # Both defecting
 
     # Bonus for cooperators
@@ -37,7 +37,7 @@ class Constants(BaseConstants):
 
     # Fraction of defectors
     strategy_schedule = [18, 14, 12, 10, 8, 6, 6, 6]
-    num_rounds = len(strategy_schedule)-1
+    num_rounds = len(strategy_schedule) - 1
 
     # Create extended lists of fractions and randomly assing them
 
@@ -74,7 +74,7 @@ class Player(BasePlayer):
 
         if self.round_number == 1:
             self.participant.vars["round_to_pay_bonus"] = random.randint(
-                1, Constants.num_rounds
+                2, Constants.num_rounds
             )
 
         if self.participant.vars["round_to_pay_bonus"] == self.round_number:

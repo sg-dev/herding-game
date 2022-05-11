@@ -27,7 +27,7 @@ class Thanks(Page):
             "game_points": game_points,
             "game_payoff": real_game_payoff,
             "real_participation_fee": real_participation_fee,
-            "total_real_payout": total_real_payout
+            "total_real_payout": total_real_payout,
         }
 
 

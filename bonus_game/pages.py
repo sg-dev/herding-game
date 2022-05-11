@@ -64,14 +64,15 @@ class Decision(Page):
             def_payoff=payoff_from_defectors,
             coop_payoff=payoff_from_cooperators,
             bonus=Constants.bonus,
-            total_bonus=Constants.bonus * n_D if my_decision == "C" else 0,
+            total_bonus=Constants.bonus * n_D if my_decision == "A" else 0,
             last_payoff=last_payoff,
             cumulative_payoff=cumulative_payoff,
             my_decision=my_decision,
             RXnC=Constants.R * n_C,
             SXnD=Constants.S * n_D,
+            TXnC=Constants.T * n_C,
+            PXnD=Constants.P * n_D,
             is_in_deception_regime=self.session.config["deception"],
-            round_to_pay=self.player.participant.vars["round_to_pay_bonus"],
         )
 
     def js_vars(self):
