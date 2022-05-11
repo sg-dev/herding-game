@@ -4,18 +4,6 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 
-# class Instructions1(Page):
-#     def vars_for_template(self):
-#         return {
-#             "R": Constants.R,
-#             "S": Constants.S,
-#             "T": Constants.T,
-#             "P": Constants.P,
-#             "bonus": Constants.bonus,
-#             "Rx3": Constants.R * 3,
-#             "Sx17": Constants.S * 17,
-#             "is_in_deception_regime": self.session.config["deception"],
-#         }
 
 
 class Instructions_setting(Page):
