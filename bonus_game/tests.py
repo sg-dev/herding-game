@@ -16,3 +16,5 @@ class PlayerBot(Bot):
         # sleep(timeout_seconds)
         yield pages.Decision, dict(decision=decision, time_spent=0)
         yield Submission(pages.ResultsWaitPage, check_html=False)
+        if self.round_number == Constants.num_rounds:
+            yield pages.Results
