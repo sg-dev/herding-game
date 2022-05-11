@@ -90,7 +90,10 @@ class Instructions_example_round(Page):
 
 
 class Instructions_next_steps(Page):
-    pass
+    def vars_for_template(self):
+        return {
+            "is_in_deception_regime": self.session.config["deception"],
+        }
 
 
 class Start_game(Page):
