@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block content %}
+
+<div>
+    <div container="container">
+        <div style="margin: auto; text-align:center;" class='card'>
+            <div class="card-header"></div>
+            <div class='card-body'>
+                <p>
+                    Round <b>{{ round_to_pay_bonus}}</b> was chosen at random for your payoff.
+                </p>
+                <br>
+                <h3>You earned {{bonus_game_points}} in this task</h3>
+                <br>
+                <button class="otree-btn-next btn btn-primary">Go to next game</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -137,4 +137,21 @@ class ResultsWaitPage(Page):
         )
 
 
-page_sequence = [Decision, ResultsWaitPage]
+class Results(Page):
+
+
+    def is_displayed(player):
+        return player.round_number == Constants.num_rounds
+
+    def vars_for_template(self):
+        participant = self.participant
+        bonus_game_points = participant.vars["payoff_bonus_game"]
+
+        bonus_round_paid = participant.vars["round_to_pay_bonus"]
+
+        return {
+            "bonus_game_points": bonus_game_points,
+            "round_to_pay_bonus": bonus_round_paid,
+        }
+
+page_sequence = [Decision, ResultsWaitPage, Results]

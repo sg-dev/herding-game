@@ -4,18 +4,18 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 
-class Instructions1(Page):
-    def vars_for_template(self):
-        return {
-            "R": Constants.R,
-            "S": Constants.S,
-            "T": Constants.T,
-            "P": Constants.P,
-            "bonus": Constants.bonus,
-            "Rx3": Constants.R * 3,
-            "Sx17": Constants.S * 17,
-            "is_in_deception_regime": self.session.config["deception"],
-        }
+# class Instructions1(Page):
+#     def vars_for_template(self):
+#         return {
+#             "R": Constants.R,
+#             "S": Constants.S,
+#             "T": Constants.T,
+#             "P": Constants.P,
+#             "bonus": Constants.bonus,
+#             "Rx3": Constants.R * 3,
+#             "Sx17": Constants.S * 17,
+#             "is_in_deception_regime": self.session.config["deception"],
+#         }
 
 
 class Instructions_setting(Page):
@@ -51,8 +51,8 @@ class Instructions_points(Page):
             "T": Constants.T,
             "P": Constants.P,
             "bonus": Constants.bonus,
-            "Rx3": Constants.R * 3,
-            "Sx17": Constants.S * 17,
+            "Rx8": Constants.R * 8,
+            "Sx12": Constants.S * 12,
             "value_of_200_points": c(200).to_real_world_currency(self.session),
             "is_in_deception_regime": self.session.config["deception"],
         }
@@ -66,23 +66,23 @@ class Instructions_example_round(Page):
             "T": Constants.T,
             "P": Constants.P,
             "bonus": Constants.bonus,
-            "Rx3": Constants.R * 3,
-            "Sx17": Constants.S * 17,
-            "bonusx17": Constants.bonus * 17,
-            "Rx3pSx17": Constants.R * 3 + Constants.S * 17,
-            "Rx3pSx17pbonusx17": Constants.R * 3
-            + Constants.S * 17
-            + Constants.bonus * 17,
-            "Tx3": Constants.T * 3,
-            "Px17": Constants.P * 17,
-            "Tx3pPx17": Constants.T * 3 + Constants.P * 17,
+            "Rx8": Constants.R * 8,
+            "Sx12": Constants.S * 12,
+            "bonusx12": Constants.bonus * 12,
+            "Rx8pSx12": Constants.R * 8 + Constants.S * 12,
+            "Rx8pSx12pbonusx12": Constants.R * 8
+            + Constants.S * 12
+            + Constants.bonus * 12,
+            "Tx8": Constants.T * 8,
+            "Px12": Constants.P * 12,
+            "Tx8pPx12": Constants.T * 8 + Constants.P * 12,
             "is_in_deception_regime": self.session.config["deception"],
         }
 
     def js_vars(self):
         return {
             "neigh_size": Constants.n_players,
-            "nC": 3,
+            "nC": 8,
             "secAnimation": 0,
             "shuffle": False,
             "skip": 0,

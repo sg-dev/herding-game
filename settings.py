@@ -17,10 +17,7 @@ SESSION_CONFIGS = [
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = dict(
-    real_world_currency_per_point=0.005,
-    participation_fee=1.20,
-    deception=False,
-    doc=""
+    real_world_currency_per_point=0.005, participation_fee=1.20, deception=False, doc=""
 )
 
 SESSION_FIELDS = ["prolific_completion_url"]

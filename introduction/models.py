@@ -86,15 +86,10 @@ class Player(BasePlayer):
 
     q5 = models.StringField(
         choices=[
-            [
-                1,
-                f"I get a bonus of {Constants.bonus} for each player choosing B if I choose A.",
-            ],
-            [2, f"I get a bonus of {Constants.R} for each player choosing A."],
-            [
-                3,
-                f"I get a bonus of {Constants.R} for each player choosing A if I choose B.",
-            ],
+            [2, f"I get a bonus of {Constants.T} for each player choosing A."],
+            [1, f"I get a bonus of {Constants.bonus} for each player choosing B if I choose A."],
+            [3, f"I get a bonus of {Constants.bonus} for each player choosing A if I choose B."],
+            [4, f"I get a bonus of {Constants.R} for each player choosing B if I choose A."],
         ],
         label="<strong>Q5:</strong> Which of the following statements is correct?",
         widget=widgets.RadioSelect,
