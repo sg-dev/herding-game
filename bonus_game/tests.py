@@ -11,7 +11,7 @@ from time import sleep
 class PlayerBot(Bot):
     def play_round(self):
         # Choose random action between cooperate/defect
-        coin_flip = ["C", "D"]
+        coin_flip = ["A", "B"]
         decision = random.choice(coin_flip)
         # sleep(timeout_seconds)
         yield pages.Decision, dict(decision=decision, time_spent=0)
