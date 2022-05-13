@@ -89,7 +89,7 @@ class Start_game(Page):
 
 
 class Attention1(Page):
-    timeout_seconds = 1080
+    timeout_seconds = 60*7
     form_model = "player"
     form_fields = ["q1", "q2", "q3", "q4", "q5"]
 
@@ -124,12 +124,7 @@ class Attention1(Page):
             return None
 
 
-class InterimWaitPage(Page):
-    timeout_seconds = 1  # Change as you wish (for realistic view purposes)
-
-
 page_sequence = [
-    # Instructions1,
     Instructions_setting,
     Instructions_points,
     Instructions_example_round,

@@ -89,7 +89,11 @@ class Decision(Page):
 
 
 class ResultsWaitPage(Page):
-    timeout_seconds = Constants.simulated_playing_time + 3
+
+    def get_timeout_seconds(self):
+        player = self.player
+        session = player.session
+        return session.config["simulated_play_time"] + 3
 
     def vars_for_template(self):
         cumulative_payoff = sum([p.payoff for p in self.player.in_all_rounds()])
@@ -130,7 +134,7 @@ class ResultsWaitPage(Page):
         return dict(
             neigh_size=Constants.neigh_size,
             nC=n_C,
-            secAnimation=self.timeout_seconds,
+            secAnimation=self.get_timeout_seconds(),
             nD=n_D,
             shuffle=True,
             skip=to_skip,
@@ -138,8 +142,6 @@ class ResultsWaitPage(Page):
 
 
 class Results(Page):
-
-
     def is_displayed(player):
         return player.round_number == Constants.num_rounds
 
