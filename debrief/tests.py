@@ -7,4 +7,4 @@ from .models import Constants
 
 class PlayerBot(Bot):
     def play_round(self):
-        yield pages.Debrief, {"debrief": "majority", "debrief_2": "minority"}
+        yield pages.Debrief, {"debrief": "majority", "debrief2": "minority"}

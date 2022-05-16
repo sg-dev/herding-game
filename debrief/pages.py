@@ -6,7 +6,7 @@ import random
 
 class Debrief(Page):
     form_model = "player"
-    form_fields = ["debrief", "debrief_2"]
+    form_fields = ["debrief", "debrief2"]
 
     def is_displayed(self):
         return self.player.round_number == Constants.num_rounds
