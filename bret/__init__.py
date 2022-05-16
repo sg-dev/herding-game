@@ -155,7 +155,7 @@ class Instructions(Page):
         return dict(
             num_nobomb=C.NUM_BOXES - 1,
             Lexicon=Lexicon,
-            real_value_100pt=real_value_1pt * 100,
+            real_value_100pt=real_value_1pt * 50,  # HACK to make the points work with bonus game
             **which_language,
         )
 
