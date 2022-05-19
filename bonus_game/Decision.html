@@ -65,7 +65,7 @@
     //This function automatically starts the timer when the page loads. In this case I want seconds so the interval is set to 1000, but I believe if you set it to 1 then it will count milliseconds - you will need to test this
     window.onload = function() {
       if(pageTimerID == -1){
-        pageTimerID = setInterval(pageTick, 1000);
+        pageTimerID = setInterval(pageTick, 100);
       }
     };
     </script>

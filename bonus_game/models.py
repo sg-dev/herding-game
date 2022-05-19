@@ -36,18 +36,9 @@ class Constants(BaseConstants):
     neigh_size = 20
 
     # Fraction of defectors
-    strategy_schedule = [18, 14, 12, 10, 8, 6, 6, 6]
+    strategy_schedule = [18, 16, 14, 12, 10, 8, 6, 4, 2, 2]
     num_rounds = len(strategy_schedule) - 1
 
-    # Create extended lists of fractions and randomly assing them
-
-    # For graphics
-    # Randomly assigned numbers to players (fixed for the whole game)
-    all_participants = list(range(500))
-    opponents_list = []
-    for n in range(num_all_players):
-        random.shuffle(all_participants)
-        opponents_list.append(all_participants[:21])
 
 
 class Subsession(BaseSubsession):
