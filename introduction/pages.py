@@ -7,6 +7,13 @@ from .models import Constants
 
 
 class Instructions_setting(Page):
+
+    def is_displayed(self):
+        import random
+        participant = self.participant
+        participant.in_deception = random.choice([True, False])
+
+
     def vars_for_template(self):
         return {
             "R": Constants.R,
@@ -17,7 +24,7 @@ class Instructions_setting(Page):
             "n_C": 10,
             "n_D": 10,
             "n_C_1": 9,
-            "is_in_deception_regime": self.session.config["deception"],
+            "is_in_deception_regime": self.participant.in_deception,
         }
 
     def js_vars(self):
@@ -27,7 +34,7 @@ class Instructions_setting(Page):
             "secAnimation": 0.2,
             "shuffle": False,
             "skip": 0,
-            "is_in_deception_regime": self.session.config["deception"],
+            "is_in_deception_regime": self.participant.in_deception,
         }
 
 
@@ -42,7 +49,7 @@ class Instructions_points(Page):
             "Rx8": Constants.R * 8,
             "Sx12": Constants.S * 12,
             "value_of_200_points": c(200).to_real_world_currency(self.session),
-            "is_in_deception_regime": self.session.config["deception"],
+            "is_in_deception_regime": self.participant.in_deception,
         }
 
 
@@ -64,7 +71,7 @@ class Instructions_example_round(Page):
             "Tx8": Constants.T * 8,
             "Px12": Constants.P * 12,
             "Tx8pPx12": Constants.T * 8 + Constants.P * 12,
-            "is_in_deception_regime": self.session.config["deception"],
+            "is_in_deception_regime": self.participant.in_deception,
         }
 
     def js_vars(self):
@@ -80,7 +87,7 @@ class Instructions_example_round(Page):
 class Instructions_next_steps(Page):
     def vars_for_template(self):
         return {
-            "is_in_deception_regime": self.session.config["deception"],
+            "is_in_deception_regime": self.participant.in_deception,
         }
 
 
@@ -100,7 +107,7 @@ class Attention1(Page):
             "T": Constants.T,
             "P": Constants.P,
             "bonus": Constants.bonus,
-            "is_in_deception_regime": self.session.config["deception"],
+            "is_in_deception_regime": self.participant.in_deception,
         }
 
     def js_vars(self):

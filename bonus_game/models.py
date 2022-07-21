@@ -36,7 +36,7 @@ class Constants(BaseConstants):
     neigh_size = 20
 
     # Fraction of defectors
-    strategy_schedule = [18, 16, 14, 12, 10, 8, 6, 4, 2, 2]
+    strategy_schedule = [18, 18, 16, 14, 12, 10, 8, 6, 4, 2, 2, 2]
     num_rounds = len(strategy_schedule) - 1
 
 
@@ -58,9 +58,12 @@ class Player(BasePlayer):
         doc="""This player's decision""",
         widget=widgets.RadioSelect(),
     )
+    in_deception = models.BooleanField()
 
-    # set random payoff round
     def set_payoff(self, payoff):
+        # HACK: to add the deception variable to the output
+        self.in_deception = self.participant.in_deception
+
         self.potential_payoff = payoff
 
         if self.round_number == 1:

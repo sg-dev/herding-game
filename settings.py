@@ -18,15 +18,14 @@ SESSION_CONFIGS = [
 
 SESSION_CONFIG_DEFAULTS = dict(
     real_world_currency_per_point=0.005,
-    participation_fee=1.20,
-    deception=False,
+    participation_fee=.7,
     simulated_play_time=5,
     doc=""
 )
 
 SESSION_FIELDS = ["prolific_completion_url"]
 
-PARTICIPANT_FIELDS = ["finished"]
+PARTICIPANT_FIELDS = ["finished", "in_deception"]
 
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans
