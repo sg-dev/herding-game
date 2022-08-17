@@ -1,17 +1,20 @@
+from itertools import cycle
+
 from otree.api import Currency as c
 
 from ._builtin import Page, WaitPage
 from .models import Constants
 
 
-
+assignment_cycler = cycle([True, False])
 
 class Instructions_setting(Page):
 
     def is_displayed(self):
         import random
         participant = self.participant
-        participant.in_deception = random.choice([True, False])
+        participant.in_deception = next(assignment_cycler)
+        return True
 
 
     def vars_for_template(self):
