@@ -25,7 +25,13 @@ class Constants(BaseConstants):
 
 
 class Subsession(BaseSubsession):
-    pass
+    def creating_session(self):
+        from itertools import cycle
+
+        assignment_cycler = cycle([True, False])
+        for p in self.get_players():
+            p.participant.in_deception = next(assignment_cycler)
+        self.group_randomly(fixed_id_in_group=True)
 
 
 class Group(BaseGroup):
@@ -87,9 +93,18 @@ class Player(BasePlayer):
     q5 = models.StringField(
         choices=[
             [2, f"I get a bonus of {Constants.T} for each player choosing A."],
-            [1, f"I get a bonus of {Constants.bonus} for each player choosing B if I choose A."],
-            [3, f"I get a bonus of {Constants.bonus} for each player choosing A if I choose B."],
-            [4, f"I get a bonus of {Constants.R} for each player choosing B if I choose A."],
+            [
+                1,
+                f"I get a bonus of {Constants.bonus} for each player choosing B if I choose A.",
+            ],
+            [
+                3,
+                f"I get a bonus of {Constants.bonus} for each player choosing A if I choose B.",
+            ],
+            [
+                4,
+                f"I get a bonus of {Constants.R} for each player choosing B if I choose A.",
+            ],
         ],
         label="<strong>Q5:</strong> Which of the following statements is correct?",
         widget=widgets.RadioSelect,

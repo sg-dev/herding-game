@@ -89,7 +89,6 @@ class Decision(Page):
 
 
 class ResultsWaitPage(Page):
-
     def get_timeout_seconds(self):
         player = self.player
         session = player.session
@@ -155,5 +154,6 @@ class Results(Page):
             "bonus_game_points": bonus_game_points,
             "round_to_pay_bonus": bonus_round_paid,
         }
+
 
 page_sequence = [Decision, ResultsWaitPage, Results]

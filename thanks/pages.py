@@ -20,8 +20,8 @@ class Thanks(Page):
 
         bonus_round_paid = participant.vars["round_to_pay_bonus"]
 
-        if 'prolific_completion_url' in self.session.vars:
-            completion_url = self.session.vars['prolific_completion_url']
+        if "prolific_completion_url" in self.session.vars:
+            completion_url = self.session.vars["prolific_completion_url"]
         else:
             completion_url = None
 
@@ -33,7 +33,7 @@ class Thanks(Page):
             "game_payoff": real_game_payoff,
             "real_participation_fee": real_participation_fee,
             "total_real_payout": total_real_payout,
-            "prolific_completion_url": completion_url
+            "prolific_completion_url": completion_url,
         }
 
 

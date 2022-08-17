@@ -18,9 +18,9 @@ SESSION_CONFIGS = [
 
 SESSION_CONFIG_DEFAULTS = dict(
     real_world_currency_per_point=0.005,
-    participation_fee=.7,
+    participation_fee=0.7,
     simulated_play_time=5,
-    doc=""
+    doc="",
 )
 
 SESSION_FIELDS = ["prolific_completion_url"]

@@ -40,7 +40,6 @@ class Constants(BaseConstants):
     num_rounds = len(strategy_schedule) - 1
 
 
-
 class Subsession(BaseSubsession):
     def creating_session(self):
         self.group_randomly(fixed_id_in_group=True)
