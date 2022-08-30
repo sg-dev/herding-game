@@ -24,10 +24,29 @@ function draw_lollipop(playerId, label) {
     return group
 }
 
+// function shuffle(array) {
+//     // shuffle elements of a list
+//     return array.sort(() => Math.random() - 0.5);
+// }
+
+
 function shuffle(array) {
-    // shuffle elements of a list
-    return array.sort(() => Math.random() - 0.5);
-}
+    let currentIndex = array.length,  randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+  }
 
 var playing_c = Array(nC).fill('A')
 var playing_d = Array(neigh_size - nC).fill('B')
@@ -37,12 +56,11 @@ if (js_vars.shuffle == true) {
     strategies = shuffle(strategies)
 }
 
-
 if (skip > 0) {
     var playerRange = Array.from({ length: neigh_size }, (x, i) => i);
-    playerRange = shuffle(playerRange)
-    var playersToSkip = playerRange.slice(0, skip)
-    console.log(playersToSkip)
+    playerRange = shuffle(playerRange);
+    playerRange = shuffle(playerRange);
+    var playersToSkip = playerRange.slice(0, skip);
 } else {
     var playersToSkip = []
 }

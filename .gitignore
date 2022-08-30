@@ -139,3 +139,4 @@ cython_debug/
 z_cleanup/
 .DS_Store
 HR
+backups/
