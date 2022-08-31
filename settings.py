@@ -9,6 +9,12 @@ SESSION_CONFIGS = [
         # app_sequence=["bonus_game", "bret", "debrief", "thanks"],
         app_sequence=["introduction", "bonus_game", "bret", "debrief", "thanks"],
     ),
+    dict(
+        name="real_experiment",
+        display_name="The Bonus Game",
+        num_demo_participants=50,
+        app_sequence=["introduction", "bonus_game", "bret", "debrief", "thanks"],
+    )
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
