@@ -59,7 +59,6 @@ if (js_vars.shuffle == true) {
 if (skip > 0) {
     var playerRange = Array.from({ length: neigh_size }, (x, i) => i);
     playerRange = shuffle(playerRange);
-    playerRange = shuffle(playerRange);
     var playersToSkip = playerRange.slice(0, skip);
 } else {
     var playersToSkip = []
